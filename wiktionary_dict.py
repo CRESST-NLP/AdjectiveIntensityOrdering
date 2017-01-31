@@ -30,8 +30,8 @@ def getMostLikelyDefinition(definitions, keywords):
 
     # indexing starts at 1
     numDefinitions = max(list(map(int, definitions.keys()))) + 1
-    for i in range(1, numDefinitions):
-        for keyword in keywords:
+    for keyword in keywords:
+        for i in range(1, numDefinitions):
             if keyword in definitions[str(i)]:
                 return definitions[str(i)]
     return definitions["1"]
