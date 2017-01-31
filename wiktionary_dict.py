@@ -27,7 +27,10 @@ def getMostLikelyDefinition(definitions, keywords):
     :param keywords: an array of strings
     :return: string with first definition in definitions containing a keyword or the first definition
     """
-    for i in range(1, 10):
+
+    # indexing starts at 1
+    numDefinitions = max(list(map(int, definitions.keys()))) + 1
+    for i in range(1, numDefinitions):
         for keyword in keywords:
             if keyword in definitions[str(i)]:
                 return definitions[str(i)]
