@@ -16,9 +16,9 @@ def getSynsetsWithWordNetAttributes(property):
     :return: An array containing the property's attributes i.e. ["hot", "cold", "warm", "cool"]
     """
     synsets = wn.synsets(property, wn.NOUN)
-    if synsets != []:
-        synset = synsets[0]
-        return synset.attributes()
+    for synset in synsets:
+        if synset.attributes() != []:
+            return synset.attributes()
     return []
 
 def getSimilarSynsets(synset):
@@ -144,7 +144,7 @@ def getOxfordDefinition(word, pos='a'):
     r = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
 
     if r.status_code == 200:
-        print(r.json())
+        # print(r.json())
         lexicalEntries = r.json()["results"][0]["lexicalEntries"]
         for lexicalEntry in lexicalEntries:
             try:
@@ -165,7 +165,8 @@ if __name__ == '__main__':
 
     for property in sys.argv[1:]:
         synsets = getSynsetsWithWordNetAttributes(property)
-        keywords = [synset.name().split(".")[0] for synset in synsets] + [property]
+        keywords = [property] + [synset.name().split(".")[0] for synset in synsets]
+
         for synset in synsets:
             word = synset.name().split(".")[0]
             print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word)))
@@ -176,7 +177,23 @@ if __name__ == '__main__':
                 print("Wiktionary:  ")
                 continue
             similarSynsets = getSimilarSynsets(synset)
-            for synset in similarSynsets:
+            archaism = wn.synsets("archaism")[0]
+            nonArchaicSimilarSynsets = set()
+            archaicSimilarSynsets = set()
+            for similarSynset in similarSynsets:
+                try:
+                    if archaism in similarSynset.usage_domains():
+                        archaicSimilarSynsets.add(similarSynset)
+                    else:
+                        nonArchaicSimilarSynsets.add(similarSynset)
+                except:
+                    continue
+
+            print(synset)
+            print("\tnon-archaic similar synsets:", nonArchaicSimilarSynsets)
+            print("\tarchaic synsets:", archaicSimilarSynsets)
+
+            for synset in nonArchaicSimilarSynsets:
                 word = synset.name().split(".")[0]
                 print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word)))
                 try:
@@ -187,8 +204,20 @@ if __name__ == '__main__':
                     continue
             print("\n")
 
-        temperature_adjectives3 = getSynsetsWithWordNetDefinitions(property)
-        for synset in temperature_adjectives3:
+        adjectivesWithPropertyInDefinition = getSynsetsWithWordNetDefinitions(property)
+        nonArchaicSynsetsWithPropertyInDefinition = set()
+        archaicSynsetsWithPropertyInDefinition = set()
+        for adjectiveWithPropertyInDefinition in adjectivesWithPropertyInDefinition:
+                try:
+                    if archaism in adjectiveWithPropertyInDefinition.usage_domains():
+                        archaicSynsetsWithPropertyInDefinition.add(adjectiveWithPropertyInDefinition)
+                    else:
+                        nonArchaicSynsetsWithPropertyInDefinition.add(adjectiveWithPropertyInDefinition)
+                except:
+                    continue
+        print("\tnon-archaic synsets with property in definition:", nonArchaicSynsetsWithPropertyInDefinition)
+        print("\tarchaic synsets with pr operty in definition:", archaicSynsetsWithPropertyInDefinition)
+        for synset in nonArchaicSynsetsWithPropertyInDefinition:
             word = synset.name().split(".")[0]
             print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word)))
             try:
