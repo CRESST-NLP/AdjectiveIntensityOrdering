@@ -4,18 +4,17 @@ import wiktionary_dict
 
 high = 1.0
 low = -1.0
-adv_score = 0.2
 
 # adverbs that increases the intensity of the word
 intensifiers = {"extremely", "really", "very", "intensely", "exceptionally", "highly", "totally", "absolutely",
                 "completely", "quite"}
 
 # adverbs that decrease the intensity of the word
-modifiers = set(["fairly", "pretty", "somewhat", "reasonably", "slightly", "moderately", "a little", "a bit", "rather",
+downtoners = set(["fairly", "pretty", "somewhat", "reasonably", "slightly", "moderately", "a little", "a bit", "rather",
                  "quite", "mildly", "mild"])
 
-adj_intensity_map = {"high": high, "good": high,
-                     "low": low, "bad": low, "not": low, "opposite": low}
+adj_intensity_map = {"high": high, "good": high, "great": high,
+                     "low": low, "bad": low, "not": low, "opposite": low, "little": low}
 
 def orderAdjectives(adjectives, keywords):
     """
@@ -33,10 +32,12 @@ def orderAdjectives(adjectives, keywords):
     """
     wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
+
     adjectiveToScore = { adjective: 0 for adjective in adjectives}
 
     for adjective in adjectives:
         definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
+        adv_score = 1.0 / len(definition)
         print(adjective, ": ", definition)
 
         for adj in adj_intensity_map:
@@ -50,8 +51,8 @@ def orderAdjectives(adjectives, keywords):
                 else:
                     adjectiveToScore[adjective] -= adv_score
 
-        for modifier in modifiers:
-            if modifier in definition:
+        for downtoner in downtoners:
+            if downtoner in definition:
                 if adjectiveToScore[adjective] > 0:
                     adjectiveToScore[adjective] -= adv_score
                 else:
