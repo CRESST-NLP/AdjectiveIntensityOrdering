@@ -4,14 +4,16 @@ import wiktionary_dict
 
 high = 1.0
 low = -1.0
-
-# adverbs that increases the intensity of the word
-intensifiers = {"extremely", "really", "very", "intensely", "exceptionally", "highly", "totally", "absolutely",
-                "completely", "quite"}
+A = 1.2
+B = 0.8
+C = 0.6
+# adverbs that increases the intensity of the worda
+intensifiers = {"extremely": A, "really": A, "very": A, "intensely": A, "exceptionally": A, "highly": A, "totally": A,
+                "absolutely": A, "completely": A}
 
 # adverbs that decrease the intensity of the word
-downtoners = set(["fairly", "pretty", "somewhat", "reasonably", "slightly", "moderately", "a little", "a bit", "rather",
-                 "quite", "mildly", "mild"])
+downtoners = {"fairly": B, "pretty": B, "somewhat": C, "reasonably": C, "slightly": C, "moderately": C, "a little": C,
+              "a bit": C, "rather": C, "quite": B, "mildly": C}
 
 adj_intensity_map = {"high": high, "good": high, "great": high,
                      "low": low, "bad": low, "not": low, "opposite": low, "little": low}
@@ -44,21 +46,26 @@ def orderAdjectives(adjectives, keywords):
             if adj in definition:
                 adjectiveToScore[adjective] += adj_intensity_map[adj]
 
+        intensity = 0
+        numIntensifiers = 0
         for intensifier in intensifiers:
             if intensifier in definition:
-                if adjectiveToScore[adjective] > 0:
-                    adjectiveToScore[adjective] += adv_score
-                else:
-                    adjectiveToScore[adjective] -= adv_score
+                intensity += intensifiers[intensifier]
+                numIntensifiers += 1
+        if numIntensifiers > 0:
+            adjectiveToScore[adjective] *= (intensity / numIntensifiers)
 
+        downtone = 0
+        numDowntoners = 0
         for downtoner in downtoners:
             if downtoner in definition:
-                if adjectiveToScore[adjective] > 0:
-                    adjectiveToScore[adjective] -= adv_score
-                else:
-                    adjectiveToScore[adjective] += adv_score
+                downtone += downtoner[downtoner]
+                numDowntoners += 1
+        if numDowntoners > 0:
+            adjectiveToScore[adjective] *= (downtone / numDowntoners)
 
-    print(adjectiveToScore)
+
+    print({(k, round(v, 2)) for (k, v) in adjectiveToScore})
     adjectiveToScore = [(k,adjectiveToScore[k]) for k in adjectiveToScore.keys()]
     sortedAdjToScore = sorted(adjectiveToScore, key=lambda tup: tup[1])
     result = [k for (k, v) in sortedAdjToScore]
