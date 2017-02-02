@@ -4,17 +4,18 @@ import wiktionary_dict
 
 high = 1.0
 low = -1.0
-modifier_score = 0.2
+adv_score = 0.2
 
-adv_intensity_map = {"extremely": high, "really": high, "very": high, "intensely": high, "exceptionally": high, "highly": high}
+# adverbs that increases the intensity of the word
+intensifiers = {"extremely", "really", "very", "intensely", "exceptionally", "highly", "totally", "absolutely",
+                "completely", "quite"}
 
 # adverbs that decrease the intensity of the word
-modifiers = set(["fairly", "pretty", "somewhat", "reasonably", "slightly", "moderately", "a little", "a bit", "rather", "quite", "mildly", "mild"])
+modifiers = set(["fairly", "pretty", "somewhat", "reasonably", "slightly", "moderately", "a little", "a bit", "rather",
+                 "quite", "mildly", "mild"])
 
 adj_intensity_map = {"high": high, "good": high,
                      "low": low, "bad": low, "not": low, "opposite": low}
-
-# very cold, cold, fairly cold, fairly warm, warm, very warm
 
 def orderAdjectives(adjectives, keywords):
     """
@@ -35,19 +36,26 @@ def orderAdjectives(adjectives, keywords):
     adjectiveToScore = { adjective: 0 for adjective in adjectives}
 
     for adjective in adjectives:
-        definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords)
-        for adv in adv_intensity_map:
-            if adv in definition:
-                adjectiveToScore[adjective] += adv_intensity_map[adv]
+        definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
+        print(adjective, ": ", definition)
+
         for adj in adj_intensity_map:
             if adj in definition:
                 adjectiveToScore[adjective] += adj_intensity_map[adj]
+
+        for intensifier in intensifiers:
+            if intensifier in definition:
+                if adjectiveToScore[adjective] > 0:
+                    adjectiveToScore[adjective] += adv_score
+                else:
+                    adjectiveToScore[adjective] -= adv_score
+
         for modifier in modifiers:
             if modifier in definition:
                 if adjectiveToScore[adjective] > 0:
-                    adjectiveToScore[adjective] -= modifier_score
+                    adjectiveToScore[adjective] -= adv_score
                 else:
-                    adjectiveToScore[adjective] += modifier_score
+                    adjectiveToScore[adjective] += adv_score
 
     print(adjectiveToScore)
     adjectiveToScore = [(k,adjectiveToScore[k]) for k in adjectiveToScore.keys()]
@@ -72,7 +80,14 @@ def orderAdjectivesExtended(orderedAdjectives, synsets):
             calefactory, calorific, fervent, fiery, heatable, heated, overheated, red-hot, scorching, sizzling, sultry,
             sweltering, thermal, torrid, tropical, white
     """
-
+    result = []
+    for adjective in orderedAdjectives:
+        result += [adjective]
+        for synset in synsets:
+            if adjective == synset.name().split(".")[0]:
+                result += [similarSynset.name().split(".")[0] for similarSynset in getSimilarSynsets(synset)]
+                break
+    return result
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -83,4 +98,5 @@ if __name__ == '__main__':
         attributes = [synset.name().split(".")[0] for synset in synsets]
         orderedAdjectives = orderAdjectives(attributes, [property] + attributes)
         print(orderedAdjectives)
-        orderAdjectivesExtended(orderedAdjectives, synsets)
+        orderedAdjectivesExtended = orderAdjectivesExtended(orderedAdjectives, synsets)
+        print(orderedAdjectivesExtended)
