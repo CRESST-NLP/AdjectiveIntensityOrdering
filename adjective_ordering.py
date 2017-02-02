@@ -17,13 +17,25 @@ adj_intensity_map = {"high": high, "good": high,
 # very cold, cold, fairly cold, fairly warm, warm, very warm
 
 def orderAdjectives(adjectives, keywords):
+    """
+
+    :param adjectives: An array of strings containing adjectives that attributes of the same property.
+    :param keywords: An array of strings for helping to find the correct word sense by looking for the keyword in the
+                     adjective definitions.
+    :return: An array of strings containing ordered adjectives.
+
+    ex: input:
+            adjectives: [cold, cool, hot, warm]
+            keywords: [temperature, cold, cool, hot, warm]
+        output:
+            [cold, cool, warm, hot]
+    """
     wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
     adjectiveToScore = { adjective: 0 for adjective in adjectives}
 
     for adjective in adjectives:
         definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords)
-        # print(definition)
         for adv in adv_intensity_map:
             if adv in definition:
                 adjectiveToScore[adjective] += adv_intensity_map[adv]
@@ -32,13 +44,10 @@ def orderAdjectives(adjectives, keywords):
                 adjectiveToScore[adjective] += adj_intensity_map[adj]
         for modifier in modifiers:
             if modifier in definition:
-                # print(adjective, modifier)
-                # print(adjectiveToScore[adjective])
                 if adjectiveToScore[adjective] > 0:
                     adjectiveToScore[adjective] -= modifier_score
                 else:
                     adjectiveToScore[adjective] += modifier_score
-                # print(adjectiveToScore[adjective])
 
     print(adjectiveToScore)
     adjectiveToScore = [(k,adjectiveToScore[k]) for k in adjectiveToScore.keys()]
@@ -46,10 +55,32 @@ def orderAdjectives(adjectives, keywords):
     result = [k for (k, v) in sortedAdjToScore]
     return result
 
+def orderAdjectivesExtended(orderedAdjectives, synsets):
+    """
+
+    :param orderedAdjectives: An array of strings containing ordered adjectives.
+    :param synsets: An array of unordered synsets with adjectives corresponding to the adjectives in orderedAdjectives.
+    :return: An array of strings containing the ordered attributes of a property along with similar adjectives
+             according to WordNet's similar_to property.
+
+    ex: input:
+            orderedAdjectives: [cold, cool, warm, hot]
+            synsets: [Synset('cold.a.01'), Synset('cool.a.01'), Synset('hot.a.01'), Synset('warm.a.01')]
+        output:
+            cold, algid, arctic, bleak, chilly, crisp, frigorific, frosty, heatless, ice-cold, shivery, stone-cold,
+            unheated, cool, air-conditioned, air-cooled, warm, lukewarm, warmed, hot, baking, blistering, calefacient,
+            calefactory, calorific, fervent, fiery, heatable, heated, overheated, red-hot, scorching, sizzling, sultry,
+            sweltering, thermal, torrid, tropical, white
+    """
+
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(0)
 
     for property in sys.argv[1:]:
-        attributes = [synset.name().split(".")[0] for synset in getSynsetsWithWordNetAttributes(property)]
-        print(orderAdjectives(attributes, [property] + attributes))
+        synsets = getSynsetsWithWordNetAttributes(property)
+        attributes = [synset.name().split(".")[0] for synset in synsets]
+        orderedAdjectives = orderAdjectives(attributes, [property] + attributes)
+        print(orderedAdjectives)
+        orderAdjectivesExtended(orderedAdjectives, synsets)
