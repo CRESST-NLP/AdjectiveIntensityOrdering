@@ -9,6 +9,14 @@ import requests
 
 import wiktionary_dict
 
+def getName(synset):
+    """
+
+    :param synset: a synset from WordNet
+    :return: a string containing the name of the synset
+    """
+    return synset.name().split('.')[0]
+
 def getSynsetsWithWordNetAttributes(property):
     """
     Retrieves a property's attributes from WordNet's attributes
@@ -36,6 +44,21 @@ def getSimilarSynsets(synset):
             Synset('torrid.s.03'), Synset('tropical.s.04'), Synset('white.s.06')]
     """
     return synset.similar_tos()
+
+def filterArchaicSynsets(synsets):
+    """
+
+    :param synsets: an array consisting of WordNet synsets.
+    :return: an array with archaic synsets removed.
+    """
+    archaism = wn.synsets("archaism")[0]
+    results = []
+    for synset in synsets:
+        if archaism in synset.usage_domains():
+            continue
+        else:
+            results.append(synset)
+    return results
 
 def getSynsetsWithWordNetAttributesExtended(property):
     """
@@ -95,7 +118,7 @@ def getWordsUsingOxfordDefinitions(property, pos='a'):
 
     words = set()
     for synset in list(wn.all_synsets(pos)):
-        word_id = synset.name().split('.')[0]
+        word_id = getName(synset)
         url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word_id.lower()
         r = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
         if r:
@@ -170,11 +193,11 @@ if __name__ == '__main__':
 
     for property in sys.argv[1:]:
         synsets = getSynsetsWithWordNetAttributes(property)
-        keywords = [property] + [synset.name().split(".")[0] for synset in synsets]
+        keywords = [property] + [getName(synset) for synset in synsets]
 
         for synset in synsets:
             print(synset)
-            word = synset.name().split(".")[0]
+            word = getName(synset)
             print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word, keywords)))
             try:
                 wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
@@ -198,7 +221,7 @@ if __name__ == '__main__':
 
             for synset in nonArchaicSimilarSynsets:
                 print(synset)
-                word = synset.name().split(".")[0]
+                word = getName(synset)
                 print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word), [word] + keywords))
                 try:
                     wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
@@ -222,7 +245,7 @@ if __name__ == '__main__':
 
         for synset in nonArchaicSynsetsWithPropertyInDefinition:
             print(synset)
-            word = synset.name().split(".")[0]
+            word = getName(synset)
             print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word, [word] + keywords)))
             try:
                 wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)

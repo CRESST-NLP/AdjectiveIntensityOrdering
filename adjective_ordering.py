@@ -18,82 +18,89 @@ downtoners = {"fairly": B, "pretty": B, "somewhat": C, "reasonably": C, "slightl
 adj_intensity_map = {"high": high, "good": high, "great": high,
                      "low": low, "bad": low, "not": low, "opposite": low, "little": low}
 
-def orderAdjectives(adjectives, keywords):
+def getScore(adjective, keywords, defaultScore = 0):
+    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
+    score = defaultScore
+
+    try:
+        definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
+    except KeyError:
+        print("No wiktionary defintion for: ", adjective)
+        return None
+
+    for adj in adj_intensity_map:
+        if adj in definition:
+            score += adj_intensity_map[adj]
+
+    intensity = 0
+    numIntensifiers = 0
+    for intensifier in intensifiers:
+        if intensifier in definition:
+            intensity += intensifiers[intensifier]
+            numIntensifiers += 1
+    if numIntensifiers > 0:
+        score *= (intensity / numIntensifiers)
+
+    downtone = 0
+    numDowntoners = 0
+    for downtoner in downtoners:
+        if downtoner in definition:
+            downtone += downtoners[downtoner]
+            numDowntoners += 1
+    if numDowntoners > 0:
+        score *= (downtone / numDowntoners)
+
+    return score
+
+def orderAdjectives(adjectives, keywords, defaultScore = 0):
     """
 
     :param adjectives: An array of strings containing adjectives that attributes of the same property.
     :param keywords: An array of strings for helping to find the correct word sense by looking for the keyword in the
                      adjective definitions.
-    :return: An array of strings containing ordered adjectives.
+    :return: An array of (string, int) pairs containing adjectives and scores in order of increasing score.
 
     ex: input:
             adjectives: [cold, cool, hot, warm]
             keywords: [temperature, cold, cool, hot, warm]
         output:
-            [cold, cool, warm, hot]
+            [('cold', -1.0), ('cool', -0.6), ('warm', 0.6), ('hot', 1.0)]
     """
-    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-
-
-    adjectiveToScore = { adjective: 0 for adjective in adjectives}
+    adjectiveToScore = {}
 
     for adjective in adjectives:
-        definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
-        adv_score = 1.0 / len(definition)
-        print(adjective, ": ", definition)
+        score = getScore(adjective, keywords, defaultScore)
+        if score != None:
+            adjectiveToScore[adjective] = score
 
-        for adj in adj_intensity_map:
-            if adj in definition:
-                adjectiveToScore[adjective] += adj_intensity_map[adj]
-
-        intensity = 0
-        numIntensifiers = 0
-        for intensifier in intensifiers:
-            if intensifier in definition:
-                intensity += intensifiers[intensifier]
-                numIntensifiers += 1
-        if numIntensifiers > 0:
-            adjectiveToScore[adjective] *= (intensity / numIntensifiers)
-
-        downtone = 0
-        numDowntoners = 0
-        for downtoner in downtoners:
-            if downtoner in definition:
-                downtone += downtoner[downtoner]
-                numDowntoners += 1
-        if numDowntoners > 0:
-            adjectiveToScore[adjective] *= (downtone / numDowntoners)
-
-
-    print({(k, round(v, 2)) for (k, v) in adjectiveToScore})
     adjectiveToScore = [(k,adjectiveToScore[k]) for k in adjectiveToScore.keys()]
     sortedAdjToScore = sorted(adjectiveToScore, key=lambda tup: tup[1])
-    result = [k for (k, v) in sortedAdjToScore]
-    return result
+    return sortedAdjToScore
 
 def orderAdjectivesExtended(orderedAdjectives, synsets):
     """
 
-    :param orderedAdjectives: An array of strings containing ordered adjectives.
+    :param orderedAdjectives: An array of (string, int) pairs containing adjectives and scores in order of
+                              increasing score.
     :param synsets: An array of unordered synsets with adjectives corresponding to the adjectives in orderedAdjectives.
     :return: An array of strings containing the ordered attributes of a property along with similar adjectives
              according to WordNet's similar_to property.
 
     ex: input:
-            orderedAdjectives: [cold, cool, warm, hot]
+            orderedAdjectives: [('cold', -1.0), ('cool', -0.6), ('warm', 0.6), ('hot', 1.0)]
             synsets: [Synset('cold.a.01'), Synset('cool.a.01'), Synset('hot.a.01'), Synset('warm.a.01')]
         output:
-            cold, algid, arctic, bleak, chilly, crisp, frigorific, frosty, heatless, ice-cold, shivery, stone-cold,
-            unheated, cool, air-conditioned, air-cooled, warm, lukewarm, warmed, hot, baking, blistering, calefacient,
-            calefactory, calorific, fervent, fiery, heatable, heated, overheated, red-hot, scorching, sizzling, sultry,
-            sweltering, thermal, torrid, tropical, white
+
     """
     result = []
-    for adjective in orderedAdjectives:
-        result += [adjective]
+    for (adjective, score) in orderedAdjectives:
         for synset in synsets:
-            if adjective == synset.name().split(".")[0]:
-                result += [similarSynset.name().split(".")[0] for similarSynset in getSimilarSynsets(synset)]
+            if adjective == getName(synset):
+                similarNonArchaicSynsets = filterArchaicSynsets(getSimilarSynsets(synset))
+                similarAdjectives = [getName(similarSynset) for similarSynset in similarNonArchaicSynsets]
+                adjectives = [adjective] + similarAdjectives
+                sortedAdjectives = orderAdjectives(adjectives, adjectives, score)
+                result += sortedAdjectives
                 break
     return result
 
@@ -102,8 +109,8 @@ if __name__ == '__main__':
         sys.exit(0)
 
     for property in sys.argv[1:]:
-        synsets = getSynsetsWithWordNetAttributes(property)
-        attributes = [synset.name().split(".")[0] for synset in synsets]
+        synsets = filterArchaicSynsets(getSynsetsWithWordNetAttributes(property))
+        attributes = [getName(synset) for synset in synsets]
         orderedAdjectives = orderAdjectives(attributes, [property] + attributes)
         print(orderedAdjectives)
         orderedAdjectivesExtended = orderAdjectivesExtended(orderedAdjectives, synsets)
