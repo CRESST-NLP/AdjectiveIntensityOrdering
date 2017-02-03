@@ -21,6 +21,13 @@ adj_intensity_map = {"high": high, "good": high, "great": high,
 wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
 def getScore(adjective, keywords, defaultScore = 0):
+    """
+
+    :param adjective: A string containing an adjective.
+    :param keywords: An array of strings containing keywords to help find the relevant definition / word sense.
+    :param defaultScore: A float containing the default score.
+    :return: A float containing the score of the adjective calculated from its definition.
+    """
 
     score = defaultScore
     try:
@@ -28,10 +35,10 @@ def getScore(adjective, keywords, defaultScore = 0):
         if definitions != {'1': None}:
             definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
         else:
-            print("No wiktionary defintion for: ", adjective)
+            # print("No wiktionary defintion for: ", adjective)
             return None
     except KeyError:
-        print("No wiktionary defintion for: ", adjective)
+        # print("No wiktionary defintion for: ", adjective)
         return None
 
     for adj in adj_intensity_map:
@@ -64,7 +71,7 @@ def orderAdjectives(adjectives, keywords, defaultScore = 0):
     :param adjectives: An array of strings containing adjectives that attributes of the same property.
     :param keywords: An array of strings for helping to find the correct word sense by looking for the keyword in the
                      adjective definitions.
-    :return: An array of (string, int) pairs containing adjectives and scores in order of increasing score.
+    :return: An array of (string, float) pairs containing adjectives and scores in order of increasing score.
 
     ex: input:
             adjectives: [cold, cool, hot, warm]
@@ -86,7 +93,7 @@ def orderAdjectives(adjectives, keywords, defaultScore = 0):
 def orderAdjectivesExtended(orderedAdjectives, synsets):
     """
 
-    :param orderedAdjectives: An array of (string, int) pairs containing adjectives and scores in order of
+    :param orderedAdjectives: An array of (string, float) pairs containing adjectives and scores in order of
                               increasing score.
     :param synsets: An array of unordered synsets with adjectives corresponding to the adjectives in orderedAdjectives.
     :return: An array of strings containing the ordered attributes of a property along with similar adjectives
@@ -104,11 +111,27 @@ def orderAdjectivesExtended(orderedAdjectives, synsets):
             if adjective == getName(synset):
                 similarNonArchaicSynsets = filterArchaicSynsets(getSimilarSynsets(synset))
                 similarAdjectives = [getName(similarSynset) for similarSynset in similarNonArchaicSynsets]
-                adjectives = [adjective] + similarAdjectives
-                sortedAdjectives = orderAdjectives(adjectives, adjectives, score)
+                sortedAdjectives = orderAdjectives(similarAdjectives, [adjective] + similarAdjectives, score)
+                sortedAdjectives = merge(sortedAdjectives, (adjective, score))
                 result += sortedAdjectives
                 break
     return result
+
+def merge(orderedAdjectives, adjectiveScorePair):
+    """
+    :param orderedAdjectives: An array of (string, float) pairs containing adjectives and scores in order of
+                              increasing score.
+    :param adjectiveScorePair: A (string, float) pair containing and adjective and score.
+    :return: An array of (string, float) pairs with adjectiveScorePair correctly inserted into its place.
+    """
+    i = 0
+    while i < len(orderedAdjectives):
+        if adjectiveScorePair[1] > orderedAdjectives[i][1]:
+            i += 1
+        else:
+            return orderedAdjectives[:i] + [adjectiveScorePair] + orderedAdjectives[i:]
+    return orderedAdjectives + [adjectiveScorePair]
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
