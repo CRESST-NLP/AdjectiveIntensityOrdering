@@ -23,7 +23,12 @@ def getScore(adjective, keywords, defaultScore = 0):
     score = defaultScore
 
     try:
-        definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
+        definitions = wiki[adjective]["A"]
+        if definitions != {'1': None}:
+            definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
+        else:
+            print("No wiktionary defintion for: ", adjective)
+            return None
     except KeyError:
         print("No wiktionary defintion for: ", adjective)
         return None
