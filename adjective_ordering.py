@@ -18,10 +18,11 @@ downtoners = {"fairly": B, "pretty": B, "somewhat": C, "reasonably": C, "slightl
 adj_intensity_map = {"high": high, "good": high, "great": high,
                      "low": low, "bad": low, "not": low, "opposite": low, "little": low}
 
-def getScore(adjective, keywords, defaultScore = 0):
-    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-    score = defaultScore
+wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
+def getScore(adjective, keywords, defaultScore = 0):
+
+    score = defaultScore
     try:
         definitions = wiki[adjective]["A"]
         if definitions != {'1': None}:
