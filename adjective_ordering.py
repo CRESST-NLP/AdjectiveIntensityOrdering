@@ -112,8 +112,7 @@ def orderAdjectivesExtended(orderedAdjectives, synsets):
                 similarNonArchaicSynsets = filterArchaicSynsets(getSimilarSynsets(synset))
                 lemmas = []
                 for x in similarNonArchaicSynsets:
-                    lemmas += x.lemma_names()
-                lemmas = filterArchaicLemmas(lemmas, synsets)
+                    lemmas += getLemmas(x)
                 similarAdjectives = [getName(similarSynset) for similarSynset in similarNonArchaicSynsets] + lemmas
                 sortedAdjectives = orderAdjectives(similarAdjectives, [adjective] + similarAdjectives, score)
                 sortedAdjectives = merge(sortedAdjectives, (adjective, score))
@@ -121,38 +120,38 @@ def orderAdjectivesExtended(orderedAdjectives, synsets):
                 break
     return result
 
-def filterArchaicLemmas(lemmas, synsets):
-    """
-
-    :param lemmas: an array consisting of strings.
-    :param synsets: an array consisting of WordNet synsets.
-    :return: an array of strings with with archaic terms removed.
-    """
-    archaism = wn.synsets("archaism")[0]
-    results = []
-    for lemma in lemmas:
-        synset = findSynsetFromLemma(lemma, synsets)
-        if archaism in synset.usage_domains():
-            continue
-        else:
-            results.append(lemma)
-    return results
-
-def findSynsetFromLemma(lemma, synsets):
-    """
-
-    :param lemma: a string containing a lemma.
-    :param synsets: an array consisting of WordNet synsets
-    :return: a WordNet synset that corresponds to the given lemma.
-    """
-    possibleSynsets = wn.synsets(lemma, wn.ADJ)
-    for possibleSynset in possibleSynsets:
-        for synset in synsets:
-            if synset in possibleSynset.similar_tos():
-                return possibleSynset
-    if len(possibleSynsets) > 0:
-        return possibleSynsets[0]
-    return None
+# def filterArchaicLemmas(lemmas, synsets):
+#     """
+#
+#     :param lemmas: an array consisting of strings.
+#     :param synsets: an array consisting of WordNet synsets.
+#     :return: an array of strings with with archaic terms removed.
+#     """
+#     archaism = wn.synsets("archaism")[0]
+#     results = []
+#     for lemma in lemmas:
+#         synset = findSynsetFromLemma(lemma, synsets)
+#         if archaism in synset.usage_domains():
+#             continue
+#         else:
+#             results.append(lemma)
+#     return results
+#
+# def findSynsetFromLemma(lemma, synsets):
+#     """
+#
+#     :param lemma: a string containing a lemma.
+#     :param synsets: an array consisting of WordNet synsets
+#     :return: a WordNet synset that corresponds to the given lemma.
+#     """
+#     possibleSynsets = wn.synsets(lemma, wn.ADJ)
+#     for possibleSynset in possibleSynsets:
+#         for synset in synsets:
+#             if synset in possibleSynset.similar_tos():
+#                 return possibleSynset
+#     if len(possibleSynsets) > 0:
+#         return possibleSynsets[0]
+#     return None
 
 
 def merge(orderedAdjectives, adjectiveScorePair):
@@ -175,9 +174,13 @@ if __name__ == '__main__':
         sys.exit(0)
 
     for property in sys.argv[1:]:
-        synsets = filterArchaicSynsets(getSynsetsWithWordNetAttributes(property))
+        synsets = filterArchaicSynsets(getAttributes(property))
         attributes = [getName(synset) for synset in synsets]
         orderedAdjectives = orderAdjectives(attributes, [property] + attributes)
-        print(orderedAdjectives)
+        # print(orderedAdjectives)
         orderedAdjectivesExtended = orderAdjectivesExtended(orderedAdjectives, synsets)
-        print(orderedAdjectivesExtended)
+        # print(orderedAdjectivesExtended)
+        for adjective, score in orderedAdjectivesExtended:
+            print(adjective)
+            print("\tOxford: ", getOxfordDefinition(adjective, attributes))
+            print("\tWiktionary: ", wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], attributes))
