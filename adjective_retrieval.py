@@ -9,15 +9,16 @@ import requests
 
 import wiktionary_dict
 
-def getName(synset):
-    """
 
-    :param synset: a synset from WordNet
-    :return: a string containing the name of the synset
-    """
+def getName(synset):
     return synset.name().split('.')[0]
 
-def getSynsetsWithWordNetAttributes(property):
+
+def getLemmas(synset):
+    return synset.lemma_names()
+
+
+def getAttributes(property):
     """
     Retrieves a property's attributes from WordNet's attributes
     :param property: A string i.e. "temperature"
@@ -28,6 +29,7 @@ def getSynsetsWithWordNetAttributes(property):
         if synset.attributes() != []:
             return synset.attributes()
     return []
+
 
 def getSimilarSynsets(synset):
     """
@@ -45,6 +47,7 @@ def getSimilarSynsets(synset):
     """
     return synset.similar_tos()
 
+
 def filterArchaicSynsets(synsets):
     """
 
@@ -60,80 +63,21 @@ def filterArchaicSynsets(synsets):
             results.append(synset)
     return results
 
-def getSynsetsWithWordNetAttributesExtended(property):
+
+def getSynsetsWithWordNetAttributesExtended(propertyName):
     """
     Retrieves a property's attributes from WordNet's attributes and words similar to the attributes
-    :param property: A string
+    :param propertyName: A string
     :return: An array containing the property's attributes and the attributes' similar synsets
     """
-    synsets = getSynsetsWithWordNetAttributes(property)
+    synsets = getAttributes(propertyName)
     result = set(synsets)
     for synset in synsets:
         result.update(getSimilarSynsets(synset))
     return result
 
 
-def getSynsetsWithWordNetDefinitions(property, pos='a'):
-    """
-    Retrieves an property's attributes from WordNet's definitions
-    :param property: A string i.e. "temperature"
-    :param pos: A string specifying the part of speech for the property's attributes
-    :return: An array containing the words with the property in its definition
-    """
-    # wn.NOUN = 'n'
-    # wn.VERB = 'v'
-    # wn.ADJ = 'a'
-    # wn.ADV = 'r'
-
-    if pos != wn.NOUN and pos != wn.VERB and pos != wn.ADJ and pos != wn.ADV:
-        print("Invalid part of speech: " + pos + ". Expected 'n', 'v', 'a', or 'r'.")
-
-    words = set()
-    for synset in list(wn.all_synsets(pos)):
-        if property in synset.definition():
-            words.add(synset)
-
-    return words
-
-# caution: following method easily maxes out free Oxford API account which restricts usage to 3,000 hits/month
-def getWordsUsingOxfordDefinitions(property, pos='a'):
-    """
-    Retrieves a property's attributes from Oxford Dictionary's definitions
-    :param property: A string i.e. "temperature"
-    :param pos: A string specifying the parts of speech for the property's attributes
-    :return: An array containing the words with the property in its definition
-    """
-    # wn.NOUN = 'n'
-    # wn.VERB = 'v'
-    # wn.ADJ = 'a'
-    # wn.ADV = 'r'
-
-    if pos != wn.NOUN and pos != wn.VERB and pos != wn.ADJ and pos != wn.ADV:
-        print("Invalid part of speech: " + pos + ". Expected 'n', 'v', 'a', or 'r'.")
-
-    app_id = '***REMOVED***'
-    app_key = '***REMOVED***'
-
-    language = 'en'
-
-    words = set()
-    for synset in list(wn.all_synsets(pos)):
-        word_id = getName(synset)
-        url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word_id.lower()
-        r = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
-        if r:
-            try:
-                definitions = r.json()["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]["definitions"]
-                for definition in definitions:
-                    if property in definition:
-                        words.add(synset)
-                        break
-            except KeyError:
-                continue
-
-    return words
-
-def getOxfordDefinition(word, keywords = [], pos='a'):
+def getOxfordDefinition(word, keywords=[], pos='a'):
     """
     Retrieves a word's definition from Oxford Dictionary
     :param property: A word i.e. "temperature"
@@ -168,7 +112,6 @@ def getOxfordDefinition(word, keywords = [], pos='a'):
 
     result = ""
     if r.status_code == 200:
-        # print(r.json())
         lexicalEntries = r.json()["results"][0]["lexicalEntries"]
         for lexicalEntry in lexicalEntries:
             try:
@@ -185,71 +128,72 @@ def getOxfordDefinition(word, keywords = [], pos='a'):
     return result
 
 
+def isArchaic(synset):
+    archaism = wn.synsets("archaism")[0]
+    return archaism in synset.usage_domains()
+
+
+def printDefinitions(word, keywords):
+    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
+
+    try:
+        wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
+        print("\tWiktionary:", wiki_def)
+    except KeyError:
+        print("\tWiktionary:")
+
+    print("\tOxford:", json.dumps(getOxfordDefinition(word, keywords)))
+
 if __name__ == '__main__':
+    # example:
+    # > python adjective_retrieval.py temperature
+    # Synset('cold.a.01')
+    #   relation: temperature has_attribute
+    #   Wiktionary: Having a low temperature.
+    #   Oxford: "of or at a low or relatively low temperature, especially when compared with the human body:"
+    # ```
+
     if len(sys.argv) < 2:
         sys.exit(0)
 
-    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-
-    for property in sys.argv[1:]:
-        synsets = getSynsetsWithWordNetAttributes(property)
-        keywords = [property] + [getName(synset) for synset in synsets]
+    for propertyName in sys.argv[1:]:
+        synsets = getAttributes(propertyName)
+        keywords = [propertyName] + [getName(synset) for synset in synsets]
 
         for synset in synsets:
-            print(synset)
-            word = getName(synset)
-            print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word, keywords)))
-            try:
-                wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
-                print("Wiktionary: " + word, "-", wiki_def)
-            except KeyError:
-                print("Wiktionary:  ")
-                continue
-            similarSynsets = getSimilarSynsets(synset)
-            archaism = wn.synsets("archaism")[0]
-            nonArchaicSimilarSynsets = set()
-            archaicSimilarSynsets = set()
-            for similarSynset in similarSynsets:
-                try:
-                    if archaism in similarSynset.usage_domains():
-                        archaicSimilarSynsets.add(similarSynset)
-                    else:
-                        nonArchaicSimilarSynsets.add(similarSynset)
-                except:
-                    continue
-
-
-            for synset in nonArchaicSimilarSynsets:
+            if not isArchaic(synset):
                 print(synset)
-                word = getName(synset)
-                print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word), [word] + keywords))
-                try:
-                    wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
-                    print("Wiktionary: " + word, "-",  wiki_def)
-                except KeyError:
-                    print("Wiktionary:  ")
-                    continue
+                print("\trelation:", propertyName, "has_attribute")
+                synsetName = getName(synset)
+
+                printDefinitions(synsetName, keywords)
+
+                lemmas = getLemmas(synset)
+                keywords += lemmas
+
+                for lemma in lemmas:
+                    if lemma != synsetName:
+                        print(lemma)
+                        print("\trelation:", synsetName, "has_lemma")
+                        printDefinitions(lemma, keywords)
+
+                similarSynsets = getSimilarSynsets(synset)
+                for similarSynset in similarSynsets:
+                    if not isArchaic(similarSynset):
+                        print(similarSynset)
+                        similarSynsetName = getName(similarSynset)
+                        print("\trelation:", synsetName, "similar_tos")
+
+                        keywords += [similarSynsetName]
+
+                        printDefinitions(similarSynsetName, keywords)
+
+                        lemmas = getLemmas(similarSynset)
+                        keywords += lemmas
+
+                        for lemma in lemmas:
+                            if lemma != similarSynsetName:
+                                print(lemma)
+                                print("\trelation:", similarSynsetName, "has_lemma")
+                                printDefinitions(lemma, keywords)
             print("\n")
-
-        adjectivesWithPropertyInDefinition = getSynsetsWithWordNetDefinitions(property)
-        nonArchaicSynsetsWithPropertyInDefinition = set()
-        archaicSynsetsWithPropertyInDefinition = set()
-        for adjectiveWithPropertyInDefinition in adjectivesWithPropertyInDefinition:
-                try:
-                    if archaism in adjectiveWithPropertyInDefinition.usage_domains():
-                        archaicSynsetsWithPropertyInDefinition.add(adjectiveWithPropertyInDefinition)
-                    else:
-                        nonArchaicSynsetsWithPropertyInDefinition.add(adjectiveWithPropertyInDefinition)
-                except:
-                    continue
-
-        for synset in nonArchaicSynsetsWithPropertyInDefinition:
-            print(synset)
-            word = getName(synset)
-            print("Oxford: " + word, "-", json.dumps(getOxfordDefinition(word, [word] + keywords)))
-            try:
-                wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
-                print("Wiktionary: " + word, "-", wiki_def)
-            except KeyError:
-                print("Wiktionary:  ")
-                continue
