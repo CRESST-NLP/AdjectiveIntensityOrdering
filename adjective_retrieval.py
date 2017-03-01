@@ -10,15 +10,15 @@ import requests
 import wiktionary_dict
 
 
-def getName(synset):
+def get_name(synset):
     return synset.name().split('.')[0]
 
 
-def getLemmas(synset):
+def get_lemmas(synset):
     return synset.lemma_names()
 
 
-def getAttributes(property):
+def get_attributes(property):
     """
     Retrieves a property's attributes from WordNet's attributes
     :param property: A string i.e. "temperature"
@@ -26,12 +26,12 @@ def getAttributes(property):
     """
     synsets = wn.synsets(property, wn.NOUN)
     for synset in synsets:
-        if synset.attributes() != []:
+        if synset.attributes():
             return synset.attributes()
     return []
 
 
-def getSimilarSynsets(synset):
+def get_similar_synsets(synset):
     """
     Retries a synset's similar synsets according to WordNet.
     :param synset: a synset
@@ -48,7 +48,7 @@ def getSimilarSynsets(synset):
     return synset.similar_tos()
 
 
-def filterArchaicSynsets(synsets):
+def filter_archaic_synsets(synsets):
     """
 
     :param synsets: an array consisting of WordNet synsets.
@@ -64,20 +64,20 @@ def filterArchaicSynsets(synsets):
     return results
 
 
-def getSynsetsWithWordNetAttributesExtended(propertyName):
+def get_synsets_with_wordnet_attributes_extended(property_name):
     """
     Retrieves a property's attributes from WordNet's attributes and words similar to the attributes
     :param propertyName: A string
     :return: An array containing the property's attributes and the attributes' similar synsets
     """
-    synsets = getAttributes(propertyName)
+    synsets = get_attributes(property_name)
     result = set(synsets)
     for synset in synsets:
-        result.update(getSimilarSynsets(synset))
+        result.update(get_similar_synsets(synset))
     return result
 
 
-def getOxfordDefinition(word, keywords=[], pos='a'):
+def get_oxford_definition(word, keywords=[], pos='a'):
     """
     Retrieves a word's definition from Oxford Dictionary
     :param property: A word i.e. "temperature"
@@ -94,13 +94,13 @@ def getOxfordDefinition(word, keywords=[], pos='a'):
         print("Invalid part of speech: " + pos + ". Expected 'n', 'v', 'a', or 'r'.")
 
     if pos == 'n':
-        lexicalCategory = "Noun"
+        lexical_category = "Noun"
     elif pos == 'v':
-        lexicalCategory = "Verb"
+        lexical_category = "Verb"
     elif pos == 'a':
-        lexicalCategory = "Adjective"
+        lexical_category = "Adjective"
     else:
-        lexicalCategory = "Adverb"
+        lexical_category = "Adverb"
 
     app_id = '4763721e'
     app_key = 'c019d50f24fc6f3d53ea53d7f9f0e983'
@@ -112,15 +112,15 @@ def getOxfordDefinition(word, keywords=[], pos='a'):
 
     result = ""
     if r.status_code == 200:
-        lexicalEntries = r.json()["results"][0]["lexicalEntries"]
-        for lexicalEntry in lexicalEntries:
+        lexical_entries = r.json()["results"][0]["lexicalEntries"]
+        for lexical_entry in lexical_entries:
             try:
-                if lexicalEntry["lexicalCategory"] == lexicalCategory:
+                if lexical_entry["lexicalCategory"] == lexical_category:
                     if result == "":
-                        result = lexicalEntry["entries"][0]["senses"][0]["definitions"][0]
+                        result = lexical_entry["entries"][0]["senses"][0]["definitions"][0]
                     for keyword in keywords:
                         if keyword in result:
-                            result = lexicalEntry["entries"][0]["senses"][0]["definitions"][0]
+                            result = lexical_entry["entries"][0]["senses"][0]["definitions"][0]
                             return result
             except KeyError:
                 continue
@@ -128,12 +128,12 @@ def getOxfordDefinition(word, keywords=[], pos='a'):
     return result
 
 
-def isArchaic(synset):
+def is_archaic(synset):
     archaism = wn.synsets("archaism")[0]
     return archaism in synset.usage_domains()
 
 
-def printDefinitions(word, keywords):
+def print_definitions(word, keywords):
     wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
     try:
@@ -142,7 +142,7 @@ def printDefinitions(word, keywords):
     except KeyError:
         print("\tWiktionary:")
 
-    print("\tOxford:", json.dumps(getOxfordDefinition(word, keywords)))
+    print("\tOxford:", json.dumps(get_oxford_definition(word, keywords)))
 
 if __name__ == '__main__':
     # example:
@@ -156,44 +156,44 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         sys.exit(0)
 
-    for propertyName in sys.argv[1:]:
-        synsets = getAttributes(propertyName)
-        keywords = [propertyName] + [getName(synset) for synset in synsets]
+    for property_name1 in sys.argv[1:]:
+        synsets1 = get_attributes(property_name1)
+        keywords1 = [property_name1] + [get_name(synset1) for synset1 in synsets1]
 
-        for synset in synsets:
-            if not isArchaic(synset):
-                print(synset)
-                print("\trelation:", propertyName, "has_attribute")
-                synsetName = getName(synset)
+        for synset1 in synsets1:
+            if not is_archaic(synset1):
+                # print(synset1)
+                # print("\trelation:", property_name1, "has_attribute")
+                synset_name = get_name(synset1)
 
-                printDefinitions(synsetName, keywords)
+                # print_definitions(synset_name, keywords)
 
-                lemmas = getLemmas(synset)
-                keywords += lemmas
+                lemmas1 = get_lemmas(synset1)
+                keywords1 += lemmas1
 
-                for lemma in lemmas:
-                    if lemma != synsetName:
-                        print(lemma)
-                        print("\trelation:", synsetName, "has_lemma")
-                        printDefinitions(lemma, keywords)
+                for lemma1 in lemmas1:
+                    if lemma1 != synset_name:
+                        print(lemma1)
+                        print("\trelation:", synset_name, "has_lemma")
+                        print_definitions(lemma1, keywords1)
 
-                similarSynsets = getSimilarSynsets(synset)
-                for similarSynset in similarSynsets:
-                    if not isArchaic(similarSynset):
-                        print(similarSynset)
-                        similarSynsetName = getName(similarSynset)
-                        print("\trelation:", synsetName, "similar_tos")
+                similar_synsets1 = get_similar_synsets(synset1)
+                for similar_synset1 in similar_synsets1:
+                    if not is_archaic(similar_synset1):
+                        print(similar_synset1)
+                        similar_synset_name = get_name(similar_synset1)
+                        print("\trelation:", synset_name, "similar_tos")
 
-                        keywords += [similarSynsetName]
+                        keywords1 += [similar_synset_name]
 
-                        printDefinitions(similarSynsetName, keywords)
+                        print_definitions(similar_synset_name, keywords1)
 
-                        lemmas = getLemmas(similarSynset)
-                        keywords += lemmas
+                        lemmas2 = get_lemmas(similar_synset1)
+                        keywords1 += lemmas2
 
-                        for lemma in lemmas:
-                            if lemma != similarSynsetName:
-                                print(lemma)
-                                print("\trelation:", similarSynsetName, "has_lemma")
-                                printDefinitions(lemma, keywords)
+                        for lemma2 in lemmas2:
+                            if lemma2 != similar_synset_name:
+                                print(lemma2)
+                                print("\trelation:", similar_synset_name, "has_lemma")
+                                print_definitions(lemma2, keywords1)
             print("\n")
