@@ -15,16 +15,17 @@ def get_name(synset):
 
 
 def get_lemmas(synset):
-    return synset.lemma_names()
+    lemma_names = list(synset.lemma_names())
+    return lemma_names
 
 
-def get_attributes(property):
+def get_attributes(property_name):
     """
-    Retrieves a property's attributes from WordNet's attributes
-    :param property: A string i.e. "temperature"
-    :return: An array containing the property's attributes i.e. ["hot", "cold", "warm", "cool"]
+    Retrieves a property_name's attributes from WordNet's attributes
+    :param property_name: A string i.e. "temperature"
+    :return: An array containing the property_name's attributes i.e. ["hot", "cold", "warm", "cool"]
     """
-    synsets = wn.synsets(property, wn.NOUN)
+    synsets = wn.synsets(property_name, wn.NOUN)
     for synset in synsets:
         if synset.attributes():
             return synset.attributes()
@@ -67,13 +68,13 @@ def filter_archaic_synsets(synsets):
 def get_synsets_with_wordnet_attributes_extended(property_name):
     """
     Retrieves a property's attributes from WordNet's attributes and words similar to the attributes
-    :param propertyName: A string
+    :param property_name: A string
     :return: An array containing the property's attributes and the attributes' similar synsets
     """
     synsets = get_attributes(property_name)
-    result = set(synsets)
+    result = list(synsets)
     for synset in synsets:
-        result.update(get_similar_synsets(synset))
+        result.extend(get_similar_synsets(synset))
     return result
 
 
@@ -169,7 +170,7 @@ if __name__ == '__main__':
                 # print_definitions(synset_name, keywords)
 
                 lemmas1 = get_lemmas(synset1)
-                keywords1 += lemmas1
+                keywords1.extend(lemmas1)
 
                 for lemma1 in lemmas1:
                     if lemma1 != synset_name:
@@ -184,12 +185,12 @@ if __name__ == '__main__':
                         similar_synset_name = get_name(similar_synset1)
                         print("\trelation:", synset_name, "similar_tos")
 
-                        keywords1 += [similar_synset_name]
+                        keywords1.append(similar_synset_name)
 
                         print_definitions(similar_synset_name, keywords1)
 
                         lemmas2 = get_lemmas(similar_synset1)
-                        keywords1 += lemmas2
+                        keywords1.extend(lemmas2)
 
                         for lemma2 in lemmas2:
                             if lemma2 != similar_synset_name:
