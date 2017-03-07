@@ -135,17 +135,23 @@ def order_adjectives_extended_with_lemma_definitions(ordered_adjectives, synsets
 
     """
     result = []
+
+    keywords = ordered_adjectives
     for (adjective, score) in ordered_adjectives:
-        for s in synsets:
-            if adjective == get_name(s):
+
+        for synset in synsets:
+            keywords.extend(get_keywords(synset))
+
+        for synset in synsets:
+            if adjective == get_name(synset):
                 similar_synsets = filter_archaic_synsets(get_similar_synsets(s))
-                lemmas = get_lemmas(s)
+                lemmas = get_lemmas(synset)
                 if lemmas is None:
                     lemmas = []
                 for x in similar_synsets:
                     lemmas.extend(get_lemmas(x))
                 lemmas.remove(adjective)  # don't recalculate score for synset; avoids using wrong word sense
-                sorted_adjective_score_pairs = order_adjectives(lemmas, [adjective] + lemmas, score)
+                sorted_adjective_score_pairs = order_adjectives(lemmas, keywords, score)
                 sorted_adjective_score_pairs = merge(sorted_adjective_score_pairs, (adjective, score))
                 result.extend(sorted_adjective_score_pairs)
                 break
@@ -169,21 +175,22 @@ def order_adjectives_extended_without_lemma_definitions(ordered_adjectives, syns
         output:
     """
     result = []
-    i=0
+
+    keywords = ordered_adjectives
     for (adjective, score) in ordered_adjectives:
+
+        for synset in synsets:
+            keywords.extend(get_keywords(synset))
+
         for synset in synsets:
             if adjective == get_name(synset):
                 similar_synsets = filter_archaic_synsets(get_similar_synsets(synset))
-                similar_adjectives = [get_name(x) for x in similar_synsets]
-                sorted_synset_score_pairs = order_synsets(similar_synsets, [adjective] + similar_adjectives, score)
+                sorted_synset_score_pairs = order_synsets(similar_synsets, keywords, score)
                 sorted_synset_score_pairs = merge(sorted_synset_score_pairs, (synset, score))
 
                 for x, y in sorted_synset_score_pairs:
                     lemmas = get_lemmas(x)
                     for lemma in lemmas:
-                        i += 1
-                        if i == 11:
-                            continue
                         result.append((lemma, y))
                 break
     return result
@@ -212,7 +219,6 @@ if __name__ == '__main__':
         synsets_result = filter_archaic_synsets(get_attributes(propertyName))
         attributes = [get_name(synset) for synset in synsets_result]
         ordered_adjectives_result = order_adjectives(attributes, [propertyName] + attributes)
-
 
         orderedAdjectivesExtended = order_adjectives_extended_with_lemma_definitions(ordered_adjectives_result, synsets_result)
         print(len(orderedAdjectivesExtended))
