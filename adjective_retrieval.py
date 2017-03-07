@@ -109,20 +109,36 @@ def get_oxford_definition(word, keywords=[], pos='a'):
     language = 'en'
 
     url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word.lower()
-    r = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
+    r = requests.get(url, headers={'app_id': app_id, 'app_key': app_key})
+
 
     result = ""
     if r.status_code == 200:
         lexical_entries = r.json()["results"][0]["lexicalEntries"]
+        print(lexical_entries)
         for lexical_entry in lexical_entries:
             try:
                 if lexical_entry["lexicalCategory"] == lexical_category:
-                    if result == "":
-                        result = lexical_entry["entries"][0]["senses"][0]["definitions"][0]
-                    for keyword in keywords:
-                        if keyword in result:
-                            result = lexical_entry["entries"][0]["senses"][0]["definitions"][0]
-                            return result
+                    senses = lexical_entry["entries"][0]["senses"]
+                    for sense in senses:
+                        if result == "":
+                            result = sense["definitions"][0]
+                        else:
+                            for keyword in keywords:
+                                curr_definition = sense["definitions"][0]
+                                if keyword in curr_definition:
+                                    result = curr_definition
+                                    return result
+                        subsenses = sense["subsenses"]
+                        for subsense in subsenses:
+                            if result == "":
+                                result = subsense["definitions"][0]
+                            else:
+                                for keyword in keywords:
+                                    curr_definition = subsense["definitions"][0]
+                                    if keyword in curr_definition:
+                                        result = curr_definition
+                                        return result
             except KeyError:
                 continue
 
@@ -145,6 +161,22 @@ def print_definitions(word, keywords):
 
     print("\tOxford:", json.dumps(get_oxford_definition(word, keywords)))
 
+
+def get_keywords(synset):
+    keywords = [get_name(synset)]
+    if not is_archaic(synset):
+        lemmas = get_lemmas(synset)
+        keywords.extend(lemmas)
+        similar_synsets = get_similar_synsets(synset)
+        for similar_synset in similar_synsets:
+            if not is_archaic(similar_synset):
+                similar_synset_name = get_name(similar_synset)
+                keywords.append(similar_synset_name)
+                lemmas2 = get_lemmas(similar_synset)
+                keywords.extend(lemmas2)
+    return keywords
+
+
 if __name__ == '__main__':
     # example:
     # > python adjective_retrieval.py temperature
@@ -159,19 +191,20 @@ if __name__ == '__main__':
 
     for property_name1 in sys.argv[1:]:
         synsets1 = get_attributes(property_name1)
-        keywords1 = [property_name1] + [get_name(synset1) for synset1 in synsets1]
+
+        keywords1 = [property_name1]
+
+        for synset1 in synsets1:
+            keywords1.extend(get_keywords(synsets1))
 
         for synset1 in synsets1:
             if not is_archaic(synset1):
-                # print(synset1)
-                # print("\trelation:", property_name1, "has_attribute")
                 synset_name = get_name(synset1)
-
-                # print_definitions(synset_name, keywords)
+                print(synset1)
+                print("\trelation:", property_name1, "has_attribute")
+                print_definitions(synset_name, keywords1)
 
                 lemmas1 = get_lemmas(synset1)
-                keywords1.extend(lemmas1)
-
                 for lemma1 in lemmas1:
                     if lemma1 != synset_name:
                         print(lemma1)
@@ -181,20 +214,15 @@ if __name__ == '__main__':
                 similar_synsets1 = get_similar_synsets(synset1)
                 for similar_synset1 in similar_synsets1:
                     if not is_archaic(similar_synset1):
+                        similar_synset_name1 = get_name(similar_synset1)
                         print(similar_synset1)
-                        similar_synset_name = get_name(similar_synset1)
                         print("\trelation:", synset_name, "similar_tos")
-
-                        keywords1.append(similar_synset_name)
-
-                        print_definitions(similar_synset_name, keywords1)
+                        print_definitions(similar_synset_name1, keywords1)
 
                         lemmas2 = get_lemmas(similar_synset1)
-                        keywords1.extend(lemmas2)
-
                         for lemma2 in lemmas2:
-                            if lemma2 != similar_synset_name:
+                            if lemma2 != similar_synset_name1:
                                 print(lemma2)
-                                print("\trelation:", similar_synset_name, "has_lemma")
+                                print("\trelation:", similar_synset_name1, "has_lemma")
                                 print_definitions(lemma2, keywords1)
             print("\n")
