@@ -4,6 +4,7 @@ import bz2
 from lxml import etree
 import sys
 
+
 def load_ontology(f):
     tree = etree.parse(f)
     results = tree.xpath('/OntoWiktionary[@lang="en"]/Concept/Lexicalization')
@@ -20,7 +21,8 @@ def load_ontology(f):
         wiki_dict[lemma][pos][sense] = r.text
     return wiki_dict
 
-def getMostLikelyDefinition(definitions, keywords):
+
+def get_most_likely_definition(definitions, keywords):
     """
 
     :param definitions: an array of strings containing definitions
@@ -29,9 +31,9 @@ def getMostLikelyDefinition(definitions, keywords):
     """
 
     # indexing starts at 1
-    numDefinitions = max(list(map(int, definitions.keys()))) + 1
+    num_definitions = max(list(map(int, definitions.keys()))) + 1
     for keyword in keywords:
-        for i in range(1, numDefinitions):
+        for i in range(1, num_definitions):
             if keyword in definitions[str(i)]:
                 return definitions[str(i)]
     return definitions["1"]
