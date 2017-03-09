@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import csv
 import json
 import sys
 import bz2
@@ -115,7 +116,6 @@ def get_oxford_definition(word, keywords=[], pos='a'):
     result = ""
     if r.status_code == 200:
         lexical_entries = r.json()["results"][0]["lexicalEntries"]
-        print(lexical_entries)
         for lexical_entry in lexical_entries:
             try:
                 if lexical_entry["lexicalCategory"] == lexical_category:
@@ -150,16 +150,18 @@ def is_archaic(synset):
     return archaism in synset.usage_domains()
 
 
-def print_definitions(word, keywords):
-    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-
-    try:
-        wiki_def = wiktionary_dict.getMostLikelyDefinition(wiki[word]["A"], keywords)
-        print("\tWiktionary:", wiki_def)
-    except KeyError:
-        print("\tWiktionary:")
-
-    print("\tOxford:", json.dumps(get_oxford_definition(word, keywords)))
+def get_most_likely_wordnet_definition(adjective, keywords):
+    result = ""
+    for synset in wn.synsets(adjective, wn.ADJ):
+        definition = synset.definition()
+        if result == "":
+            result = definition
+        else:
+            for word in definition:
+                if word in keywords:
+                    result = definition
+                    return result
+    return result
 
 
 def get_keywords(synset):
@@ -186,43 +188,79 @@ if __name__ == '__main__':
     #   Oxford: "of or at a low or relatively low temperature, especially when compared with the human body:"
     # ```
 
-    if len(sys.argv) < 2:
+    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
+
+    if len(sys.argv) != 2:
         sys.exit(0)
 
-    for property_name1 in sys.argv[1:]:
+    property_name1 = sys.argv[1]
+    with open('./data/adjective_retrieval_results.csv', 'w') as csvfile:
+        fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wikitionary Definition', 'Oxford Definition']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+
         synsets1 = get_attributes(property_name1)
 
         keywords1 = [property_name1]
 
         for synset1 in synsets1:
-            keywords1.extend(get_keywords(synsets1))
+            keywords1.extend(get_keywords(synset1))
 
         for synset1 in synsets1:
             if not is_archaic(synset1):
                 synset_name = get_name(synset1)
-                print(synset1)
-                print("\trelation:", property_name1, "has_attribute")
-                print_definitions(synset_name, keywords1)
+
+                wordnet_def = synset1.definition()
+                try:
+                    wiki_def = wiktionary_dict.get_most_likely_definition(wiki[synset_name]["A"], keywords1)
+                except KeyError:
+                    wiki_def = ""
+                oxford_def = get_oxford_definition(synset_name, keywords1)
+
+                writer.writerow({'Source': property_name1, 'Relation': 'has_attribute', 'Word': synset_name,
+                                 'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def,
+                                 'Oxford Definition': oxford_def})
 
                 lemmas1 = get_lemmas(synset1)
                 for lemma1 in lemmas1:
                     if lemma1 != synset_name:
-                        print(lemma1)
-                        print("\trelation:", synset_name, "has_lemma")
-                        print_definitions(lemma1, keywords1)
+                        try:
+                            wiki_def1 = wiktionary_dict.get_most_likely_definition(wiki[lemma1]["A"], keywords1)
+                        except KeyError:
+                            wiki_def1 = ""
+                        oxford_def1 = get_oxford_definition(lemma1, keywords1)
+
+                        writer.writerow({'Source': synset_name, 'Relation': 'has_lemma', 'Word': lemma1,
+                                 'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def1,
+                                 'Oxford Definition': oxford_def1})
 
                 similar_synsets1 = get_similar_synsets(synset1)
                 for similar_synset1 in similar_synsets1:
                     if not is_archaic(similar_synset1):
                         similar_synset_name1 = get_name(similar_synset1)
-                        print(similar_synset1)
-                        print("\trelation:", synset_name, "similar_tos")
-                        print_definitions(similar_synset_name1, keywords1)
+
+                        wordnet_def1 = similar_synset1.definition()
+                        try:
+                            wiki_def2 = wiktionary_dict.get_most_likely_definition(wiki[similar_synset_name1]["A"], keywords1)
+                        except KeyError:
+                            wiki_def2 = ""
+                        oxford_def2 = get_oxford_definition(similar_synset_name1, keywords1)
+
+                        writer.writerow({'Source': synset_name, 'Relation': 'similar_tos', 'Word': similar_synset1,
+                                 'WordNet Definition': wordnet_def1, 'Wikitionary Definition': wiki_def2,
+                                 'Oxford Definition': oxford_def2})
 
                         lemmas2 = get_lemmas(similar_synset1)
                         for lemma2 in lemmas2:
                             if lemma2 != similar_synset_name1:
-                                print(lemma2)
-                                print("\trelation:", similar_synset_name1, "has_lemma")
-                                print_definitions(lemma2, keywords1)
-            print("\n")
+                                try:
+                                    wiki_def3 = wiktionary_dict.get_most_likely_definition(wiki[lemma2]["A"], keywords1)
+                                except KeyError:
+                                    wiki_def3 = ""
+                                oxford_def3 = get_oxford_definition(lemma2, keywords1)
+
+                                writer.writerow({'Source': similar_synset1, 'Relation': 'has_lemma',
+                                                 'Word': lemma2,
+                                                 'WordNet Definition': wordnet_def1,
+                                                 'Wikitionary Definition': wiki_def3,
+                                                 'Oxford Definition': oxford_def3})

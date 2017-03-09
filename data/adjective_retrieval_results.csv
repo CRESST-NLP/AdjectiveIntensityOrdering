@@ -1,0 +1,45 @@
+Source,Relation,Word,WordNet Definition,Wikitionary Definition,Oxford Definition
+speed,has_attribute,fast,acting or moving or capable of acting or moving quickly,"Moving with great speed, or capable of doing so; swift, rapid.",aking place at high speed; taking a short tim
+fast,similar_tos,Synset('accelerated.s.01'),"speeded up, as of an academic course",,
+fast,similar_tos,Synset('alacritous.s.01'),quick and eager,"Brisk, speedy, with alacrity, quick and eager.",brisk or lively
+fast,similar_tos,Synset('blistering.s.03'),very fast; capable of quick response and great speed,Very fast,of criticism) expressed with great vehemenc
+Synset('blistering.s.03'),has_lemma,hot,very fast; capable of quick response and great speed,"Of the weather, causing the air to be hot.",having a high degree of heat or a high temperature
+Synset('blistering.s.03'),has_lemma,red-hot,very fast; capable of quick response and great speed,Heated to the point that it glows with a visible red color.,so hot as to glow red
+fast,similar_tos,Synset('double-quick.s.01'),(of a marching cadence) very quick,,
+fast,similar_tos,Synset('express.s.02'),without unnecessary stops,"Moving or operating quickly, as a train not making local stops.",of a train or other form of public transport) making few intermediate stops and reaching its destination quickl
+fast,similar_tos,Synset('fast-breaking.s.01'),occurring rapidly as a series of events in rapid succession,,
+fast,similar_tos,Synset('fast-paced.s.01'),of communication that proceeds rapidly,Moving or changing rapidly.,(of a narrative or series of events) moving or developing very quickly
+fast,similar_tos,Synset('fleet.s.01'),moving very fast,Swift in motion; moving with velocity; light and quick in going from place to place; nimble; fast.,fast and nimble in movement
+Synset('fleet.s.01'),has_lemma,swift,moving very fast,Capable of moving at high speeds.,oving or capable of moving at high spee
+fast,similar_tos,Synset('high-speed.s.01'),operating at high speed,"That operates, moves or takes place at a greater than normal speed.",of photographic film) needing little light or only short exposure
+Synset('high-speed.s.01'),has_lemma,high-velocity,operating at high speed,,enoting or relating to a gun capable of discharging a projectile with great force and spee
+fast,similar_tos,Synset('hurrying.s.01'),moving with great haste,,
+Synset('hurrying.s.01'),has_lemma,scurrying,moving with great haste,,
+fast,similar_tos,Synset('immediate.s.05'),performed with little or no delay,"happening right away, instantly, with no delay",occurring or done at once; instant
+Synset('immediate.s.05'),has_lemma,prompt,performed with little or no delay,"Ready, willing (to act).",of goods) for immediate delivery and payment
+Synset('immediate.s.05'),has_lemma,quick,performed with little or no delay,"Moving with speed, rapidity or swiftness, or capable of doing so; rapid; fast.",appening with little or no delay; promp
+Synset('immediate.s.05'),has_lemma,straightaway,performed with little or no delay,extending into the distance in a straight line.,extending or moving in a straight line
+fast,similar_tos,Synset('instantaneous.s.01'),occurring with no delay,"Occurring, arising, or functioning without any delay; happening within an imperceptibly brief period of time.",occurring or done instantly
+Synset('instantaneous.s.01'),has_lemma,instant,occurring with no delay,Occurring immediately; immediate; present.,repared quickly and with little effor
+fast,similar_tos,Synset('meteoric.s.03'),like a meteor in speed or brilliance or transience,"Like a meteor in speed, brilliance, or ephemeralness.",of the development of something) very rapi
+fast,similar_tos,Synset('quick.s.01'),accomplished rapidly and without delay,"Moving with speed, rapidity or swiftness, or capable of doing so; rapid; fast.",appening with little or no delay; promp
+Synset('quick.s.01'),has_lemma,speedy,accomplished rapidly and without delay,Characterized by a rapid or swift motion.,done or occurring quickly
+fast,similar_tos,Synset('rapid.s.01'),done or occurring in a brief period of time,Describes a process or concept which occurs quickly.,of an action) characterized by great spee
+fast,similar_tos,Synset('rapid.s.02'),characterized by speed; moving with or capable of moving with high speed,Describes a process or concept which occurs quickly.,of an action) characterized by great spee
+Synset('rapid.s.02'),has_lemma,speedy,characterized by speed; moving with or capable of moving with high speed,Characterized by a rapid or swift motion.,done or occurring quickly
+fast,similar_tos,Synset('smart.s.06'),quick and brisk,"Cleverly and/or sarcastically humorous in a way that may be rude and disrespectful.  Cf: (verb) to smart off; (noun) smarty pants, wise guy, wiseacre, wise-ass; (adjective) cute.",having or showing a quick-witted intelligence
+fast,similar_tos,Synset('windy.s.03'),"resembling the wind in speed, force, or variability",Accompanied by wind.,characterized by or exposed to strong winds
+fast,similar_tos,Synset('winged.s.02'),very fast; as if with wings,swift,having wings for flight
+speed,has_attribute,slow,not moving quickly; taking a comparatively long time,"Taking a long time to move or go a short distance, or to perform an action; not quick in motion; proceeding at a low speed.",ot allowing or intended for fast trave
+slow,similar_tos,Synset('bumper-to-bumper.s.01'),used of traffic,"Heavily crowded and slow-moving, particularly in reference to automobile traffic on a highway.",
+slow,similar_tos,Synset('dilatory.s.01'),wasting time,"Intentionally delaying (someone or something), intended to cause delay, gain time, or defer decision.",slow to act
+Synset('dilatory.s.01'),has_lemma,laggard,wasting time,Hanging back; loitering.,slower than desired or expected
+Synset('dilatory.s.01'),has_lemma,poky,wasting time,slow,(of a room or building) uncomfortably small and cramped
+Synset('dilatory.s.01'),has_lemma,pokey,wasting time,fast,
+slow,similar_tos,Synset('drawn-out.s.02'),(used of speech) uttered slowly with prolonged vowels,"Protracted, made to take a longer period of time than necessary.",lasting or seeming to last longer than is necessary
+slow,similar_tos,Synset('lazy.s.01'),moving slowly and gently,Unwilling to do work or make an effort.,of a river) slow-movin
+slow,similar_tos,Synset('long-play.s.01'),(used of records) playing at a slower speed and for a longer time than earlier records,,long-playing.
+Synset('long-play.s.01'),has_lemma,long-playing,(used of records) playing at a slower speed and for a longer time than earlier records,"Referring to records that recorded a greater amount of sound than previous versions had, an LP, generally a 12 inch 33 1/3 RPM record.",(of a record) about 30 cm in diameter and designed to rotate at 331/3 revolutions per minute
+slow,similar_tos,Synset('slow-moving.s.01'),moving slowly,,"slow in movement, action, or progress"
+slow,similar_tos,Synset('sluggish.s.01'),moving slowly,"Habitually idle and lazy; slothful; dull; inactive; as, a sluggish man.",low to respond or make progres
+Synset('sluggish.s.01'),has_lemma,sulky,moving slowly,"Irritated, gloomy, upset; moodily silent",xpressing or suggesting gloom and bad tempe

@@ -34,13 +34,13 @@ def get_score(adjective, keywords, default_score=0):
     try:
         definitions = wiki[adjective]["A"]
         if definitions != {'1': None}:
-            definition = wiktionary_dict.getMostLikelyDefinition(wiki[adjective]["A"], keywords).lower()
+            definition = wiktionary_dict.get_most_likely_definition(wiki[adjective]["A"], keywords).lower()
         else:
-            # print("No wiktionary defintion for: ", adjective)
-            return None
+            # No Wiktionary defintion; assign WordNet definition
+            definition = get_most_likely_wordnet_definition(adjective, keywords)
     except KeyError:
-        # print("No wiktionary defintion for: ", adjective)
-        return None
+        # No Wiktionary defintion; assign WordNet definition
+        definition = get_most_likely_wordnet_definition(adjective, keywords)
 
     for adj in adj_intensity_map:
         if adj in definition:
@@ -85,8 +85,7 @@ def order_adjectives(adjectives, keywords, default_score=0):
 
     for adjective in adjectives:
         score = get_score(adjective, keywords, default_score)
-        if score is not None:
-            adjective_score_pairs.append((adjective, score))
+        adjective_score_pairs.append((adjective, score))
 
     sorted_adj_to_score = sorted(adjective_score_pairs, key=lambda tup: tup[1])
     return sorted_adj_to_score
