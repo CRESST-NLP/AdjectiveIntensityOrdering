@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from adjective_retrieval import *
+import csv
 import wiktionary_dict
 
 high = 1.0
@@ -134,21 +135,28 @@ def order_adjectives_extended_with_lemma_definitions(ordered_adjectives, synsets
 
     """
     result = []
+    seen_words = set()
 
-    keywords = ordered_adjectives
+    keywords = []
+    for synset in synsets:
+        keywords.extend(get_keywords(synset))
+
     for (adjective, score) in ordered_adjectives:
-
-        for synset in synsets:
-            keywords.extend(get_keywords(synset))
-
         for synset in synsets:
             if adjective == get_name(synset):
-                similar_synsets = filter_archaic_synsets(get_similar_synsets(s))
+                similar_synsets = filter_archaic_synsets(get_similar_synsets(synset))
                 lemmas = get_lemmas(synset)
+                for word in get_lemmas(synset):
+                    seen_words.add(word)
                 if lemmas is None:
                     lemmas = []
-                for x in similar_synsets:
-                    lemmas.extend(get_lemmas(x))
+                for similar_synset in similar_synsets:
+                    for word in get_lemmas(similar_synset):
+                        if word in seen_words:
+                            continue
+                        else:
+                            lemmas.append(word)
+                            seen_words.add(word)
                 lemmas.remove(adjective)  # don't recalculate score for synset; avoids using wrong word sense
                 sorted_adjective_score_pairs = order_adjectives(lemmas, keywords, score)
                 sorted_adjective_score_pairs = merge(sorted_adjective_score_pairs, (adjective, score))
@@ -174,13 +182,13 @@ def order_adjectives_extended_without_lemma_definitions(ordered_adjectives, syns
         output:
     """
     result = []
+    seen_words = set()
 
-    keywords = ordered_adjectives
+    keywords = []
+    for synset in synsets:
+        keywords.extend(get_keywords(synset))
+
     for (adjective, score) in ordered_adjectives:
-
-        for synset in synsets:
-            keywords.extend(get_keywords(synset))
-
         for synset in synsets:
             if adjective == get_name(synset):
                 similar_synsets = filter_archaic_synsets(get_similar_synsets(synset))
@@ -190,7 +198,11 @@ def order_adjectives_extended_without_lemma_definitions(ordered_adjectives, syns
                 for x, y in sorted_synset_score_pairs:
                     lemmas = get_lemmas(x)
                     for lemma in lemmas:
-                        result.append((lemma, y))
+                        if lemma in seen_words:
+                            continue
+                        else:
+                            seen_words.add(lemma)
+                            result.append((lemma, y))
                 break
     return result
 
@@ -211,10 +223,13 @@ def merge(ordered_adjectives, adjective_score_pair):
     return ordered_adjectives + [adjective_score_pair]
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
+    if len(sys.argv) != 2:
         sys.exit(0)
 
-    for propertyName in sys.argv[1:]:
+    with open('./data/adjective_ordering_results.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+
+        propertyName = sys.argv[1]
         synsets_result = filter_archaic_synsets(get_attributes(propertyName))
         attributes = [get_name(synset) for synset in synsets_result]
         ordered_adjectives_result = order_adjectives(attributes, [propertyName] + attributes)
@@ -222,11 +237,12 @@ if __name__ == '__main__':
         orderedAdjectivesExtended = order_adjectives_extended_with_lemma_definitions(ordered_adjectives_result, synsets_result)
         print(len(orderedAdjectivesExtended))
         print(orderedAdjectivesExtended)
+        writer.writerow(orderedAdjectivesExtended)
 
         orderedAdjectivesExtended2 = order_adjectives_extended_without_lemma_definitions(ordered_adjectives_result, synsets_result)
         print(len(orderedAdjectivesExtended2))
         print(orderedAdjectivesExtended2)
-
+        writer.writerow(orderedAdjectivesExtended2)
 
 
 
