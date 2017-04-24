@@ -63,6 +63,18 @@ def get_definition(adjective, keywords):
     return definition
 
 
+def score(property_name, adjective, keywords, default_score=0):
+    """
+
+    Use ordinary least squares to order attributes (x = (A_transpose * A)**-1 * A_transpose * b)
+
+    :param adjective: A string containing an adjective.
+    :param keywords: An array of strings containing keywords to help find the relevant definition / word sense.
+    :param default_score: A float containing the default score.
+    :return: A float containing the score of the adjective calculated from its definition.
+    """
+
+
 def get_score_using_next_word(property_name, adjective, keywords, default_score=0):
     """
 

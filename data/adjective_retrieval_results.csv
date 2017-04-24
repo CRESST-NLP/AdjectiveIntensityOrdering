@@ -1,57 +1,45 @@
 Source,Relation,Word,WordNet Definition,Wikitionary Definition,Oxford Definition
-duration,has_attribute,long,primarily temporal sense; being or indicating a relatively great or greater than average duration or passage of time or a duration as specified,Having great duration.,of elongated shape
-long,similar_tos,Synset('agelong.s.01'),lasting through all time,lasting throughout all time; eternal,
-long,similar_tos,Synset('bimestrial.s.02'),two months long; lasting two months,Occurring once every two months,
-long,similar_tos,Synset('chronic.s.02'),of long duration,"That which continues over an extended period of time, often associated with suffering (""long suffering"").",(of a person) having a chronic illness
-Synset('chronic.s.02'),has_lemma,continuing,of long duration,,
-long,similar_tos,Synset('daylong.s.01'),lasting through an entire day,"Which lasts a day, or approximately so.",
-long,similar_tos,Synset('drawn-out.s.01'),relatively long in duration; tediously protracted,"Protracted, made to take a longer period of time than necessary.",lasting or seeming to last longer than is necessary
-Synset('drawn-out.s.01'),has_lemma,extended,relatively long in duration; tediously protracted,longer in length or extension; elongated,lasting longer than is usual or expected; prolonged
-Synset('drawn-out.s.01'),has_lemma,lengthy,relatively long in duration; tediously protracted,"long and overextended, especially in time rather than dimension","(especially in reference to time) of considerable or unusual length, especially so as to be tedious"
-Synset('drawn-out.s.01'),has_lemma,prolonged,relatively long in duration; tediously protracted,lengthy in duration; extended; protracted.,continuing for a long time or longer than usual; lengthy
-Synset('drawn-out.s.01'),has_lemma,protracted,relatively long in duration; tediously protracted,Lasting for a long time or longer than expected or usual.,lasting for a long time or longer than expected or usual
-long,similar_tos,Synset('durable.s.01'),existing for a long time,"able to resist wear, decay; lasting; enduring;","able to withstand wear, pressure, or damage; hard-wearing"
-Synset('durable.s.01'),has_lemma,lasting,existing for a long time,Persisting for an extended period of time.,enduring or able to endure over a long period of time
-Synset('durable.s.01'),has_lemma,long-lasting,existing for a long time,Persisting or enduring for a long time.,enduring or having endured for a long period of time
-Synset('durable.s.01'),has_lemma,long-lived,existing for a long time,Having a long lifespan; surviving for a long period of time.,living or lasting a long time
-long,similar_tos,Synset('eight-day.s.01'),lasting for eight days,,
-long,similar_tos,Synset('endless.s.01'),tiresomely long; seemingly without end,having no end,having or seeming to have no end or limit
-Synset('endless.s.01'),has_lemma,eternal,tiresomely long; seemingly without end,"existing outside time; as opposed to sempiternal, existing within time but everlastingly",lasting or existing forever; without end
-Synset('endless.s.01'),has_lemma,interminable,tiresomely long; seemingly without end,"Existing or occurring without interruption or end; ceaseless, unending.",endless or apparently endless (often used hyperbolically)
-long,similar_tos,Synset('hourlong.s.01'),lasting for an hour,of or related to an hourlong period of time,
-long,similar_tos,Synset('lifelong.s.01'),continuing through life,Extending for the entire duration of life.,lasting or remaining in a particular state throughout a person's life
-Synset('lifelong.s.01'),has_lemma,womb-to-tomb,continuing through life,,
-long,similar_tos,Synset('long-acting.s.01'),active over a long period of time,Having a pharmaceutical effect principally in the long term.,(chiefly of a drug) having effects that last for a long time.
-long,similar_tos,Synset('long-dated.s.01'),of a gilt-edged security; having more than 15 years to run before redemption,,(of securities) not due for early payment or redemption
-long,similar_tos,Synset('long-life.s.01'),(of perishable goods) treated to stay fresh longer than usual,,(of a product) able to continue working for longer than others of the same kind
-long,similar_tos,Synset('long-range.s.01'),involving an extended span of time,Capable of operating over a great distance.,(especially of vehicles or missiles) able to be used or be effective over long distances
-long,similar_tos,Synset('long-run.s.01'),relating to or extending over a relatively long time,,
-Synset('long-run.s.01'),has_lemma,long-term,relating to or extending over a relatively long time,extending over a relatively long time period,occurring over or relating to a long period of time
-Synset('long-run.s.01'),has_lemma,semipermanent,relating to or extending over a relatively long time,Neither temporary nor entirely permanent; of indefinite duration,
-long,similar_tos,Synset('longish.s.01'),somewhat long,Somewhat long.,fairly long
-long,similar_tos,Synset('longitudinal.s.03'),over an extended time,"Relating to length, or to longitude.",running lengthwise rather than across
-long,similar_tos,Synset('longstanding.s.01'),having existed for a long time,Having persisted for an extended period of time.,
-long,similar_tos,Synset('monthlong.s.01'),last through a month,"which lasts a month, or approximately so",
-long,similar_tos,Synset('nightlong.s.01'),"lasting, open, or operating through the whole night",lasting all night,
-Synset('nightlong.s.01'),has_lemma,all-night,"lasting, open, or operating through the whole night",Lasting throughout the whole night.,"lasting, open, or operating throughout the night"
-Synset('nightlong.s.01'),has_lemma,overnight,"lasting, open, or operating through the whole night",Occurring between dusk and dawn.,"done, happening, or for use overnight"
-long,similar_tos,Synset('perennial.s.02'),lasting an indefinitely long time; suggesting self-renewal,Enduring; lasting; timeless.,lasting or existing for a long or apparently infinite time; enduring or continually recurring
-long,similar_tos,Synset('time-consuming.s.01'),of a task that takes time and patience,requiring significant amounts of time.,taking a lot of or too much time
-long,similar_tos,Synset('weeklong.s.01'),lasting through a week,"which lasts for a week, or approximately so",
-Synset('weeklong.s.01'),has_lemma,seven-day,lasting through a week,,lasting for a week
-long,similar_tos,Synset('yearlong.s.01'),lasting through a year,"Lasting one year, or approximately so.",
-duration,has_attribute,short,primarily temporal sense; indicating or being or seeming to be limited in duration,Having little duration; opposite of long.,lasting or taking a small amount of time
-short,similar_tos,Synset('abbreviated.s.02'),cut short in duration,Shortened; relatively short.,shortened; cut short
-Synset('abbreviated.s.02'),has_lemma,shortened,cut short in duration,,
-Synset('abbreviated.s.02'),has_lemma,truncated,cut short in duration,,
-short,similar_tos,Synset('brief.s.01'),of short duration or distance,Of short duration; happening quickly.,of short duration; not lasting for long
-short,similar_tos,Synset('clipped.s.02'),(of speech) having quick short sounds,Having an end cut off; trimmed or cut back.,"(of speech) having short, sharp vowel sounds and clear pronunciation"
-short,similar_tos,Synset('fleeting.s.01'),lasting for a markedly brief time,passing quickly,lasting for a very short time
-Synset('fleeting.s.01'),has_lemma,fugitive,lasting for a markedly brief time,"transient, fleeting or ephemeral",quick to disappear; fleeting
-Synset('fleeting.s.01'),has_lemma,momentaneous,lasting for a markedly brief time,,"Lasting only a moment; momentary (Linguistics, with reference to the time taken to perform the action expressed by a verb)."
-Synset('fleeting.s.01'),has_lemma,momentary,lasting for a markedly brief time,lasting for only a moment,lasting for a very short time; brief
-short,similar_tos,Synset('short-dated.s.01'),of a gilt-edged security; having less than 5 years to run before redemption,,(of a stock or bond) due for early payment or redemption
-short,similar_tos,Synset('short-range.s.01'),relating to the near future,Intended for use on something close or nearby.,(especially of a vehicle or missile) only able to be used or be effective over short distances
-short,similar_tos,Synset('short-run.s.01'),relating to or extending over a limited period,,taken or considered on a short timescale; short-term
-Synset('short-run.s.01'),has_lemma,short-term,relating to or extending over a limited period,of or pertaining to a short duration of time,occurring over or relating to a short period of time
-short,similar_tos,Synset('short_and_sweet.s.01'),dealt with very quickly; to the point,,
+speed,has_attribute,fast,acting or moving or capable of acting or moving quickly,"Moving with great speed, or capable of doing so; swift, rapid.",taking place at high speed; taking a short time
+fast,similar_tos,Synset('accelerated.s.01'),"speeded up, as of an academic course",,
+fast,similar_tos,Synset('alacritous.s.01'),quick and eager,"Brisk, speedy, with alacrity, quick and eager.",brisk or lively
+fast,similar_tos,Synset('blistering.s.03'),very fast; capable of quick response and great speed,Very fast,(of criticism) expressed with great vehemence
+Synset('blistering.s.03'),has_lemma,hot,very fast; capable of quick response and great speed,"Of the weather, causing the air to be hot.",having a high degree of heat or a high temperature
+Synset('blistering.s.03'),has_lemma,red-hot,very fast; capable of quick response and great speed,Heated to the point that it glows with a visible red color.,so hot as to glow red
+fast,similar_tos,Synset('double-quick.s.01'),(of a marching cadence) very quick,,
+fast,similar_tos,Synset('express.s.02'),without unnecessary stops,"Moving or operating quickly, as a train not making local stops.",(of a train or other form of public transport) making few intermediate stops and reaching its destination quickly
+fast,similar_tos,Synset('fast-breaking.s.01'),occurring rapidly as a series of events in rapid succession,,
+fast,similar_tos,Synset('fast-paced.s.01'),of communication that proceeds rapidly,Moving or changing rapidly.,(of a narrative or series of events) moving or developing very quickly
+fast,similar_tos,Synset('fleet.s.01'),moving very fast,Swift in motion; moving with velocity; light and quick in going from place to place; nimble; fast.,fast and nimble in movement
+Synset('fleet.s.01'),has_lemma,swift,moving very fast,Capable of moving at high speeds.,moving or capable of moving at high speed
+fast,similar_tos,Synset('high-speed.s.01'),operating at high speed,"That operates, moves or takes place at a greater than normal speed.",(of photographic film) needing little light or only short exposure.
+Synset('high-speed.s.01'),has_lemma,high-velocity,operating at high speed,,denoting or relating to a gun capable of discharging a projectile with great force and speed
+fast,similar_tos,Synset('hurrying.s.01'),moving with great haste,,
+Synset('hurrying.s.01'),has_lemma,scurrying,moving with great haste,,
+fast,similar_tos,Synset('immediate.s.05'),performed with little or no delay,"happening right away, instantly, with no delay",occurring or done at once; instant
+Synset('immediate.s.05'),has_lemma,prompt,performed with little or no delay,"Ready, willing (to act).",(of goods) for immediate delivery and payment.
+Synset('immediate.s.05'),has_lemma,quick,performed with little or no delay,"Moving with speed, rapidity or swiftness, or capable of doing so; rapid; fast.",happening with little or no delay; prompt
+Synset('immediate.s.05'),has_lemma,straightaway,performed with little or no delay,extending into the distance in a straight line.,extending or moving in a straight line
+fast,similar_tos,Synset('instantaneous.s.01'),occurring with no delay,"Occurring, arising, or functioning without any delay; happening within an imperceptibly brief period of time.",occurring or done instantly
+Synset('instantaneous.s.01'),has_lemma,instant,occurring with no delay,Occurring immediately; immediate; present.,prepared quickly and with little effort
+fast,similar_tos,Synset('meteoric.s.03'),like a meteor in speed or brilliance or transience,"Like a meteor in speed, brilliance, or ephemeralness.",(of the development of something) very rapid
+fast,similar_tos,Synset('quick.s.01'),accomplished rapidly and without delay,"Moving with speed, rapidity or swiftness, or capable of doing so; rapid; fast.",happening with little or no delay; prompt
+Synset('quick.s.01'),has_lemma,speedy,accomplished rapidly and without delay,Characterized by a rapid or swift motion.,done or occurring quickly
+fast,similar_tos,Synset('rapid.s.01'),done or occurring in a brief period of time,Describes a process or concept which occurs quickly.,(of an action) characterized by great speed
+fast,similar_tos,Synset('rapid.s.02'),characterized by speed; moving with or capable of moving with high speed,Describes a process or concept which occurs quickly.,(of an action) characterized by great speed
+Synset('rapid.s.02'),has_lemma,speedy,characterized by speed; moving with or capable of moving with high speed,Characterized by a rapid or swift motion.,done or occurring quickly
+fast,similar_tos,Synset('smart.s.06'),quick and brisk,"Cleverly and/or sarcastically humorous in a way that may be rude and disrespectful.  Cf: (verb) to smart off; (noun) smarty pants, wise guy, wiseacre, wise-ass; (adjective) cute.",having or showing a quick-witted intelligence
+fast,similar_tos,Synset('windy.s.03'),"resembling the wind in speed, force, or variability",Accompanied by wind.,characterized by or exposed to strong winds
+fast,similar_tos,Synset('winged.s.02'),very fast; as if with wings,swift,having wings for flight
+speed,has_attribute,slow,not moving quickly; taking a comparatively long time,"Taking a long time to move or go a short distance, or to perform an action; not quick in motion; proceeding at a low speed.",not allowing or intended for fast travel
+slow,similar_tos,Synset('bumper-to-bumper.s.01'),used of traffic,"Heavily crowded and slow-moving, particularly in reference to automobile traffic on a highway.",
+slow,similar_tos,Synset('dilatory.s.01'),wasting time,"Intentionally delaying (someone or something), intended to cause delay, gain time, or defer decision.",slow to act
+Synset('dilatory.s.01'),has_lemma,laggard,wasting time,Hanging back; loitering.,slower than desired or expected
+Synset('dilatory.s.01'),has_lemma,poky,wasting time,slow,(of a room or building) uncomfortably small and cramped
+Synset('dilatory.s.01'),has_lemma,pokey,wasting time,fast,
+slow,similar_tos,Synset('drawn-out.s.02'),(used of speech) uttered slowly with prolonged vowels,"Protracted, made to take a longer period of time than necessary.",lasting or seeming to last longer than is necessary
+slow,similar_tos,Synset('lazy.s.01'),moving slowly and gently,Unwilling to do work or make an effort.,(of a river) slow-moving
+slow,similar_tos,Synset('long-play.s.01'),(used of records) playing at a slower speed and for a longer time than earlier records,,long-playing.
+Synset('long-play.s.01'),has_lemma,long-playing,(used of records) playing at a slower speed and for a longer time than earlier records,"Referring to records that recorded a greater amount of sound than previous versions had, an LP, generally a 12 inch 33 1/3 RPM record.",(of a record) about 30 cm in diameter and designed to rotate at 331/3 revolutions per minute
+slow,similar_tos,Synset('slow-moving.s.01'),moving slowly,,"slow in movement, action, or progress"
+slow,similar_tos,Synset('sluggish.s.01'),moving slowly,"Habitually idle and lazy; slothful; dull; inactive; as, a sluggish man.",slow to respond or make progress
+Synset('sluggish.s.01'),has_lemma,sulky,moving slowly,"Irritated, gloomy, upset; moodily silent",expressing or suggesting gloom and bad temper
