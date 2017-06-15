@@ -2,7 +2,7 @@ import re
 
 import spacy
 
-from adjective_retrieval import *
+from adjective_and_definition_retrieval import *
 import wiktionary_dict
 
 nlp = spacy.load("en")

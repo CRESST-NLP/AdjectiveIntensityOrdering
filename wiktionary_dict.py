@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import bz2
+
 from lxml import etree
-import sys
 
 
 def load_ontology(f):
@@ -39,20 +39,24 @@ def get_most_likely_definition(definitions, keywords):
     return definitions["1"]
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        sys.exit(0)
 
     wiki = load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
-    for entry in sys.argv[1:]:
-        word = entry.split(",")[0]
-        pos = entry.split(",")[1]
-
-        if pos != "N" and pos != "A" and pos != "V" and pos != "R":
-            print("pos should be N, A, V, or R. Given:", pos)
+    while True:
+        entry = input("\nEnter [word,POS] (POS must be N, A, V, or R) (EXIT to break): ")
+        if entry == 'EXIT':
+            break
         else:
             try:
-                res = wiki[word][pos]["1"]
-                print(word + ":", res)
-            except KeyError:
-                print("entry not found")
+                word = entry.split(",")[0]
+                pos = entry.split(",")[1]
+                if pos != "N" and pos != "A" and pos != "V" and pos != "R":
+                    print("pos should be N, A, V, or R. Given:", pos)
+                else:
+                    try:
+                        res = wiki[word][pos]["1"]
+                        print(word + ":", res)
+                    except KeyError:
+                        print("entry not found")
+            except IndexError:
+                print("Invalid input:", entry)
