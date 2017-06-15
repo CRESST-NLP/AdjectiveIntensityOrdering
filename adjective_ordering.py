@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import spacy
 
-from adjective_retrieval import *
+from adjective_and_definition_retrieval import *
 from score import get_score_with_spacy as get_score
 
 nlp = spacy.load("en")
