@@ -180,7 +180,7 @@ def get_keywords(synset):
 def retrieve_definitions(property_name):
     wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
-    with open('./data/adjective_retrieval_results.csv', 'w') as csvfile:
+    with open('./data/definitions.csv', 'w') as csvfile:
         fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wikitionary Definition', 'Oxford Definition']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -235,7 +235,7 @@ def retrieve_definitions(property_name):
                             wiki_def = ""
                         oxford_def = get_oxford_definition(similar_synset_name, keywords)
 
-                        writer.writerow({'Source': synset_name, 'Relation': 'similar_tos', 'Word': similar_synset,
+                        writer.writerow({'Source': synset_name, 'Relation': 'similar_tos', 'Word': similar_synset_name,
                                          'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def,
                                          'Oxford Definition': oxford_def})
 
@@ -249,7 +249,7 @@ def retrieve_definitions(property_name):
                                     wiki_def = ""
                                 oxford_def3 = get_oxford_definition(lemma, keywords)
 
-                                writer.writerow({'Source': similar_synset, 'Relation': 'has_lemma',
+                                writer.writerow({'Source': similar_synset_name, 'Relation': 'has_lemma',
                                                  'Word': lemma,
                                                  'WordNet Definition': wordnet_def,
                                                  'Wikitionary Definition': wiki_def,
@@ -259,11 +259,6 @@ def retrieve_definitions(property_name):
 if __name__ == '__main__':
     # example:
     # > python3 adjective_and_definition_retrieval.py temperature
-    # Synset('cold.a.01')
-    #   relation: temperature has_attribute
-    #   Wiktionary: Having a low temperature.
-    #   Oxford: "of or at a low or relatively low temperature, especially when compared with the human body:"
-    # ```
 
     if len(sys.argv) != 2:
         sys.exit(0)
