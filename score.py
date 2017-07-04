@@ -21,8 +21,8 @@ intensifiers = {"extremely": A, "intensely": A, "exceptionally": A, "astoundingl
                 "extraordinarily": A, "really": A, "very": A, "highly": A}
 
 # adverbs that decrease the intensity of the word
-downtoners = {"fairly": B, "pretty": B, "quite": B, "rather": B, "moderately": B,
-              "somewhat": B2, "reasonably": B2, "slightly": B2, "a little": B2, "mildly": B2, "a bit": B2,
+downtoners = {"fairly": B, "pretty": B, "quite": B, "rather": B, "moderately": B, "somewhat": B,
+              "reasonably": B2, "slightly": B2, "a little": B2, "mildly": B2, "a bit": B2,
               "pleasantly": B2, "not_quite": -0.6}
 
 # not quite gets parsed incorrectly by spacy so manual conversion to not_quite is necessary
