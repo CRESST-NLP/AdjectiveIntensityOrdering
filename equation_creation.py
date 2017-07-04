@@ -99,10 +99,12 @@ def get_noun_scores(doc, property_name):
     for token in doc:
         if token.tag_ == "NN" and (token.text == property_name or token.text in synonyms):
             added = False
-            modified_by_adj = False
+            modified = False
             for child in token.children:
+                if child.tag_ == "JJR":
+                    modified = True
                 if child.text in adj_intensity_map:
-                    modified_by_adj = True
+                    modified = True
                     for grandchild in child.children:
                         if grandchild.text in intensifiers:
                             added = True
@@ -112,7 +114,7 @@ def get_noun_scores(doc, property_name):
                             scores.append(adj_intensity_map[child.text] * downtoners[grandchild.text])
                     if not added:
                         scores.append(adj_intensity_map[child.text])
-            if not modified_by_adj:
+            if not modified:
                 scores.append(1)
     return scores
 
@@ -125,8 +127,13 @@ def get_adj_adv_scores(current_word, doc, property_name, other_words):
             curr_i = definition_array.index(token.text)
         except ValueError:
             curr_i = -1
-        if (token.tag_ == "JJ" or token.tag_ == "RB") and token.head.text != property_name:
-            matches = find_links(current_word, token.text, other_words)
+        if (token.tag_ in ["JJ", "RB"] and token.head.text != property_name) or token.tag_ in ["JJR", "JJS"]:
+            word = token.text
+            if token.tag_ == "JJR" and token.text.endswith("er"):
+                word = token.text[:-2]
+            elif token.tag_ == "JJS" and token.text.endswith("est"):
+                word = token.text[:-3]
+            matches = find_links(current_word, word, other_words)
             if matches is not None:
                 found_adverb = False
                 for child in token.children:
