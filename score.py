@@ -23,13 +23,16 @@ intensifiers = {"extremely": A, "intensely": A, "exceptionally": A, "astoundingl
 # adverbs that decrease the intensity of the word
 downtoners = {"fairly": B, "pretty": B, "quite": B, "rather": B, "moderately": B,
               "somewhat": B2, "reasonably": B2, "slightly": B2, "a little": B2, "mildly": B2, "a bit": B2,
-              "pleasantly": B2}
+              "pleasantly": B2, "not_quite": -0.6}
+
+# not quite gets parsed incorrectly by spacy so manual conversion to not_quite is necessary
 
 adj_intensity_map = {"high": high, "good": high, "great": high, "higher": high, "better": high, "greater": high,
                      "low": low, "bad": low, "little": low, "lower": low, "worse": low}
 
-wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-
+# wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
+wiki = wiktionary_dict.load_ontology(
+    bz2.open('/Users/Tan/Research/2016-2017/semantic-modeling/data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
 def merge_compound_nouns(sentence):
     doc = nlp(sentence)

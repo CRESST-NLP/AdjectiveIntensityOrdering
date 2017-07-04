@@ -81,7 +81,6 @@ def get_synsets_with_wordnet_attributes_extended(property_name):
 def get_oxford_definition(word, keywords=[], pos='a'):
     """
     Retrieves a word's definition from Oxford Dictionary
-    :param property: A word i.e. "temperature"
     :param pos: A string specifying the parts of speech to search for the word's attributes
     :return: A string containing the definition of the word
     """
@@ -180,7 +179,8 @@ def get_keywords(synset):
 def retrieve_definitions(property_name):
     wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
-    with open('./data/definitions.csv', 'w') as csvfile:
+    csv_path = './data/' + property_name + '_definitions.csv'
+    with open(csv_path, 'w') as csvfile:
         fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wikitionary Definition', 'Oxford Definition']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -258,7 +258,7 @@ def retrieve_definitions(property_name):
 
 if __name__ == '__main__':
     # example:
-    # > python3 adjective_and_definition_retrieval.py temperature
+    # > python3 temperature
 
     if len(sys.argv) != 2:
         sys.exit(0)

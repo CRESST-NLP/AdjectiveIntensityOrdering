@@ -7,19 +7,12 @@ import sys
 
 import spacy
 from nltk.stem.porter import PorterStemmer
+from PyDictionary import PyDictionary
 
 from score import intensifiers, downtoners, adj_intensity_map
 
+dictionary = PyDictionary()
 nlp = spacy.load("en_depent_web_md")
-
-# irrelevant_adj = ["raw", "polar", "cutting", "nipping", "snappy", "refrigerant", "refrigerating", "refrigerated",
-#                   "shivery", "caller", "precooled", "water-cooled", "warming", "fervent", "baking_hot", "blistery",
-#                   "calefacient", "calefactory", "calefactive", "calorifacient", "calorific", "heatable", "heated_up",
-#                   "het", "het_up", "sulfurous", "sulphurous", "sweltry", "white", "white-hot", "fervid"]
-
-irrelevant_adj = ["accelerated", "double-quick", "fast-breaking", "high-velocity", "hot", "hurrying", "lazy",
-                  "long-play", "long-playing", "pokey", "red-hot", "scurrying", "slow-moving",
-                  "sulky"]
 
 
 def get_csv_column(column_name, csv_file_path):
@@ -45,14 +38,11 @@ def create_equations(property_name, equations_csv_path, definitions_csv_path):
     :param definitions_csv_path: a string containing a path to a csv file containing the adjectives and definitions
     :return:
     """
-    words = get_csv_column('Word', equations_csv_path)
+    words = get_csv_column('Word', definitions_csv_path)
     words.update({"high_prop": ""})
 
-    word_equation_dict = {}  # map from word to variable to an int representing the factor
-    missing_adjectives = set()
-
     with open(equations_csv_path, 'w') as equations_file, open(definitions_csv_path, 'r') as definitions_file:
-        fieldnames = ['Word', 'Variable', 'Factor', 'Definition']
+        fieldnames = ['Word', 'Variable', 'Factor', 'Definition', "Deduced"]
         writer = csv.DictWriter(equations_file, fieldnames=fieldnames)
         writer.writeheader()
 
@@ -63,38 +53,22 @@ def create_equations(property_name, equations_csv_path, definitions_csv_path):
             definitions.extend(row['Wikitionary Definition'].lower().split(';'))
             definitions.extend(row['Oxford Definition'].lower().split(';'))
             word = row['Word']
-            word_unadded = True
             for definition in definitions:
                 definition = combine_words(definition, "not", "quite")
                 doc = nlp(definition)
                 noun_scores = get_noun_scores(doc, property_name)
                 adj_adv_scores = get_adj_adv_scores(word, doc, property_name, words)
 
-                if noun_scores or adj_adv_scores:
-                    word_unadded = False
-
                 for score in noun_scores:
                     writer.writerow({'Word': word, 'Variable': 'high_prop', 'Factor': str(score),
                                      'Definition': definition})
-                    if word in word_equation_dict:
-                        word_equation_dict[word]['high_prop'] = score
-                    else:
-                        word_equation_dict[word] = {'high_prop': score}
+                    writer.writerow({'Word': "high_prop", 'Variable': word, 'Factor': str(1.0 / score),
+                                     'Definition': definition, 'Deduced': 'Yes'})
                 for (a, score) in adj_adv_scores:
                     writer.writerow({'Word': word, 'Variable': a, 'Factor': str(score),
                                      'Definition': definition})
-                    if word in word_equation_dict:
-                        word_equation_dict[word][a] = score
-                    else:
-                        word_equation_dict[word] = {a: score}
-                    if a in missing_adjectives:
-                        writer.writerow({'Word': a, 'Variable': word, 'Factor': str(1.0 / score),
-                                         'Definition': "DEDUCED FROM: " + definition})
-                        word_equation_dict[a] = {word: 1.0 / score}
-                        missing_adjectives.remove(a)
-            if word_unadded:
-                missing_adjectives.add(word)
-    return word_equation_dict
+                    writer.writerow({'Word': a, 'Variable': word, 'Factor': str(1.0 / score),
+                                     'Definition': definition, 'Deduced': 'Yes'})
 
 
 def combine_words(text, a, b):
@@ -120,21 +94,26 @@ def combine_words(text, a, b):
 
 
 def get_noun_scores(doc, property_name):
+    synonyms = dictionary.synonym(property_name)
     scores = []
     for token in doc:
-        if token.tag_ == "NN" and token.text == property_name:
+        if token.tag_ == "NN" and (token.text == property_name or token.text in synonyms):
+            added = False
+            modified_by_adj = False
             for child in token.children:
                 if child.text in adj_intensity_map:
-                    found_adverb = False
+                    modified_by_adj = True
                     for grandchild in child.children:
                         if grandchild.text in intensifiers:
-                            found_adverb = True
+                            added = True
                             scores.append(adj_intensity_map[child.text] * intensifiers[grandchild.text])
                         elif grandchild.text in downtoners:
-                            found_adverb = True
+                            added = True
                             scores.append(adj_intensity_map[child.text] * downtoners[grandchild.text])
-                    if not found_adverb:
+                    if not added:
                         scores.append(adj_intensity_map[child.text])
+            if not modified_by_adj:
+                scores.append(1)
     return scores
 
 
@@ -209,7 +188,7 @@ if __name__ == '__main__':
 
     input_term = sys.argv[1]
 
-    equations_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/equations.csv"
-    adj_definitions_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/adjective_retrieval_results.csv"
+    equations_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/" + input_term + "_equations.csv"
+    definitions_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/" + input_term + "_definitions.csv"
 
-    create_equations(input_term, equations_file, adj_definitions_file)
+    create_equations(input_term, equations_file, definitions_file)
