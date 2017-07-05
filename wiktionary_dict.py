@@ -34,7 +34,7 @@ def get_most_likely_definition(definitions, keywords):
     num_definitions = max(list(map(int, definitions.keys()))) + 1
     for keyword in keywords:
         for i in range(1, num_definitions):
-            if keyword in definitions[str(i)]:
+            if definitions[str(i)] and keyword in definitions[str(i)]:
                 return definitions[str(i)]
     return definitions["1"]
 
