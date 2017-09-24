@@ -57,11 +57,11 @@ def create_dict_from_equations_file(equations_csv_path, include_deduced):
 def build_matrix(equations_csv_path, variables, connected_equations_dict):
     """
     Creates a m x n matrix, where m is the number of equations in the equations csv file and n is the number of words.
-    :param equations_csv_path: A string with the path to the csv containing the equations
-    :param variables: A list of the words that correspond to the matrix columns
+    :param equations_csv_path: A string with the path to the csv containing the equations.
+    :param variables: A list of the words that correspond to the matrix columns.
     :param connected_equations_dict: A dictionary mapping each word to a dictionary mapping variables to their factors.
     All the entries in this parameter are interconnected.
-    :return: A m x n matrix
+    :return: A m x n matrix.
     """
     size = len(variables)
     matrix = [[0] * size for i in range(size)]
@@ -84,7 +84,7 @@ def build_matrix(equations_csv_path, variables, connected_equations_dict):
 def order_adjectives(property_name, equations_csv_path, include_all):
     """
     Orders the adjectives using least squares linear regression.
-    :param equations_csv_path:
+    :param equations_csv_path: A string with the path to the csv containing the equations.
     :param include_all: If true, includes all words. Else, only includes words connected to the variable high_prop.
     :return: A list of (adj, score) tuples in order of ascending score.
     """
@@ -132,6 +132,7 @@ def order_adjectives(property_name, equations_csv_path, include_all):
 if __name__ == '__main__':
     # example:
     # > python3 matrix_creation.py temperature
+    # creates the file temperature_results.csv or overwrites existing file
 
     if len(sys.argv) != 2:
         sys.exit(0)
