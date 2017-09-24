@@ -30,12 +30,12 @@ def get_csv_column(column_name, csv_file_path):
     return variables
 
 
-def create_equations(property_name, equations_csv_path, definitions_csv_path):
+def create_equations(attribute, equations_csv_path, definitions_csv_path):
     """
-
-    :param property_name: a string containing the name of the property
-    :param equations_csv_path: a string containing a path to a csv file to write the equations to
-    :param definitions_csv_path: a string containing a path to a csv file containing the adjectives and definitions
+    Converts an attribute's adjectives and their definitions to equations
+    :param attribute: A string containing an attribute i.e. "temperature"
+    :param equations_csv_path: A string containing a path to a csv file for the equations
+    :param definitions_csv_path: A string containing a path to a csv file with the adjectives and definitions
     :return:
     """
     words = get_csv_column('Word', definitions_csv_path)
@@ -56,8 +56,8 @@ def create_equations(property_name, equations_csv_path, definitions_csv_path):
             for definition in definitions:
                 definition = combine_words(definition, "not", "quite")
                 doc = nlp(definition)
-                noun_scores = get_noun_scores(doc, property_name)
-                adj_adv_scores = get_adj_adv_scores(word, doc, property_name, words)
+                noun_scores = get_noun_scores(doc, attribute)
+                adj_adv_scores = get_adj_adv_scores(word, doc, attribute, words)
 
                 for score in noun_scores:
                     writer.writerow({'Word': word, 'Variable': 'high_prop', 'Factor': str(score),
@@ -73,7 +73,8 @@ def create_equations(property_name, equations_csv_path, definitions_csv_path):
 
 def combine_words(text, a, b):
     """
-    This function is needed b/c spacy doesn't parse phrases like "not quite" correctly
+    Combines two words with an underscore
+    This function is needed because spaCy incorrectly parses phrases like "not quite"
     :return: A string combining adjacent words a b in text to form a_b in new_text
     """
     text = text.split()
@@ -93,11 +94,11 @@ def combine_words(text, a, b):
     return " ".join(new_text)
 
 
-def get_noun_scores(doc, property_name):
-    synonyms = dictionary.synonym(property_name)
+def get_noun_scores(doc, attribute):
+    synonyms = dictionary.synonym(attribute)
     scores = []
     for token in doc:
-        if token.tag_ == "NN" and (token.text == property_name or token.text in synonyms):
+        if token.tag_ == "NN" and (token.text == attribute or token.text in synonyms):
             added = False
             modified = False
             for child in token.children:
@@ -115,11 +116,24 @@ def get_noun_scores(doc, property_name):
                     if not added:
                         scores.append(adj_intensity_map[child.text])
             if not modified:
-                scores.append(1)
+                definition = doc.text.split()
+                curr_i = -1
+                if token.text in definition:
+                    curr_i = definition.index(token.text)
+                else:
+                    for synonym in synonyms:
+                        if synonym in definition:
+                            curr_i = definition.index(synonym)
+                            break
+                if curr_i > 0 and definition[curr_i - 1] in ["without", "lacking", "missing", "no"]:
+                    # necessary because spaCy doesn't tag these as dependencies
+                    scores.append(-1)
+                elif curr_i > -1:
+                    scores.append(1)
     return scores
 
 
-def get_adj_adv_scores(current_word, doc, property_name, other_words):
+def get_adj_adv_scores(current_word, doc, attribute, other_words):
     scores = []
     definition_array = re.findall(r"[\w]+", doc.text)
     for token in doc:
@@ -127,7 +141,7 @@ def get_adj_adv_scores(current_word, doc, property_name, other_words):
             curr_i = definition_array.index(token.text)
         except ValueError:
             curr_i = -1
-        if (token.tag_ in ["JJ", "RB"] and token.head.text != property_name) or token.tag_ in ["JJR", "JJS"]:
+        if (token.tag_ in ["JJ", "RB"] and token.head.text != attribute) or token.tag_ in ["JJR", "JJS"]:
             word = token.text
             if token.tag_ == "JJR" and token.text.endswith("er"):
                 word = token.text[:-2]
@@ -174,6 +188,14 @@ def get_adj_adv_scores(current_word, doc, property_name, other_words):
 
 
 def find_links(current_word, definition_word, other_words):
+    """
+    Finds words in current word's definition that are in the list of other words
+    Uses word stems with PorterStemmer so that word's with the same stem still "match"
+    :param current_word: A string containing word
+    :param definition_word: A string containing the definition of current_word
+    :param other_words: A list of strings
+    :return: A list of strings from other_words that "match" words in the definition
+    """
     links = []
     porter_stemmer = PorterStemmer()
     definition_word_stem = porter_stemmer.stem(definition_word)
@@ -189,6 +211,7 @@ def find_links(current_word, definition_word, other_words):
 if __name__ == '__main__':
     # example:
     # > python3 equation_creation.py temperature
+    # creates the file temperature_equations.csv or overwrites existing file
 
     if len(sys.argv) != 2:
         sys.exit(0)

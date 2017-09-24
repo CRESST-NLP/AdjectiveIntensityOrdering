@@ -19,13 +19,13 @@ def get_lemmas(synset):
     return lemma_names
 
 
-def get_attributes(property_name):
+def get_adjectives(attribute):
     """
-    Retrieves a property_name's attributes from WordNet's attributes
-    :param property_name: A string i.e. "temperature"
-    :return: An array containing the property_name's attributes i.e. ["hot", "cold", "warm", "cool"]
+    Retrieves a attribute's adjectives from WordNet.
+    :param attribute: A string containing an attribute i.e. "temperature".
+    :return: An array containing the attribute's adjectives i.e. ["hot", "cold", "warm", "cool"].
     """
-    synsets = wn.synsets(property_name, wn.NOUN)
+    synsets = wn.synsets(attribute, wn.NOUN)
     for synset in synsets:
         if synset.attributes():
             return synset.attributes()
@@ -34,9 +34,9 @@ def get_attributes(property_name):
 
 def get_similar_synsets(synset):
     """
-    Retries a synset's similar synsets according to WordNet.
-    :param synset: a synset
-    :return: an array containing similar synsets.
+    Retrieves a synset's similar synsets according to WordNet.
+    :param synset: a WordNet synset.
+    :return: an array containing similar synsets from WordNet.
     ex:
         input: Synset('hot.a.01')
         output: [Synset('baking.s.01'), Synset('blistering.s.02'), Synset('calefacient.s.01'),
@@ -51,8 +51,8 @@ def get_similar_synsets(synset):
 
 def filter_archaic_synsets(synsets):
     """
-
-    :param synsets: an array consisting of WordNet synsets.
+    Filters archaic synsets out of an array of synsets.
+    :param synsets: an array containing WordNet synsets.
     :return: an array with archaic synsets removed.
     """
     archaism = wn.synsets("archaism")[0]
@@ -65,13 +65,13 @@ def filter_archaic_synsets(synsets):
     return results
 
 
-def get_synsets_with_wordnet_attributes_extended(property_name):
+def get_synsets_with_wordnet_extended(attribute):
     """
-    Retrieves a property's attributes from WordNet's attributes and words similar to the attributes
-    :param property_name: A string
-    :return: An array containing the property's attributes and the attributes' similar synsets
+    Retrieves an attribute's adjective synsets and similar synsets from WordNet.
+    :param attribute: A string containing an attribute i.e. "temperature".
+    :return: An array containing the attribute's adjectives and similar synsets.
     """
-    synsets = get_attributes(property_name)
+    synsets = get_adjectives(attribute)
     result = list(synsets)
     for synset in synsets:
         result.extend(get_similar_synsets(synset))
@@ -80,9 +80,9 @@ def get_synsets_with_wordnet_attributes_extended(property_name):
 
 def get_oxford_definition(word, keywords=[], pos='a'):
     """
-    Retrieves a word's definition from Oxford Dictionary
-    :param pos: A string specifying the parts of speech to search for the word's attributes
-    :return: A string containing the definition of the word
+    Retrieves a word's definition from Oxford Dictionary.
+    :param pos: A string specifying the word's part of speech.
+    :return: A string containing the word's definition.
     """
     # wn.NOUN = 'n'
     # wn.VERB = 'v'
@@ -90,8 +90,8 @@ def get_oxford_definition(word, keywords=[], pos='a'):
     # wn.ADV = 'r'
 
     if pos != wn.NOUN and pos != wn.VERB and pos != wn.ADJ and pos != wn.ADV:
-        return ""
         print("Invalid part of speech: " + pos + ". Expected 'n', 'v', 'a', or 'r'.")
+        return ""
 
     if pos == 'n':
         lexical_category = "Noun"
@@ -176,18 +176,22 @@ def get_keywords(synset):
     return keywords
 
 
-def retrieve_definitions(property_name):
+def retrieve_definitions(attribute):
+    """
+    Creates a file called [attribute]_definitions.csv with WordNet, Wikitionary, and Oxford definitions.
+    :param attribute: A string containing an attribute i.e. "temperature".
+    """
     wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
 
-    csv_path = './data/' + property_name + '_definitions.csv'
+    csv_path = './data/' + attribute + '_definitions.csv'
     with open(csv_path, 'w') as csvfile:
         fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wikitionary Definition', 'Oxford Definition']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-        synsets = get_attributes(property_name)
+        synsets = get_adjectives(attribute)
 
-        keywords = [property_name]
+        keywords = [attribute]
 
         for synset in synsets:
             keywords.extend(get_keywords(synset))
@@ -203,7 +207,7 @@ def retrieve_definitions(property_name):
                     wiki_def = ""
                 oxford_def = get_oxford_definition(synset_name, keywords)
 
-                writer.writerow({'Source': property_name, 'Relation': 'has_attribute', 'Word': synset_name,
+                writer.writerow({'Source': attribute, 'Relation': 'has_attribute', 'Word': synset_name,
                                  'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def,
                                  'Oxford Definition': oxford_def})
 
@@ -259,6 +263,7 @@ def retrieve_definitions(property_name):
 if __name__ == '__main__':
     # example:
     # > python3 temperature
+    # creates the file temperature_definitions.csv or overwrites existing file
 
     if len(sys.argv) != 2:
         sys.exit(0)

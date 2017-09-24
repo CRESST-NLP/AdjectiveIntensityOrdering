@@ -25,9 +25,9 @@ def load_ontology(f):
 def get_most_likely_definition(definitions, keywords):
     """
 
-    :param definitions: an array of strings containing definitions
-    :param keywords: an array of strings
-    :return: string with first definition in definitions containing a keyword or the first definition
+    :param definitions: An array of strings containing definitions.
+    :param keywords: An array of strings containing the attribute and its adjectives.
+    :return: String with first definition in definitions containing a keyword or the first definition.
     """
 
     # indexing starts at 1
