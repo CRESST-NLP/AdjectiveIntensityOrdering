@@ -5,7 +5,7 @@
 `adjective_and_definition_retrieval.py` - creates the file temperature_definitions.csv
 The header of this csv file is:
 ```
-Source,Relation,Word,WordNet Definition,Wikitionary Definition,Oxford Definition
+Source,Relation,Word,WordNet Definition,Wiktionary Definition,Oxford Definition
 ```
 
 ### Usage
