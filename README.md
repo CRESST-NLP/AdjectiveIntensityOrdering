@@ -57,6 +57,28 @@ python equation_creation.py temperature ./temperature_definitions.csv --output t
 ## Matrix Creation
 matrix_creation.py - creates the file temperature_results.csv
 
+### Usage
+```
+python matrix_creation.py --help
+usage: matrix_creation.py [-h] [--output OUTPUT] input_term equations_path
+
+positional arguments:
+  input_term       A string containing an attribute i.e. "temperature"
+  equations_path   Input path to the equations file. Expected csv header:
+                   Word,Variable,Factor,Definition,Deduced Output from
+                   `equation_creation.py`
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --output OUTPUT  Output path for the equations csv file. Defaults to
+                   `input_term`_equations.csv
+```
+
+#### Example
+```
+python matrix_creation.py temperature ./temperature_equations.csv --output temperature_results.csv
+```
+
 ## Wiktionary Dict
 wiktionary_dict.py
 
