@@ -51,7 +51,7 @@ def create_equations(attribute, equations_csv_path, definitions_csv_path, nlp=No
         for row in reader:
             definitions = []
             definitions.extend(row['WordNet Definition'].lower().split(';'))
-            definitions.extend(row['Wikitionary Definition'].lower().split(';'))
+            definitions.extend(row['Wiktionary Definition'].lower().split(';'))
             definitions.extend(row['Oxford Definition'].lower().split(';'))
             word = row['Word']
             for definition in definitions:
@@ -219,7 +219,7 @@ if __name__ == '__main__':
     parser.add_argument("input_term", help='A string containing an attribute i.e. "temperature"')
     parser.add_argument("definitions_path", help="""
         Input path to the definitions file.
-        Expected csv header: Source,Relation,Word,WordNet Definition,Wikitionary Definition,Oxford Definition
+        Expected csv header: Source,Relation,Word,WordNet Definition,Wiktionary Definition,Oxford Definition
         """)
     parser.add_argument("--output", help="Output path for the equations csv file. Defaults to `input_term`_equations.csv", type=str)
     args = parser.parse_args()

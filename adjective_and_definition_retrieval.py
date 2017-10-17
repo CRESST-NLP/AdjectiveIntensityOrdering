@@ -191,7 +191,7 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
     else:
         csv_path = attribute + '_definitions.csv'
     with open(csv_path, 'w') as csvfile:
-        fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wikitionary Definition', 'Oxford Definition']
+        fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wiktionary Definition', 'Oxford Definition']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
@@ -214,7 +214,7 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
                 oxford_def = get_oxford_definition(synset_name, keywords)
 
                 writer.writerow({'Source': attribute, 'Relation': 'has_attribute', 'Word': synset_name,
-                                 'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def,
+                                 'WordNet Definition': wordnet_def, 'Wiktionary Definition': wiki_def,
                                  'Oxford Definition': oxford_def})
 
                 # add lemmas
@@ -228,7 +228,7 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
                         oxford_def = get_oxford_definition(lemma, keywords)
 
                         writer.writerow({'Source': synset_name, 'Relation': 'has_lemma', 'Word': lemma,
-                                         'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def,
+                                         'WordNet Definition': wordnet_def, 'Wiktionary Definition': wiki_def,
                                          'Oxford Definition': oxford_def})
 
                 # add similar synsets
@@ -246,7 +246,7 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
                         oxford_def = get_oxford_definition(similar_synset_name, keywords)
 
                         writer.writerow({'Source': synset_name, 'Relation': 'similar_tos', 'Word': similar_synset_name,
-                                         'WordNet Definition': wordnet_def, 'Wikitionary Definition': wiki_def,
+                                         'WordNet Definition': wordnet_def, 'Wiktionary Definition': wiki_def,
                                          'Oxford Definition': oxford_def})
 
                         # add similar synsets' lemmas
@@ -262,7 +262,7 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
                                 writer.writerow({'Source': similar_synset_name, 'Relation': 'has_lemma',
                                                  'Word': lemma,
                                                  'WordNet Definition': wordnet_def,
-                                                 'Wikitionary Definition': wiki_def,
+                                                 'Wiktionary Definition': wiki_def,
                                                  'Oxford Definition': oxford_def3})
 
 
