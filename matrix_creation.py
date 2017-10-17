@@ -3,6 +3,7 @@
 import csv
 from collections import deque
 import sys
+import argparse
 
 import numpy as np
 
@@ -81,14 +82,14 @@ def build_matrix(equations_csv_path, variables, connected_equations_dict):
     return matrix
 
 
-def order_adjectives(property_name, equations_csv_path, include_all):
+def order_adjectives(property_name, equations_csv_path, results_path, include_all):
     """
     Orders the adjectives using least squares linear regression.
     :param equations_csv_path: A string with the path to the csv containing the equations.
     :param include_all: If true, includes all words. Else, only includes words connected to the variable high_prop.
     :return: A list of (adj, score) tuples in order of ascending score.
     """
-    all_word_equations_dict = create_dict_from_equations_file(equations_file, True)
+    all_word_equations_dict = create_dict_from_equations_file(equations_csv_path, True)
     connected_word_equations_dict = get_connected_equations(all_word_equations_dict)
 
     if include_all:
@@ -113,8 +114,7 @@ def order_adjectives(property_name, equations_csv_path, include_all):
     # sort the attributes
     sorted_word_score_tuples = sorted(word_score_tuples, key=lambda tup: tup[1])
 
-    csv_path = '/Users/Tan/Research/2016-2017/semantic-modeling/data/' + property_name + '_results.csv'
-    with open(csv_path, 'w') as csvfile:
+    with open(results_path, 'w') as csvfile:
         A_indices = ['A' + str(i) for i in range(num_rows)]
         fieldnames = A_indices + ['x', 'b', 'results']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -134,11 +134,19 @@ if __name__ == '__main__':
     # > python3 matrix_creation.py temperature
     # creates the file temperature_results.csv or overwrites existing file
 
-    if len(sys.argv) != 2:
-        sys.exit(0)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_term", help='A string containing an attribute i.e. "temperature"')
+    parser.add_argument("equations_path", help="""
+        Input path to the equations file.
+        Expected csv header: Word,Variable,Factor,Definition,Deduced
+        Output from `equation_creation.py`
+        """)
+    parser.add_argument("--output", help="Output path for the equations csv file. Defaults to `input_term`_results.csv", type=str)
+    args = parser.parse_args()
 
-    input_term = sys.argv[1]
+    if args.output is None:
+        output = args.input_term + "_results.csv"
+    else:
+        output = args.output
 
-    equations_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/" + input_term + "_equations.csv"
-
-    ordered_adjectives = order_adjectives(input_term, equations_file, False)
+    ordered_adjectives = order_adjectives(args.input_term, args.equations_path, output, False)
