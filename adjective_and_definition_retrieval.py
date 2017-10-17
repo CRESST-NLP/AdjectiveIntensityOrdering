@@ -3,6 +3,7 @@
 import csv
 import sys
 import bz2
+import argparse
 
 from nltk.corpus import wordnet as wn
 import requests
@@ -176,14 +177,19 @@ def get_keywords(synset):
     return keywords
 
 
-def retrieve_definitions(attribute):
+def retrieve_definitions(attribute, wiktionary_path, output_path=None):
     """
     Creates a file called [attribute]_definitions.csv with WordNet, Wikitionary, and Oxford definitions.
     :param attribute: A string containing an attribute i.e. "temperature".
+    :param wiktionary_path: Path to 2011-08-01_OntoWiktionary_EN.xml.bz2
+    :param output_path: Optional path to output csv file. Defaults to `attribute`_definitions.csv
     """
-    wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
+    wiki = wiktionary_dict.load_ontology(bz2.open(wiktionary_path))
 
-    csv_path = './data/' + attribute + '_definitions.csv'
+    if output_path:
+        csv_path = output_path
+    else:
+        csv_path = attribute + '_definitions.csv'
     with open(csv_path, 'w') as csvfile:
         fieldnames = ['Source', 'Relation', 'Word', 'WordNet Definition', 'Wikitionary Definition', 'Oxford Definition']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -265,8 +271,9 @@ if __name__ == '__main__':
     # > python3 temperature
     # creates the file temperature_definitions.csv or overwrites existing file
 
-    if len(sys.argv) != 2:
-        sys.exit(0)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_term", help='A string containing an attribute i.e. "temperature"')
+    parser.add_argument("--wiktionary", help="Path to 2011-08-01_OntoWiktionary_EN.xml.bz2", type=str, default="./data/2011-08-01_OntoWiktionary_EN.xml.bz2")
+    args = parser.parse_args()
 
-    input_term = sys.argv[1]
-    retrieve_definitions(input_term)
+    retrieve_definitions(args.input_term, args.wiktionary)
