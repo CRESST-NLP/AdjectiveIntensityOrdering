@@ -125,6 +125,7 @@ def order_adjectives(property_name, equations_csv_path, results_path, include_al
             map = dict(zip(A_indices, A[i]))
             map.update({'x': variables[i], 'b': b[i],
                         'results': (sorted_word_score_tuples[i][0], "%.2f" % sorted_word_score_tuples[i][1])})
+            print(map['results'][0], num_rows - i, map['results'][1], sep=",")
             writer.writerow(map)
     return sorted_word_score_tuples
 
