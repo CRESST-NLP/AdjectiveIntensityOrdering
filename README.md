@@ -34,24 +34,23 @@ python adjective_and_definition_retrieval.py temperature --wiktionary '../data/2
 
 ### Usage
 ```
-python equation_creation.py --help
-usage: equation_creation.py [-h] [--output OUTPUT] input_term definitions_path
+python adjective_and_definition_retrieval.py --help
+	usage: adjective_and_definition_retrieval.py [-h] [--see_also]
+                                             wiktionary input_term
 
 positional arguments:
- input_term        A string containing an attribute i.e. "temperature"
- definitions_path  Input path to the definitions file. Expected csv header:
-                   Source,Relation,Word,WordNet Definition,Wikitionary
-                   Definition,Oxford Definition
+  wiktionary  Path to 2011-08-01_OntoWiktionary_EN.xml.bz2
+  input_term  A string containing an attribute i.e. "temperature"
 
 optional arguments:
- -h, --help        show this help message and exit
- --output OUTPUT   Output path for the equations csv file. Defaults to
-                   `input_term`_equations.csv
+  -h, --help  show this help message and exit
+  --see_also  Should the definitions collected include the `see-also` wordnet
+              relation?
 ```
 
 #### Example
 ```
-python equation_creation.py temperature ./temperature_definitions.csv --output temperature_equations.csv
+python adjective_and_definition_retrieval.py '../data/2011-08-01_OntoWiktionary_EN.xml.bz2' speed --see_also
 ```
 
 ## Matrix Creation

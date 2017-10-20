@@ -176,12 +176,57 @@ def get_keywords(synset):
                 keywords.extend(lemmas2)
     return keywords
 
+def write_see_also(synset, wiki, already_written, keywords, dict_writer):
+    """
+    :param synset: Original synset
+    :param wiki: Wiktionary dict object
+    :param keywords: A list of keywords for the original synset
+    :param already_written: List of words that have already been used
+    :param dict_writer: A csv DictWriter object.
+    """
+    synset_name = get_name(synset)
+    for see_also_synset in synset.also_sees():
+        if not is_archaic(see_also_synset):
+            see_also_synset_name = get_name(see_also_synset)
+            # If we have already written the word, don't write it again.
+            if see_also_synset_name in already_written:
+                return
 
-def retrieve_definitions(attribute, wiktionary_path, output_path=None):
+            wordnet_def = see_also_synset.definition()
+            try:
+                wiki_def = wiktionary_dict.get_most_likely_definition(wiki[see_also_synset_name]["A"],
+                                                                      keywords)
+            except KeyError:
+                wiki_def = ""
+            oxford_def = get_oxford_definition(see_also_synset_name, keywords)
+
+            dict_writer.writerow({'Source': synset_name, 'Relation': 'see_also', 'Word': see_also_synset_name,
+                             'WordNet Definition': wordnet_def, 'Wiktionary Definition': wiki_def,
+                             'Oxford Definition': oxford_def})
+
+            # add similar synsets' lemmas
+            lemmas = get_lemmas(see_also_synset)
+            for lemma in lemmas:
+                if lemma != see_also_synset_name:
+                    try:
+                        wiki_def = wiktionary_dict.get_most_likely_definition(wiki[lemma]["A"], keywords)
+                    except KeyError:
+                        wiki_def = ""
+                    oxford_def3 = get_oxford_definition(lemma, keywords)
+
+                    dict_writer.writerow({'Source': see_also_synset_name, 'Relation': 'has_lemma',
+                                     'Word': lemma,
+                                     'WordNet Definition': wordnet_def,
+                                     'Wiktionary Definition': wiki_def,
+                                     'Oxford Definition': oxford_def3})
+
+
+def retrieve_definitions(attribute, wiktionary_path, see_also, output_path=None):
     """
     Creates a file called [attribute]_definitions.csv with WordNet, Wikitionary, and Oxford definitions.
     :param attribute: A string containing an attribute i.e. "temperature".
     :param wiktionary_path: Path to 2011-08-01_OntoWiktionary_EN.xml.bz2
+    :param see_also: Boolean of whether or not to include see-also wordnet relations in clustering
     :param output_path: Optional path to output csv file. Defaults to `attribute`_definitions.csv
     """
     wiki = wiktionary_dict.load_ontology(bz2.open(wiktionary_path))
@@ -202,8 +247,10 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
         for synset in synsets:
             keywords.extend(get_keywords(synset))
 
+        all_synsets = set()
         for synset in synsets:
             if not is_archaic(synset):
+                all_synsets.add(synset)
                 synset_name = get_name(synset)
 
                 wordnet_def = synset.definition()
@@ -235,6 +282,7 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
                 similar_synsets = get_similar_synsets(synset)
                 for similar_synset in similar_synsets:
                     if not is_archaic(similar_synset):
+                        all_synsets.add(similar_synset)
                         similar_synset_name = get_name(similar_synset)
 
                         wordnet_def = similar_synset.definition()
@@ -265,6 +313,11 @@ def retrieve_definitions(attribute, wiktionary_path, output_path=None):
                                                  'Wiktionary Definition': wiki_def,
                                                  'Oxford Definition': oxford_def3})
 
+        # Return see-also relations for all found synsets if true
+        if see_also:
+            already_used = [get_name(s) for s in all_synsets]
+            for s in all_synsets:
+                write_see_also(s, wiki, already_used, keywords, writer)
 
 if __name__ == '__main__':
     # example:
@@ -272,8 +325,9 @@ if __name__ == '__main__':
     # creates the file temperature_definitions.csv or overwrites existing file
 
     parser = argparse.ArgumentParser()
+    parser.add_argument("wiktionary", help="Path to 2011-08-01_OntoWiktionary_EN.xml.bz2", type=str)
     parser.add_argument("input_term", help='A string containing an attribute i.e. "temperature"')
-    parser.add_argument("--wiktionary", help="Path to 2011-08-01_OntoWiktionary_EN.xml.bz2", type=str, default="./data/2011-08-01_OntoWiktionary_EN.xml.bz2")
+    parser.add_argument("--see_also", help="Should the definitions collected include the `see-also` wordnet relation?", action='store_true')
     args = parser.parse_args()
 
-    retrieve_definitions(args.input_term, args.wiktionary)
+    retrieve_definitions(args.input_term, args.wiktionary, args.see_also)
