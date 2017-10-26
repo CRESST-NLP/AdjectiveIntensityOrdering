@@ -5,8 +5,6 @@ import spacy
 from adjective_and_definition_retrieval import *
 import wiktionary_dict
 
-nlp = spacy.load("en")
-
 high = 1.0
 low = -1.0
 A = 1.4
@@ -30,11 +28,9 @@ downtoners = {"fairly": B, "pretty": B, "quite": B, "rather": B, "moderately": B
 adj_intensity_map = {"high": high, "good": high, "great": high, "higher": high, "better": high, "greater": high,
                      "low": low, "bad": low, "little": low, "lower": low, "worse": low}
 
-# wiki = wiktionary_dict.load_ontology(bz2.open('./data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-wiki = wiktionary_dict.load_ontology(
-    bz2.open('/Users/Tan/Research/2016-2017/semantic-modeling/data/2011-08-01_OntoWiktionary_EN.xml.bz2'))
-
-def merge_compound_nouns(sentence):
+def merge_compound_nouns(sentence, nlp = None):
+    if nlp is None:
+        nlp = spacy.load("en")
     doc = nlp(sentence)
 
     for np in doc.noun_chunks:
@@ -52,11 +48,11 @@ def merge_compound_nouns(sentence):
     return " ".join(results)
 
 
-def get_definition(adjective, keywords):
+def get_definition(adjective, keywords, wiki_dict):
     try:
-        definitions = wiki[adjective]["A"]
+        definitions = wiki_dict[adjective]["A"]
         if definitions != {'1': None}:
-            definition = wiktionary_dict.get_most_likely_definition(wiki[adjective]["A"], keywords).lower()
+            definition = wiktionary_dict.get_most_likely_definition(wiki_dict[adjective]["A"], keywords).lower()
         else:
             # No Wiktionary defintion; assign WordNet definition
             definition = get_most_likely_wordnet_definition(adjective, keywords)
@@ -78,7 +74,7 @@ def score(property_name, adjective, keywords, default_score=0):
     """
 
 
-def get_score_using_next_word(property_name, adjective, keywords, default_score=0):
+def get_score_using_next_word(property_name, adjective, keywords, wiki_dict, default_score=0):
     """
 
     Only factors in adjectives into the score that precede keywords and intensifiers and downtoners that precede
@@ -86,6 +82,7 @@ def get_score_using_next_word(property_name, adjective, keywords, default_score=
 
     :param adjective: A string containing an adjective.
     :param keywords: An array of strings containing keywords to help find the relevant definition / word sense.
+    :param wiki_dict: Result of parsing OntoWiktionary with wiktionary_dict.load_ontology
     :param default_score: A float containing the default score.
     :return: A float containing the score of the adjective calculated from its definition.
     """
@@ -106,7 +103,7 @@ def get_score_using_next_word(property_name, adjective, keywords, default_score=
                     if adjective in antonyms:
                         return -1
 
-    definition = get_definition(adjective, keywords)
+    definition = get_definition(adjective, keywords, wiki_dict)
     definition = re.findall(r"[\w']+", definition)
 
     for adj in adj_intensity_map:
@@ -142,16 +139,20 @@ def get_score_using_next_word(property_name, adjective, keywords, default_score=
     return score
 
 
-def get_score_with_spacy(property_name, adjective, keywords, default_score=0):
+def get_score_with_spacy(property_name, adjective, keywords, wiki_dict, nlp = None, default_score=0):
     """
 
     Only factors in adjectives, intensifiers, and downtoners into the score depending on the dependency parse using Spacy.
 
     :param adjective: A string containing an adjective.
     :param keywords: An array of strings containing keywords to help find the relevant definition / word sense.
+    :param wiki_dict: Result of parsing OntoWiktionary with wiktionary_dict.load_ontology
+    :param nlp: spacy.load object
     :param default_score: A float containing the default score.
     :return: A float containing the score of the adjective calculated from its definition.
     """
+    if nlp is None:
+        nlp = spacy.load('en')
 
     score = default_score
     # handles property_names like brightness (attributes bright and dull)
@@ -169,9 +170,9 @@ def get_score_with_spacy(property_name, adjective, keywords, default_score=0):
                     if adjective in antonyms:
                         return -1
 
-    definition = get_definition(adjective, keywords)
+    definition = get_definition(adjective, keywords, wiki_dict)
 
-    doc = nlp(merge_compound_nouns(definition))
+    doc = nlp(merge_compound_nouns(definition, nlp))
     for word in doc:
         if (word.tag_ == "JJ" or word.tag_ == "JJR") \
                 and word.text in adj_intensity_map \
@@ -198,11 +199,12 @@ def get_score_with_spacy(property_name, adjective, keywords, default_score=0):
     return score
 
 
-def get_score_simple(property_name, adjective, keywords, default_score=0):
+def get_score_simple(property_name, adjective, keywords, wiki_dict, default_score=0):
     """
 
     :param adjective: A string containing an adjective.
     :param keywords: An array of strings containing keywords to help find the relevant definition / word sense.
+    :param wiki_dict: Result of parsing OntoWiktionary with wiktionary_dict.load_ontology
     :param default_score: A float containing the default score.
     :return: A float containing the score of the adjective calculated from its definition.
     """
@@ -224,7 +226,7 @@ def get_score_simple(property_name, adjective, keywords, default_score=0):
 
     score = default_score
 
-    definition = get_definition(adjective, keywords)
+    definition = get_definition(adjective, keywords, wiki_dict)
     definition = re.findall(r"[\w']+", definition)
 
     for adj in adj_intensity_map:

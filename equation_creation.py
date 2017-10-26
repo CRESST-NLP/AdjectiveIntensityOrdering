@@ -4,16 +4,13 @@ import collections
 import csv
 import re
 import sys
+import argparse
 
 import spacy
 from nltk.stem.porter import PorterStemmer
 from PyDictionary import PyDictionary
 
 from score import intensifiers, downtoners, adj_intensity_map
-
-dictionary = PyDictionary()
-nlp = spacy.load("en_depent_web_md")
-
 
 def get_csv_column(column_name, csv_file_path):
     """
@@ -30,14 +27,18 @@ def get_csv_column(column_name, csv_file_path):
     return variables
 
 
-def create_equations(attribute, equations_csv_path, definitions_csv_path):
+def create_equations(attribute, equations_csv_path, definitions_csv_path, nlp=None):
     """
     Converts an attribute's adjectives and their definitions to equations
     :param attribute: A string containing an attribute i.e. "temperature"
     :param equations_csv_path: A string containing a path to a csv file for the equations
     :param definitions_csv_path: A string containing a path to a csv file with the adjectives and definitions
+    :param nlp: spacy object. Optional and will be initialized if not given.
     :return:
     """
+    if nlp is None:
+        nlp = spacy.load("en_depent_web_md")
+
     words = get_csv_column('Word', definitions_csv_path)
     words.update({"high_prop": ""})
 
@@ -50,7 +51,7 @@ def create_equations(attribute, equations_csv_path, definitions_csv_path):
         for row in reader:
             definitions = []
             definitions.extend(row['WordNet Definition'].lower().split(';'))
-            definitions.extend(row['Wikitionary Definition'].lower().split(';'))
+            definitions.extend(row['Wiktionary Definition'].lower().split(';'))
             definitions.extend(row['Oxford Definition'].lower().split(';'))
             word = row['Word']
             for definition in definitions:
@@ -95,6 +96,7 @@ def combine_words(text, a, b):
 
 
 def get_noun_scores(doc, attribute):
+    dictionary = PyDictionary()
     synonyms = dictionary.synonym(attribute)
     scores = []
     for token in doc:
@@ -213,12 +215,19 @@ if __name__ == '__main__':
     # > python3 equation_creation.py temperature
     # creates the file temperature_equations.csv or overwrites existing file
 
-    if len(sys.argv) != 2:
-        sys.exit(0)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_term", help='A string containing an attribute i.e. "temperature"')
+    parser.add_argument("definitions_path", help="""
+        Input path to the definitions file.
+        Expected csv header: Source,Relation,Word,WordNet Definition,Wiktionary Definition,Oxford Definition
+        """)
+    parser.add_argument("--output", help="Output path for the equations csv file. Defaults to `input_term`_equations.csv", type=str)
+    args = parser.parse_args()
 
-    input_term = sys.argv[1]
+    definitions_path = args.definitions_path
+    if args.output:
+        equations_path = args.output
+    else:
+        equations_path = args.input_term + "_equations.csv"
 
-    equations_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/" + input_term + "_equations.csv"
-    definitions_file = "/Users/Tan/Research/2016-2017/semantic-modeling/data/" + input_term + "_definitions.csv"
-
-    create_equations(input_term, equations_file, definitions_file)
+    create_equations(args.input_term, equations_path, definitions_path)
