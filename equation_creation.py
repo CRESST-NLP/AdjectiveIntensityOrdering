@@ -37,7 +37,7 @@ def create_equations(attribute, equations_csv_path, definitions_csv_path, nlp=No
     :return:
     """
     if nlp is None:
-        nlp = spacy.load("en_depent_web_md")
+        nlp = spacy.load("en")
 
     words = get_csv_column('Word', definitions_csv_path)
     words.update({"high_prop": ""})
