@@ -4,6 +4,7 @@ import csv
 import sys
 import bz2
 import argparse
+import os
 
 from nltk.corpus import wordnet as wn
 import requests
@@ -103,8 +104,15 @@ def get_oxford_definition(word, keywords=[], pos='a'):
     else:
         lexical_category = "Adverb"
 
-    app_id = '4763721e'
-    app_key = 'c019d50f24fc6f3d53ea53d7f9f0e983'
+    app_id = os.getenv('OXFORD_API_ID')
+    app_key = os.getenv('OXFORD_API_KEY')
+
+    if app_id is None:
+        print("Could not find oxford api key in env variable: OXFORD_API_ID")
+        return None
+    if app_key is None:
+        print("Could not find oxford api key in env variable: OXFORD_API_KEY")
+        return None
 
     language = 'en'
 

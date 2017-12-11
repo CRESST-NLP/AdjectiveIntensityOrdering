@@ -22,10 +22,15 @@ optional arguments:
   --wiktionary WIKTIONARY
                         Path to 2011-08-01_OntoWiktionary_EN.xml.bz2
 ```
+This script also gets the credentials for the Oxford API, if using, through environment variables.
+  - `OXFORD_API_ID=eXXXXXXX`
+  - `OXFORD_API_KEY=key-here`
+
+Register for credentials here: [https://developer.oxforddictionaries.com](https://developer.oxforddictionaries.com/)
 
 #### Example
 ```                
-python adjective_and_definition_retrieval.py temperature --wiktionary '../data/2011-08-01_OntoWiktionary_EN.xml.bz2'
+OXFORD_API_ID=eXXXXXXX OXFORD_API_KEY=key-here python adjective_and_definition_retrieval.py temperature --wiktionary '../data/2011-08-01_OntoWiktionary_EN.xml.bz2'
 ```
 
 ## Equation Creation
