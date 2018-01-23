@@ -1,0 +1,37 @@
+Word,Variable,Factor,Definition,Deduced
+happy,high_prop,1,enjoying or showing or marked by joy or pleasure,
+high_prop,happy,1.0,enjoying or showing or marked by joy or pleasure,Yes
+happy,high_prop,1,having the feeling arising from the consciousness of well-being or of enjoyment,
+high_prop,happy,1.0,having the feeling arising from the consciousness of well-being or of enjoyment,Yes
+blessed,high_prop,1,characterized by happiness and good fortune,
+high_prop,blessed,1.0,characterized by happiness and good fortune,Yes
+blissful,happy,1.4,completely happy and contented,
+happy,blissful,0.7142857142857143,completely happy and contented,Yes
+blissful,happy,1.4,extremely happy,
+happy,blissful,0.7142857142857143,extremely happy,Yes
+blissful,high_prop,1,full of joy,
+high_prop,blissful,1.0,full of joy,Yes
+bright,high_prop,1,characterized by happiness or gladness,
+high_prop,bright,1.0,characterized by happiness or gladness,Yes
+golden,high_prop,1,marked by peace and prosperity,
+high_prop,golden,1.0,marked by peace and prosperity,Yes
+halcyon,high_prop,1,marked by peace and prosperity,
+high_prop,halcyon,1.0,marked by peace and prosperity,Yes
+prosperous,high_prop,1,marked by peace and prosperity,
+high_prop,prosperous,1.0,marked by peace and prosperity,Yes
+laughing,high_prop,1,showing or feeling mirth or pleasure or happiness,
+high_prop,laughing,1.0,showing or feeling mirth or pleasure or happiness,Yes
+riant,high_prop,1,showing or feeling mirth or pleasure or happiness,
+high_prop,riant,1.0,showing or feeling mirth or pleasure or happiness,Yes
+riant,bright,1,"when said of place, landscape or view: having a pleasant appearance, looking bright or cheerful.",
+bright,riant,1.0,"when said of place, landscape or view: having a pleasant appearance, looking bright or cheerful.",Yes
+unhappy,happy,-1,not happy,
+happy,unhappy,-1.0,not happy,Yes
+miserable,unhappy,1.4,very unhappy,
+unhappy,miserable,0.7142857142857143,very unhappy,Yes
+suffering,unhappy,1.4,very unhappy,
+unhappy,suffering,0.7142857142857143,very unhappy,Yes
+wretched,unhappy,1.4,very unhappy,
+unhappy,wretched,0.7142857142857143,very unhappy,Yes
+wretched,miserable,1.4,very miserable,
+miserable,wretched,0.7142857142857143,very miserable,Yes

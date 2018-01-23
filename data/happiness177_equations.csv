@@ -1,0 +1,677 @@
+Word,Variable,Factor,Definition,Deduced
+beaming,cheerful,1,cheerful and bright,
+cheerful,beaming,1.0,cheerful and bright,Yes
+beaming,happy,1,smilingly happy,
+happy,beaming,1.0,smilingly happy,Yes
+beaming,happy,1,showing happy emotion.,
+happy,beaming,1.0,showing happy emotion.,Yes
+beatific,high_prop,1,experiencing or bestowing celestial joy,
+high_prop,beatific,1.0,experiencing or bestowing celestial joy,Yes
+beatific,blissful,1,"blessed, blissful, heavenly",
+blissful,beatific,1.0,"blessed, blissful, heavenly",Yes
+beatific,blissful,1,blissfully happy.,
+blissful,beatific,1.0,blissfully happy.,Yes
+beatific,happy,1,blissfully happy.,
+happy,beatific,1.0,blissfully happy.,Yes
+blessed,high_prop,1,characterized by happiness and good fortune,
+high_prop,blessed,1.0,characterized by happiness and good fortune,Yes
+blissful,happy,1.4,completely happy and contented,
+happy,blissful,0.7142857142857143,completely happy and contented,Yes
+blissful,content,1,completely happy and contented,
+content,blissful,1.0,completely happy and contented,Yes
+blissful,contented,1,completely happy and contented,
+contented,blissful,1.0,completely happy and contented,Yes
+blissful,happy,1.4,extremely happy,
+happy,blissful,0.7142857142857143,extremely happy,Yes
+blissful,high_prop,1,full of joy,
+high_prop,blissful,1.0,full of joy,Yes
+blissful,happy,1.4,extremely happy,
+happy,blissful,0.7142857142857143,extremely happy,Yes
+blithesome,happy,1,carefree and happy and lighthearted,
+happy,blithesome,1.0,carefree and happy and lighthearted,Yes
+blithesome,lighthearted,1,carefree and happy and lighthearted,
+lighthearted,blithesome,1.0,carefree and happy and lighthearted,Yes
+blithesome,happy,1,"happy or spriteful, carefree",
+happy,blithesome,1.0,"happy or spriteful, carefree",Yes
+blithesome,cheerful,1,(of a person) having a cheerful disposition.,
+cheerful,blithesome,1.0,(of a person) having a cheerful disposition.,Yes
+blue.03,depressing,1,"(informal) depressed, melancholic, sad.",
+depressing,blue.03,1.0,"(informal) depressed, melancholic, sad.",Yes
+blue.03,melancholic,1,"(informal) depressed, melancholic, sad.",
+melancholic,blue.03,1.0,"(informal) depressed, melancholic, sad.",Yes
+blue.03,sad,1,"(informal) depressed, melancholic, sad.",
+sad,blue.03,1.0,"(informal) depressed, melancholic, sad.",Yes
+blue.03,melancholy,1,"(of a person or mood) melancholy, sad, or depressed.",
+melancholy,blue.03,1.0,"(of a person or mood) melancholy, sad, or depressed.",Yes
+blue.03,sad,1,"(of a person or mood) melancholy, sad, or depressed.",
+sad,blue.03,1.0,"(of a person or mood) melancholy, sad, or depressed.",Yes
+blue.03,depressing,1,"(of a person or mood) melancholy, sad, or depressed.",
+depressing,blue.03,1.0,"(of a person or mood) melancholy, sad, or depressed.",Yes
+bright.09,high_prop,1,characterized by happiness or gladness,
+high_prop,bright.09,1.0,characterized by happiness or gladness,Yes
+bright.09,happy,1,"happy, in good spirits.",
+happy,bright.09,1.0,"happy, in good spirits.",Yes
+bright.09,cheerful,1,giving an appearance of cheerful liveliness.,
+cheerful,bright.09,1.0,giving an appearance of cheerful liveliness.,Yes
+buoyant.02,lighthearted,1,lighthearted and lively,
+lighthearted,buoyant.02,1.0,lighthearted and lively,Yes
+buoyant.02,cheerful,1,cheerful and optimistic.,
+cheerful,buoyant.02,1.0,cheerful and optimistic.,Yes
+chapfallen,crestfallen,1,"crestfallen, dejected",
+crestfallen,chapfallen,1.0,"crestfallen, dejected",Yes
+chapfallen,dejected,1,"crestfallen, dejected",
+dejected,chapfallen,1.0,"crestfallen, dejected",Yes
+cheerful,happy,1,noticeably happy and optimistic.,
+happy,cheerful,1.0,noticeably happy and optimistic.,Yes
+cheerful,happy,1,noticeably happy and optimistic.,
+happy,cheerful,1.0,noticeably happy and optimistic.,Yes
+cheerless,sad,1,causing sad feelings of gloom and inadequacy,
+sad,cheerless,1.0,causing sad feelings of gloom and inadequacy,Yes
+cheery,happy,1,"(often sarcastic) in a good mood, happy, cheerful.",
+happy,cheery,1.0,"(often sarcastic) in a good mood, happy, cheerful.",Yes
+cheery,cheerful,1,"(often sarcastic) in a good mood, happy, cheerful.",
+cheerful,cheery,1.0,"(often sarcastic) in a good mood, happy, cheerful.",Yes
+cheery,happy,1,happy and optimistic.,
+happy,cheery,1.0,happy and optimistic.,Yes
+chipper,cheerful,1,"having a cheerful, lively, and self-confident air",
+cheerful,chipper,1.0,"having a cheerful, lively, and self-confident air",Yes
+chipper,cheerful,1,"in high spirits, cheerful.",
+cheerful,chipper,1.0,"in high spirits, cheerful.",Yes
+chipper,cheerful,1,cheerful and lively.,
+cheerful,chipper,1.0,cheerful and lively.,Yes
+chirpy.02,happy,1,happy and energetic.,
+happy,chirpy.02,1.0,happy and energetic.,Yes
+chirpy.02,cheerful,1,cheerful and lively.,
+cheerful,chirpy.02,1.0,cheerful and lively.,Yes
+content,satisfied,1,satisfied or showing satisfaction with things as they are,
+satisfied,content,1.0,satisfied or showing satisfaction with things as they are,Yes
+content,satisfied,1,satisfied about a particular circumstance,
+satisfied,content,1.0,satisfied about a particular circumstance,Yes
+contented,satisfied,1,satisfied or showing satisfaction with things as they are,
+satisfied,contented,1.0,satisfied or showing satisfaction with things as they are,Yes
+contented,satisfied,1,satisfied.,
+satisfied,contented,1.0,satisfied.,Yes
+contented,high_prop,1,feeling or expressing happiness or satisfaction.,
+high_prop,contented,1.0,feeling or expressing happiness or satisfaction.,Yes
+crestfallen,sad,1,sad because of a recent disappointment.,
+sad,crestfallen,1.0,sad because of a recent disappointment.,Yes
+crestfallen,sad,1,sad and disappointed.,
+sad,crestfallen,1.0,sad and disappointed.,Yes
+debonair.02,cheerful,1,"having a cheerful, lively, and self-confident air",
+cheerful,debonair.02,1.0,"having a cheerful, lively, and self-confident air",Yes
+debonaire.02,cheerful,1,"having a cheerful, lively, and self-confident air",
+cheerful,debonaire.02,1.0,"having a cheerful, lively, and self-confident air",Yes
+dejected,sad,1,sad and dispirited,
+sad,dejected,1.0,sad and dispirited,Yes
+dejected,sad,1,sad and depressed,
+sad,dejected,1.0,sad and depressed,Yes
+dejected,depressing,1,sad and depressed,
+depressing,dejected,1.0,sad and depressed,Yes
+dejected,sad,1,sad and dispirited,
+sad,dejected,1.0,sad and dispirited,Yes
+dejected,sad,1,sad and depressed,
+sad,dejected,1.0,sad and depressed,Yes
+dejected,depressing,1,sad and depressed,
+depressing,dejected,1.0,sad and depressed,Yes
+depressed.03,unhappy,1,"unhappy, and blaming oneself rather than others",
+unhappy,depressed.03,1.0,"unhappy, and blaming oneself rather than others",Yes
+depressing,sad,1,causing sad feelings of gloom and inadequacy,
+sad,depressing,1.0,causing sad feelings of gloom and inadequacy,Yes
+depressing,miserable,1,causing or resulting in a feeling of miserable dejection.,
+miserable,depressing,1.0,causing or resulting in a feeling of miserable dejection.,Yes
+depressing,sad,1,causing sad feelings of gloom and inadequacy,
+sad,depressing,1.0,causing sad feelings of gloom and inadequacy,Yes
+depressing,miserable,1,causing or resulting in a feeling of miserable dejection.,
+miserable,depressing,1.0,causing or resulting in a feeling of miserable dejection.,Yes
+disaffected,discontent,1,discontented as toward authority,
+discontent,disaffected,1.0,discontented as toward authority,Yes
+disaffected,discontented,1,discontented as toward authority,
+discontented,disaffected,1.0,discontented as toward authority,Yes
+disaffected,dissatisfied,1,"dissatisfied, especially with people in authority or a system of control.",
+dissatisfied,disaffected,1.0,"dissatisfied, especially with people in authority or a system of control.",Yes
+disconsolate.02,cheerless,1,"cheerless, dreary.",
+cheerless,disconsolate.02,1.0,"cheerless, dreary.",Yes
+disconsolate.02,unhappy,1.4,very unhappy and unable to be comforted.,
+unhappy,disconsolate.02,0.7142857142857143,very unhappy and unable to be comforted.,Yes
+discontent,restless,1,showing or experiencing dissatisfaction or restless longing,
+restless,discontent,1.0,showing or experiencing dissatisfaction or restless longing,Yes
+discontented,restless,1,showing or experiencing dissatisfaction or restless longing,
+restless,discontented,1.0,showing or experiencing dissatisfaction or restless longing,Yes
+discontented,dissatisfied,1,"dissatisfied, especially with one's circumstances.",
+dissatisfied,discontented,1.0,"dissatisfied, especially with one's circumstances.",Yes
+disgruntled,unhappy,1,unhappy,
+unhappy,disgruntled,1.0,unhappy,Yes
+disgruntled,dissatisfied,1,dissatisfied,
+dissatisfied,disgruntled,1.0,dissatisfied,Yes
+disgruntled,dissatisfied,1,angry or dissatisfied.,
+dissatisfied,disgruntled,1.0,angry or dissatisfied.,Yes
+displeased,pleased,-1,not pleased,
+pleased,displeased,-1.0,not pleased,Yes
+displeased,pleased,-1,not pleased or happy with something.,
+pleased,displeased,-1.0,not pleased or happy with something.,Yes
+displeased,happy,1,not pleased or happy with something.,
+happy,displeased,1.0,not pleased or happy with something.,Yes
+dissatisfied,content,-1,not content or happy with something.,
+content,dissatisfied,-1.0,not content or happy with something.,Yes
+dissatisfied,contented,-1,not content or happy with something.,
+contented,dissatisfied,-1.0,not content or happy with something.,Yes
+dissatisfied,happy,1,not content or happy with something.,
+happy,dissatisfied,1.0,not content or happy with something.,Yes
+doleful,mournful,1,"filled with grief, mournful, bringing feelings of sadness.",
+mournful,doleful,1.0,"filled with grief, mournful, bringing feelings of sadness.",Yes
+doleful,mourning,1,"filled with grief, mournful, bringing feelings of sadness.",
+mourning,doleful,1.0,"filled with grief, mournful, bringing feelings of sadness.",Yes
+doleful,mournful,1,mournful.,
+mournful,doleful,1.0,mournful.,Yes
+doleful,mourning,1,mournful.,
+mourning,doleful,1.0,mournful.,Yes
+dolorous,sad,1,solemnly or ponderously sad.,
+sad,dolorous,1.0,solemnly or ponderously sad.,Yes
+dolourous,sad,1,solemnly or ponderously sad.,
+sad,dolourous,1.0,solemnly or ponderously sad.,Yes
+down in the mouth,sad,1,"(idiomatic) sad or discouraged, especially as indicated by one's facial appearance.",
+sad,down in the mouth,1.0,"(idiomatic) sad or discouraged, especially as indicated by one's facial appearance.",Yes
+down in the mouth,unhappy,1,unhappy,
+unhappy,down in the mouth,1.0,unhappy,Yes
+down in the mouth,dejected,1,dejected.,
+dejected,down in the mouth,1.0,dejected.,Yes
+down.09,depressing,1,"depressed, feeling low.",
+depressing,down.09,1.0,"depressed, feeling low.",Yes
+down.09,unhappy,1,unhappy,
+unhappy,down.09,1.0,unhappy,Yes
+down.09,depressing,1,depressed.,
+depressing,down.09,1.0,depressed.,Yes
+downhearted,sad,1,"sad, discouraged, in low spirits, unhappy, having no hope",
+sad,downhearted,1.0,"sad, discouraged, in low spirits, unhappy, having no hope",Yes
+downhearted,unhappy,1,"sad, discouraged, in low spirits, unhappy, having no hope",
+unhappy,downhearted,1.0,"sad, discouraged, in low spirits, unhappy, having no hope",Yes
+dreary.02,cheerless,1,"dark, colorless, or cheerless.",
+cheerless,dreary.02,1.0,"dark, colorless, or cheerless.",Yes
+ecstatic,happy,1.4,sense 1: feeling or characterized by ecstasy. sense 2: extremely happy,
+happy,ecstatic,0.7142857142857143,sense 1: feeling or characterized by ecstasy. sense 2: extremely happy,Yes
+ecstatic,high_prop,1,feeling or expressing overwhelming happiness or joyful excitement.,
+high_prop,ecstatic,1.0,feeling or expressing overwhelming happiness or joyful excitement.,Yes
+ecstatic,joyful,1,feeling or expressing overwhelming happiness or joyful excitement.,
+joyful,ecstatic,1.0,feeling or expressing overwhelming happiness or joyful excitement.,Yes
+elated,joyful,1,exultantly proud and joyful,
+joyful,elated,1.0,exultantly proud and joyful,Yes
+elated,happy,1.4,extremely happy and excited,
+happy,elated,0.7142857142857143,extremely happy and excited,Yes
+elated,pleased,1,pleased.,
+pleased,elated,1.0,pleased.,Yes
+elated,exultant,1,exultant or proud.,
+exultant,elated,1.0,exultant or proud.,Yes
+elated,exulting,1,exultant or proud.,
+exulting,elated,1.0,exultant or proud.,Yes
+elegiac.02,wistful,1,wistfully mournful.,
+wistful,elegiac.02,1.0,wistfully mournful.,Yes
+elegiac.02,mournful,1,wistfully mournful.,
+mournful,elegiac.02,1.0,wistfully mournful.,Yes
+elegiac.02,mourning,1,wistfully mournful.,
+mourning,elegiac.02,1.0,wistfully mournful.,Yes
+enraptured,high_prop,1,(verb def enrapture) give intense pleasure or joy to.,
+high_prop,enraptured,1.0,(verb def enrapture) give intense pleasure or joy to.,Yes
+euphoric,high_prop,1,feeling great well-being or elation or intense happiness,
+high_prop,euphoric,1.0,feeling great well-being or elation or intense happiness,Yes
+exhilarated,joyful,1,made joyful,
+joyful,exhilarated,1.0,made joyful,Yes
+exhilarated,happy,1.4,"make (someone) feel very happy, animated, or elated.",
+happy,exhilarated,0.7142857142857143,"make (someone) feel very happy, animated, or elated.",Yes
+exhilarated,elated,1,"make (someone) feel very happy, animated, or elated.",
+elated,exhilarated,1.0,"make (someone) feel very happy, animated, or elated.",Yes
+exultant,joyful,1,joyful and proud especially because of triumph or success,
+joyful,exultant,1.0,joyful and proud especially because of triumph or success,Yes
+exultant,happy,1.4,"very happy, especially at someone else's defeat or failure.",
+happy,exultant,0.7142857142857143,"very happy, especially at someone else's defeat or failure.",Yes
+exultant,happy,1,triumphantly happy.,
+happy,exultant,1.0,triumphantly happy.,Yes
+exulting,joyful,1,joyful and proud especially because of triumph or success,
+joyful,exulting,1.0,joyful and proud especially because of triumph or success,Yes
+exulting,triumphant,1,show or feel triumphant elation or jubilation.,
+triumphant,exulting,1.0,show or feel triumphant elation or jubilation.,Yes
+festal,festive,1,"festive, relating to a festival or feast",
+festive,festal,1.0,"festive, relating to a festival or feast",Yes
+festive,cheerful,1,cheerful and jovially celebratory.,
+cheerful,festive,1.0,cheerful and jovially celebratory.,Yes
+festive,jovial,1,cheerful and jovially celebratory.,
+jovial,festive,1.0,cheerful and jovially celebratory.,Yes
+funereal,mournful,1,"having the mournful, sombre character appropriate to a funeral.",
+mournful,funereal,1.0,"having the mournful, sombre character appropriate to a funeral.",Yes
+funereal,mourning,1,"having the mournful, sombre character appropriate to a funeral.",
+mourning,funereal,1.0,"having the mournful, sombre character appropriate to a funeral.",Yes
+gay,festive,1,"(dated) festive, bright, or colourful.",
+festive,gay,1.0,"(dated) festive, bright, or colourful.",Yes
+gay.02,happy,1,"(dated) happy, joyful, and lively.",
+happy,gay.02,1.0,"(dated) happy, joyful, and lively.",Yes
+gay.02,joyful,1,"(dated) happy, joyful, and lively.",
+joyful,gay.02,1.0,"(dated) happy, joyful, and lively.",Yes
+gay.05,happy,1,"(dated) happy, joyful, and lively.",
+happy,gay.05,1.0,"(dated) happy, joyful, and lively.",Yes
+gay.05,joyful,1,"(dated) happy, joyful, and lively.",
+joyful,gay.05,1.0,"(dated) happy, joyful, and lively.",Yes
+glad.01,high_prop,1,showing or causing joy and pleasure,
+high_prop,glad.01,1.0,showing or causing joy and pleasure,Yes
+glad.01,happy,1,especially made happy,
+happy,glad.01,1.0,especially made happy,Yes
+glad.01,pleased,1,"pleased, happy, gratified.",
+pleased,glad.01,1.0,"pleased, happy, gratified.",Yes
+glad.01,happy,1,"pleased, happy, gratified.",
+happy,glad.01,1.0,"pleased, happy, gratified.",Yes
+glad.04,cheerful,1,cheerful and bright,
+cheerful,glad.04,1.0,cheerful and bright,Yes
+glad.04,cheerful,1,(obsolete) having a bright or cheerful appearance,
+cheerful,glad.04,1.0,(obsolete) having a bright or cheerful appearance,Yes
+glad.04,high_prop,1,expressing or exciting joy,
+high_prop,glad.04,1.0,expressing or exciting joy,Yes
+gladdened,joyful,1,made joyful,
+joyful,gladdened,1.0,made joyful,Yes
+gladsome,high_prop,1,experiencing or expressing gladness or joy,
+high_prop,gladsome,1.0,experiencing or expressing gladness or joy,Yes
+gladsome,high_prop,1,marked by joy or gladness,
+high_prop,gladsome,1.0,marked by joy or gladness,Yes
+gladsome,happy,1,"happy, joyous, or light-hearted.",
+happy,gladsome,1.0,"happy, joyous, or light-hearted.",Yes
+gladsome,joyous,1,"happy, joyous, or light-hearted.",
+joyous,gladsome,1.0,"happy, joyous, or light-hearted.",Yes
+gladsome,cheerful,1,(of a person) having a cheerful disposition.,
+cheerful,gladsome,1.0,(of a person) having a cheerful disposition.,Yes
+gleeful,joyful,1,exuberantly or triumphantly joyful.,
+joyful,gleeful,1.0,exuberantly or triumphantly joyful.,Yes
+gleeful,joyful,1,exuberantly or triumphantly joyful.,
+joyful,gleeful,1.0,exuberantly or triumphantly joyful.,Yes
+gloomy.02,melancholy,1,melancholy,
+melancholy,gloomy.02,1.0,melancholy,Yes
+gloomy.02,dejected,1,dejected.,
+dejected,gloomy.02,1.0,dejected.,Yes
+gloomy.03,melancholy,1,melancholy,
+melancholy,gloomy.03,1.0,melancholy,Yes
+gloomy.03,dejected,1,dejected.,
+dejected,gloomy.03,1.0,dejected.,Yes
+glum,melancholic,1,moody and melancholic,
+melancholic,glum,1.0,moody and melancholic,Yes
+glum,dejected,1,looking or feeling dejected,
+dejected,glum,1.0,looking or feeling dejected,Yes
+golden.02,high_prop,1,marked by peace and prosperity,
+high_prop,golden.02,1.0,marked by peace and prosperity,Yes
+golden.02,happy,1.4,(of a period) very happy and prosperous.,
+happy,golden.02,0.7142857142857143,(of a period) very happy and prosperous.,Yes
+grief-stricken,sad,1.4,very sad.,
+sad,grief-stricken,0.7142857142857143,very sad.,Yes
+grim.05,dismal,1,"dismal and gloomy, cold and forbidding",
+dismal,grim.05,1.0,"dismal and gloomy, cold and forbidding",Yes
+grim.06,dismal,1,"dismal and gloomy, cold and forbidding",
+dismal,grim.06,1.0,"dismal and gloomy, cold and forbidding",Yes
+halcyon.02,high_prop,1,marked by peace and prosperity,
+high_prop,halcyon.02,1.0,marked by peace and prosperity,Yes
+halcyon.02,happy,1,denoting a period of time in the past that was idyllically happy and peaceful.,
+happy,halcyon.02,1.0,denoting a period of time in the past that was idyllically happy and peaceful.,Yes
+happy,high_prop,1,enjoying or showing or marked by joy or pleasure,
+high_prop,happy,1.0,enjoying or showing or marked by joy or pleasure,Yes
+happy,high_prop,1,having a feeling arising from a consciousness of well-being or of enjoyment,
+high_prop,happy,1.0,having a feeling arising from a consciousness of well-being or of enjoyment,Yes
+happy,blissful,1,"blissful, contented, joyous.",
+blissful,happy,1.0,"blissful, contented, joyous.",Yes
+happy,content,1,"blissful, contented, joyous.",
+content,happy,1.0,"blissful, contented, joyous.",Yes
+happy,contented,1,"blissful, contented, joyous.",
+contented,happy,1.0,"blissful, contented, joyous.",Yes
+happy,joyous,1,"blissful, contented, joyous.",
+joyous,happy,1.0,"blissful, contented, joyous.",Yes
+heartsick,sorrowful,1,very despondent or sorrowful,
+sorrowful,heartsick,1.0,very despondent or sorrowful,Yes
+heartsick,sorrowing,1,very despondent or sorrowful,
+sorrowing,heartsick,1.0,very despondent or sorrowful,Yes
+heavyhearted,depressing,1,depressed,
+depressing,heavyhearted,1.0,depressed,Yes
+heavyhearted,sad,1,"(idiomatic) sad, melancholic.",
+sad,heavyhearted,1.0,"(idiomatic) sad, melancholic.",Yes
+heavyhearted,depressing,1,feeling depressed or melancholy.,
+depressing,heavyhearted,1.0,feeling depressed or melancholy.,Yes
+heavyhearted,melancholy,1,feeling depressed or melancholy.,
+melancholy,heavyhearted,1.0,feeling depressed or melancholy.,Yes
+high.05,happy,1,happy and excited and energetic,
+happy,high.05,1.0,happy and excited and energetic,Yes
+high.05,euphoric,1,"feeling euphoric, especially from the effects of drugs or alcohol.",
+euphoric,high.05,1.0,"feeling euphoric, especially from the effects of drugs or alcohol.",Yes
+ill-affected,discontent,1,discontented as toward authority,
+discontent,ill-affected,1.0,discontented as toward authority,Yes
+ill-affected,discontented,1,discontented as toward authority,
+discontented,ill-affected,1.0,discontented as toward authority,Yes
+ill-affected,disaffected,1,disaffected,
+disaffected,ill-affected,1.0,disaffected,Yes
+in high spirits,happy,1,happy and excited and energetic,
+happy,in high spirits,1.0,happy and excited and energetic,Yes
+in high spirits,cheerful,1,"cheerful, happy",
+cheerful,in high spirits,1.0,"cheerful, happy",Yes
+in high spirits,happy,1,"cheerful, happy",
+happy,in high spirits,1.0,"cheerful, happy",Yes
+in high spirits,cheerful,1,lively and cheerful behaviour or mood.,
+cheerful,in high spirits,1.0,lively and cheerful behaviour or mood.,Yes
+jaunty.02,cheerful,1,"having a cheerful, lively, and self-confident air",
+cheerful,jaunty.02,1.0,"having a cheerful, lively, and self-confident air",Yes
+jaunty.02,cheerful,1,"having or expressing a lively, cheerful, and self-confident manner.",
+cheerful,jaunty.02,1.0,"having or expressing a lively, cheerful, and self-confident manner.",Yes
+jocund,jovial,1,jovial,
+jovial,jocund,1.0,jovial,Yes
+jocund,lighthearted,1,lighthearted,
+lighthearted,jocund,1.0,lighthearted,Yes
+jocund,cheerful,1,cheerful and light-hearted.,
+cheerful,jocund,1.0,cheerful and light-hearted.,Yes
+jolly,jovial,1,jovial.,
+jovial,jolly,1.0,jovial.,Yes
+jolly,happy,1,happy and cheerful.,
+happy,jolly,1.0,happy and cheerful.,Yes
+jolly,cheerful,1,happy and cheerful.,
+cheerful,jolly,1.0,happy and cheerful.,Yes
+jovial,cheerful,1,cheerful and good-humored.,
+cheerful,jovial,1.0,cheerful and good-humored.,Yes
+jovial,cheerful,1,cheerful and friendly.,
+cheerful,jovial,1.0,cheerful and friendly.,Yes
+joyful,high_prop,1,full of or producing joy,
+high_prop,joyful,1.0,full of or producing joy,Yes
+joyless,high_prop,1,not experiencing or inspiring joy,
+high_prop,joyless,1.0,not experiencing or inspiring joy,Yes
+joyless,high_prop,-1,without joy,
+high_prop,joyless,-1.0,without joy,Yes
+joyless,unhappy,1,"unhappy, sad",
+unhappy,joyless,1.0,"unhappy, sad",Yes
+joyless,sad,1,"unhappy, sad",
+sad,joyless,1.0,"unhappy, sad",Yes
+joyless,dismal,1,grim or dismal.,
+dismal,joyless,1.0,grim or dismal.,Yes
+joyless,high_prop,1,not experiencing or inspiring joy,
+high_prop,joyless,1.0,not experiencing or inspiring joy,Yes
+joyless,high_prop,-1,without joy,
+high_prop,joyless,-1.0,without joy,Yes
+joyless,unhappy,1,"unhappy, sad",
+unhappy,joyless,1.0,"unhappy, sad",Yes
+joyless,sad,1,"unhappy, sad",
+sad,joyless,1.0,"unhappy, sad",Yes
+joyless,dismal,1,grim or dismal.,
+dismal,joyless,1.0,grim or dismal.,Yes
+joyous,high_prop,1,full of or characterized by joy,
+high_prop,joyous,1.0,full of or characterized by joy,Yes
+joyous,high_prop,1,full of joy,
+high_prop,joyous,1.0,full of joy,Yes
+joyous,happy,1,happy.,
+happy,joyous,1.0,happy.,Yes
+joyous,high_prop,1,full of happiness and joy.,
+high_prop,joyous,1.0,full of happiness and joy.,Yes
+jubilant,joyful,1,joyful and proud especially because of triumph or success,
+joyful,jubilant,1.0,joyful and proud especially because of triumph or success,Yes
+jubilant,high_prop,1.0,feeling or expressing great happiness and triumph.,
+high_prop,jubilant,1.0,feeling or expressing great happiness and triumph.,Yes
+lachrymose,sorrowful,1,"tearful, sorrowful, sad, pertaining to tears, weeping, causing tears or crying.",
+sorrowful,lachrymose,1.0,"tearful, sorrowful, sad, pertaining to tears, weeping, causing tears or crying.",Yes
+lachrymose,sorrowing,1,"tearful, sorrowful, sad, pertaining to tears, weeping, causing tears or crying.",
+sorrowing,lachrymose,1.0,"tearful, sorrowful, sad, pertaining to tears, weeping, causing tears or crying.",Yes
+lachrymose,sad,1,"tearful, sorrowful, sad, pertaining to tears, weeping, causing tears or crying.",
+sad,lachrymose,1.0,"tearful, sorrowful, sad, pertaining to tears, weeping, causing tears or crying.",Yes
+laughing,high_prop,1,showing or feeling mirth or pleasure or happiness,
+high_prop,laughing,1.0,showing or feeling mirth or pleasure or happiness,Yes
+light-hearted,happy,1,carefree and happy and lighthearted,
+happy,light-hearted,1.0,carefree and happy and lighthearted,Yes
+light-hearted,lighthearted,1,carefree and happy and lighthearted,
+lighthearted,light-hearted,1.0,carefree and happy and lighthearted,Yes
+light-hearted,joyful,1,"joyful, glad, taking pleasure in being alive",
+joyful,light-hearted,1.0,"joyful, glad, taking pleasure in being alive",Yes
+light-hearted,depressing,-1,not depressed or sad.,
+depressing,light-hearted,-1.0,not depressed or sad.,Yes
+light-hearted,sad,1,not depressed or sad.,
+sad,light-hearted,1.0,not depressed or sad.,Yes
+lighthearted,happy,1,carefree and happy and lighthearted,
+happy,lighthearted,1.0,carefree and happy and lighthearted,Yes
+lighthearted,joyful,1,"joyful, glad, taking pleasure in being alive",
+joyful,lighthearted,1.0,"joyful, glad, taking pleasure in being alive",Yes
+lighthearted,depressing,-1,not depressed or sad.,
+depressing,lighthearted,-1.0,not depressed or sad.,Yes
+lighthearted,sad,1,not depressed or sad.,
+sad,lighthearted,1.0,not depressed or sad.,Yes
+lightsome.02,happy,1,carefree and happy and lighthearted,
+happy,lightsome.02,1.0,carefree and happy and lighthearted,Yes
+lightsome.02,lighthearted,1,carefree and happy and lighthearted,
+lighthearted,lightsome.02,1.0,carefree and happy and lighthearted,Yes
+lightsome.02,happy,1,happy and carefree.,
+happy,lightsome.02,1.0,happy and carefree.,Yes
+low-spirited,sad,1,sad and despondent,
+sad,low-spirited,1.0,sad and despondent,Yes
+low-spirited,depressing,1,depressed.,
+depressing,low-spirited,1.0,depressed.,Yes
+low.10,depressing,1,"depressed, sad.",
+depressing,low.10,1.0,"depressed, sad.",Yes
+low.10,sad,1,"depressed, sad.",
+sad,low.10,1.0,"depressed, sad.",Yes
+low.10,depressing,1,depressed or lacking in energy.,
+depressing,low.10,1.0,depressed or lacking in energy.,Yes
+lugubrious,mournful,1.4,excessively mournful,
+mournful,lugubrious,0.7142857142857143,excessively mournful,Yes
+lugubrious,mourning,1.4,excessively mournful,
+mourning,lugubrious,0.7142857142857143,excessively mournful,Yes
+lugubrious,mournful,1,"gloomy, mournful or dismal, especially to an exaggerated degree.",
+mournful,lugubrious,1.0,"gloomy, mournful or dismal, especially to an exaggerated degree.",Yes
+lugubrious,mourning,1,"gloomy, mournful or dismal, especially to an exaggerated degree.",
+mourning,lugubrious,1.0,"gloomy, mournful or dismal, especially to an exaggerated degree.",Yes
+lugubrious,dismal,1,"gloomy, mournful or dismal, especially to an exaggerated degree.",
+dismal,lugubrious,1.0,"gloomy, mournful or dismal, especially to an exaggerated degree.",Yes
+lugubrious,sad,1,looking or sounding sad and dismal.,
+sad,lugubrious,1.0,looking or sounding sad and dismal.,Yes
+lugubrious,dismal,1,looking or sounding sad and dismal.,
+dismal,lugubrious,1.0,looking or sounding sad and dismal.,Yes
+malcontent,discontent,1,discontented as toward authority,
+discontent,malcontent,1.0,discontented as toward authority,Yes
+malcontent,discontented,1,discontented as toward authority,
+discontented,malcontent,1.0,discontented as toward authority,Yes
+malcontent,dissatisfied,1,dissatisfied with current conditions,
+dissatisfied,malcontent,1.0,dissatisfied with current conditions,Yes
+malcontent,disaffected,1,"disaffected, discontented, rebellious.",
+disaffected,malcontent,1.0,"disaffected, discontented, rebellious.",Yes
+malcontent,discontent,1,"disaffected, discontented, rebellious.",
+discontent,malcontent,1.0,"disaffected, discontented, rebellious.",Yes
+malcontent,discontented,1,"disaffected, discontented, rebellious.",
+discontented,malcontent,1.0,"disaffected, discontented, rebellious.",Yes
+malcontent,dissatisfied,1,a person who is dissatisfied and rebellious.,
+dissatisfied,malcontent,1.0,a person who is dissatisfied and rebellious.,Yes
+melancholic,melancholy,1,"filled with or affected by melancholy—great sadness or depression, especially of a thoughtful or introspective nature.",
+melancholy,melancholic,1.0,"filled with or affected by melancholy—great sadness or depression, especially of a thoughtful or introspective nature.",Yes
+melancholy,sad,1,sad and pensive.,
+sad,melancholy,1.0,sad and pensive.,Yes
+melancholy.02,melancholy,1,having a feeling of melancholy,
+melancholy,melancholy.02,1.0,having a feeling of melancholy,Yes
+melancholy.02,sad,1,sad and pensive.,
+sad,melancholy.02,1.0,sad and pensive.,Yes
+merry.01,jolly,1,jolly and full of high spirits.,
+jolly,merry.01,1.0,jolly and full of high spirits.,Yes
+merry.01,cheerful,1,cheerful and lively.,
+cheerful,merry.01,1.0,cheerful and lively.,Yes
+merry.02,festive,1,festive and full of fun and laughter.,
+festive,merry.02,1.0,festive and full of fun and laughter.,Yes
+miserable,unhappy,1.4,very unhappy,
+unhappy,miserable,0.7142857142857143,very unhappy,Yes
+miserable,sad,1.4,"in a state of misery: very sad, ill, or poor.",
+sad,miserable,0.7142857142857143,"in a state of misery: very sad, ill, or poor.",Yes
+miserable,unhappy,1,(of a person) wretchedly unhappy or uncomfortable.,
+unhappy,miserable,1.0,(of a person) wretchedly unhappy or uncomfortable.,Yes
+overjoyed,joyful,1.4,extremely joyful,
+joyful,overjoyed,0.7142857142857143,extremely joyful,Yes
+overjoyed,happy,1.4,very happy.,
+happy,overjoyed,0.7142857142857143,very happy.,Yes
+overjoyed,happy,1.4,extremely happy.,
+happy,overjoyed,0.7142857142857143,extremely happy.,Yes
+perky,cheerful,1,cheerful and lively.,
+cheerful,perky,1.0,cheerful and lively.,Yes
+plaintive,mournful,1,"sounding sorrowful, mournful or melancholic.",
+mournful,plaintive,1.0,"sounding sorrowful, mournful or melancholic.",Yes
+plaintive,mourning,1,"sounding sorrowful, mournful or melancholic.",
+mourning,plaintive,1.0,"sounding sorrowful, mournful or melancholic.",Yes
+plaintive,sad,1,sounding sad and mournful.,
+sad,plaintive,1.0,sounding sad and mournful.,Yes
+plaintive,mournful,1,sounding sad and mournful.,
+mournful,plaintive,1.0,sounding sad and mournful.,Yes
+plaintive,mourning,1,sounding sad and mournful.,
+mourning,plaintive,1.0,sounding sad and mournful.,Yes
+pleased,happy,1,"happy, content",
+happy,pleased,1.0,"happy, content",Yes
+pleased,content,1,"happy, content",
+content,pleased,1.0,"happy, content",Yes
+pleased,contented,1,"happy, content",
+contented,pleased,1.0,"happy, content",Yes
+prideful.02,joyful,1,joyful and proud especially because of triumph or success,
+joyful,prideful.02,1.0,joyful and proud especially because of triumph or success,Yes
+rebellious.02,discontent,1,discontented as toward authority,
+discontent,rebellious.02,1.0,discontented as toward authority,Yes
+rebellious.02,discontented,1,discontented as toward authority,
+discontented,rebellious.02,1.0,discontented as toward authority,Yes
+rejoicing,joyful,1,joyful and proud especially because of triumph or success,
+joyful,rejoicing,1.0,joyful and proud especially because of triumph or success,Yes
+rejoicing,high_prop,1.0,great joy,
+high_prop,rejoicing,1.0,great joy,Yes
+restless,satisfied,-1,not satisfied to be at rest or in peace,
+satisfied,restless,-1.0,not satisfied to be at rest or in peace,Yes
+restless,discontent,1,discontented.,
+discontent,restless,1.0,discontented.,Yes
+restless,discontented,1,discontented.,
+discontented,restless,1.0,discontented.,Yes
+rhapsodic,rapturous,1,rapturous,
+rapturous,rhapsodic,1.0,rapturous,Yes
+rhapsodic,ecstatic,1,see rhapsody: (noun) an effusively enthusiastic or ecstatic expression of feeling.,
+ecstatic,rhapsodic,1.0,see rhapsody: (noun) an effusively enthusiastic or ecstatic expression of feeling.,Yes
+riant,high_prop,1,showing or feeling mirth or pleasure or happiness,
+high_prop,riant,1.0,showing or feeling mirth or pleasure or happiness,Yes
+riant,mirthful,1,"when said of a person or a person's manner: mirthful, cheerful, smiling, light-hearted.",
+mirthful,riant,1.0,"when said of a person or a person's manner: mirthful, cheerful, smiling, light-hearted.",Yes
+riant,cheerful,1,"when said of a person or a person's manner: mirthful, cheerful, smiling, light-hearted.",
+cheerful,riant,1.0,"when said of a person or a person's manner: mirthful, cheerful, smiling, light-hearted.",Yes
+riant,mirthful,1,"of a person or a person's disposition, actions, etc.: smiling, mirthful, cheerful, light-hearted.",
+mirthful,riant,1.0,"of a person or a person's disposition, actions, etc.: smiling, mirthful, cheerful, light-hearted.",Yes
+riant,cheerful,1,"of a person or a person's disposition, actions, etc.: smiling, mirthful, cheerful, light-hearted.",
+cheerful,riant,1.0,"of a person or a person's disposition, actions, etc.: smiling, mirthful, cheerful, light-hearted.",Yes
+sad,mournful,1,"sorrowful, mournful.",
+mournful,sad,1.0,"sorrowful, mournful.",Yes
+sad,mourning,1,"sorrowful, mournful.",
+mourning,sad,1.0,"sorrowful, mournful.",Yes
+sad,unhappy,1,unhappy.,
+unhappy,sad,1.0,unhappy.,Yes
+sad,mournful,1,"sorrowful, mournful.",
+mournful,sad,1.0,"sorrowful, mournful.",Yes
+sad,mourning,1,"sorrowful, mournful.",
+mourning,sad,1.0,"sorrowful, mournful.",Yes
+sad,unhappy,1,unhappy.,
+unhappy,sad,1.0,unhappy.,Yes
+sad.02,sad,1,of things that make you feel sad,
+sad,sad.02,1.0,of things that make you feel sad,Yes
+satisfied,content,1,contented,
+content,satisfied,1.0,contented,Yes
+satisfied,contented,1,contented,
+contented,satisfied,1.0,contented,Yes
+satisfied,pleased,1,pleased.,
+pleased,satisfied,1.0,pleased.,Yes
+self-complacent,content,1,contented to a fault with oneself or one's actions,
+content,self-complacent,1.0,contented to a fault with oneself or one's actions,Yes
+self-complacent,contented,1,contented to a fault with oneself or one's actions,
+contented,self-complacent,1.0,contented to a fault with oneself or one's actions,Yes
+self-complacent,satisfied,1,complacently self-satisfied,
+satisfied,self-complacent,1.0,complacently self-satisfied,Yes
+self-complacent,smug,1,showing smug or uncritical satisfaction with oneself or one's achievements.,
+smug,self-complacent,1.0,showing smug or uncritical satisfaction with oneself or one's achievements.,Yes
+self-satisfied,satisfied,1,satisfied with oneself,
+satisfied,self-satisfied,1.0,satisfied with oneself,Yes
+self-satisfied,satisfied,1,especially too satisfied,
+satisfied,self-satisfied,1.0,especially too satisfied,Yes
+self-satisfied,smug,1,smug,
+smug,self-satisfied,1.0,smug,Yes
+self-satisfied,satisfied,1.4,excessively satisfied with oneself or one's achievements,
+satisfied,self-satisfied,0.7142857142857143,excessively satisfied with oneself or one's achievements,Yes
+self-satisfied.02,content,1,contented to a fault with oneself or one's actions,
+content,self-satisfied.02,1.0,contented to a fault with oneself or one's actions,Yes
+self-satisfied.02,contented,1,contented to a fault with oneself or one's actions,
+contented,self-satisfied.02,1.0,contented to a fault with oneself or one's actions,Yes
+self-satisfied.02,satisfied,1,satisfied with oneself,
+satisfied,self-satisfied.02,1.0,satisfied with oneself,Yes
+self-satisfied.02,satisfied,1,especially too satisfied,
+satisfied,self-satisfied.02,1.0,especially too satisfied,Yes
+self-satisfied.02,smug,1,smug,
+smug,self-satisfied.02,1.0,smug,Yes
+self-satisfied.02,satisfied,1.4,excessively satisfied with oneself or one's achievements,
+satisfied,self-satisfied.02,0.7142857142857143,excessively satisfied with oneself or one's achievements,Yes
+sepulchral.03,dismal,1,dismal.,
+dismal,sepulchral.03,1.0,dismal.,Yes
+smiling,high_prop,1,smiling with happiness or optimism,
+high_prop,smiling,1.0,smiling with happiness or optimism,Yes
+smug,pleased,1,"irritatingly pleased with oneself, offensively self-complacent. self-satisfied.",
+pleased,smug,1.0,"irritatingly pleased with oneself, offensively self-complacent. self-satisfied.",Yes
+smug,satisfied,1,"irritatingly pleased with oneself, offensively self-complacent. self-satisfied.",
+satisfied,smug,1.0,"irritatingly pleased with oneself, offensively self-complacent. self-satisfied.",Yes
+somber.02,joyless,1,"joyless, and grim.",
+joyless,somber.02,1.0,"joyless, and grim.",Yes
+sombre.02,joyless,1,"joyless, and grim.",
+joyless,sombre.02,1.0,"joyless, and grim.",Yes
+sorrowful,sad,1,sad,
+sad,sorrowful,1.0,sad,Yes
+sorrowful,dejected,1,dejected,
+dejected,sorrowful,1.0,dejected,Yes
+sorrowful,sad,1,sad,
+sad,sorrowful,1.0,sad,Yes
+sorrowful,dejected,1,dejected,
+dejected,sorrowful,1.0,dejected,Yes
+sorry.04,sad,1,"poor, sad or regrettable.",
+sad,sorry.04,1.0,"poor, sad or regrettable.",Yes
+sorry.04,sad,1,feeling sad or distressed through sympathy with someone else's misfortune.,
+sad,sorry.04,1.0,feeling sad or distressed through sympathy with someone else's misfortune.,Yes
+suffering.02,unhappy,1.4,very unhappy,
+unhappy,suffering.02,0.7142857142857143,very unhappy,Yes
+sunny,cheerful,1,cheerful.,
+cheerful,sunny,1.0,cheerful.,Yes
+tragic,sad,1.4,very sad,
+sad,tragic,0.7142857142857143,very sad,Yes
+triumphal.02,joyful,1,joyful and proud especially because of triumph or success,
+joyful,triumphal.02,1.0,joyful and proud especially because of triumph or success,Yes
+triumphant,joyful,1,joyful and proud especially because of triumph or success,
+joyful,triumphant,1.0,joyful and proud especially because of triumph or success,Yes
+twinkly,high_prop,1,smiling with happiness or optimism,
+high_prop,twinkly,1.0,smiling with happiness or optimism,Yes
+uncheerful,sad,1,causing sad feelings of gloom and inadequacy,
+sad,uncheerful,1.0,causing sad feelings of gloom and inadequacy,Yes
+uncheerful,cheerful,-1,not cheerful.,
+cheerful,uncheerful,-1.0,not cheerful.,Yes
+unhappy,happy,-1,not happy,
+happy,unhappy,-1.0,not happy,Yes
+unhappy,sad,1,sad.,
+sad,unhappy,1.0,sad.,Yes
+unhappy,happy,-1,not happy.,
+happy,unhappy,-1.0,not happy.,Yes
+unhappy,happy,-1,not happy,
+happy,unhappy,-1.0,not happy,Yes
+unhappy,sad,1,sad.,
+sad,unhappy,1.0,sad.,Yes
+unhappy,happy,-1,not happy.,
+happy,unhappy,-1.0,not happy.,Yes
+unhappy.02,satisfied,-1,not satisfied,
+satisfied,unhappy.02,-1.0,not satisfied,Yes
+unhappy.02,satisfied,-1,not satisfied or pleased with (a situation),
+satisfied,unhappy.02,-1.0,not satisfied or pleased with (a situation),Yes
+unhappy.02,pleased,1,not satisfied or pleased with (a situation),
+pleased,unhappy.02,1.0,not satisfied or pleased with (a situation),Yes
+unsatisfied.02,satisfied,-1,"not satisfied, especially with the quantity of something",
+satisfied,unsatisfied.02,-1.0,"not satisfied, especially with the quantity of something",Yes
+unsatisfied.02,satisfied,-1,not satisfied.,
+satisfied,unsatisfied.02,-1.0,not satisfied.,Yes
+uplifted,joyous,1,"joyous, hopeful or inspired.",
+joyous,uplifted,1.0,"joyous, hopeful or inspired.",Yes
+wailful,mournful,1,mournful.,
+mournful,wailful,1.0,mournful.,Yes
+wailful,mourning,1,mournful.,
+mourning,wailful,1.0,mournful.,Yes
+wistful,sad,1,sad and thoughtful.,
+sad,wistful,1.0,sad and thoughtful.,Yes
+woebegone.02,sad,1,sad or miserable in appearance.,
+sad,woebegone.02,1.0,sad or miserable in appearance.,Yes
+woebegone.02,miserable,1,sad or miserable in appearance.,
+miserable,woebegone.02,1.0,sad or miserable in appearance.,Yes
+wretched.03,unhappy,1.4,very unhappy,
+unhappy,wretched.03,0.7142857142857143,very unhappy,Yes
+wretched.03,miserable,1.4,very miserable,
+miserable,wretched.03,0.7142857142857143,very miserable,Yes
+wretched.03,woeful,1,woeful,
+woeful,wretched.03,1.0,woeful,Yes
+wretched.03,unhappy,1.4,(of a person) in a very unhappy or unfortunate state.,
+unhappy,wretched.03,0.7142857142857143,(of a person) in a very unhappy or unfortunate state.,Yes

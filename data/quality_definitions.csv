@@ -1,0 +1,80 @@
+Source,Relation,Word,WordNet Definition,Wikitionary Definition,Oxford Definition
+quality,has_attribute,bad,having undesirable or negative qualities,Tricky; stressful; unpleasant.,"(of something causing pain, danger, or other unwelcome consequences) severe or serious"
+bad,similar_tos,atrocious,exceptionally bad or displeasing,very bad; abominable or disgusting,of a very poor quality; extremely bad or unpleasant
+atrocious,has_lemma,abominable,exceptionally bad or displeasing,Very bad or inferior.,very bad; terrible
+atrocious,has_lemma,awful,exceptionally bad or displeasing,Very bad.,"used to emphasize the extent of something, especially something unpleasant or negative"
+atrocious,has_lemma,dreadful,exceptionally bad or displeasing,Causing dread; bad.,"used to emphasize the degree to which something is the case, especially something regarded with sadness or disapproval"
+atrocious,has_lemma,painful,exceptionally bad or displeasing,"Causing pain or distress, either physical or mental.",very bad
+atrocious,has_lemma,terrible,exceptionally bad or displeasing,Very bad; lousy.,used to emphasize the extent of something unpleasant or bad
+atrocious,has_lemma,unspeakable,exceptionally bad or displeasing,Extremely bad or objectionable.,too bad or horrific to express in words
+bad,similar_tos,corked,(of wine) tainted in flavor by a cork containing excess tannin,"Of a container, especially a bottle, closed with a cork.",(of wine) spoilt by a musty taint arising from a fault in the cork
+corked,has_lemma,corky,(of wine) tainted in flavor by a cork containing excess tannin,"Of wine, contaminated by a faulty or tainted cork.",resembling cork
+bad,similar_tos,deplorable,bad; unfortunate,Deserving strong condemnation; shockingly bad.,shockingly bad in quality
+deplorable,has_lemma,distressing,bad; unfortunate,Causing distress; upsetting,"causing anxiety, sorrow or pain; upsetting"
+deplorable,has_lemma,lamentable,bad; unfortunate,"Causing sorrow, distress or regret; deplorable, pitiful or distressing.",(of circumstances or conditions) very bad; deplorable
+deplorable,has_lemma,pitiful,bad; unfortunate,So appalling or sad that one feels or should feel sorry for it; eliciting pity.,very small or poor; inadequate
+deplorable,has_lemma,sad,bad; unfortunate,"Poor in quality, bad; shameful, deplorable; later, regrettable, poor.",feeling or showing sorrow; unhappy
+deplorable,has_lemma,sorry,bad; unfortunate,"Regretful for an action; grieved or saddened, especially by the loss of something or someone.",filled with compassion for
+bad,similar_tos,fearful,extremely distressing,terrible,very great
+fearful,has_lemma,frightful,extremely distressing,"Full of that which causes fright; exciting alarm; impressing terror; shocking; as, a frightful chasm, or tempest; a frightful appearance.","used for emphasis, especially of something bad"
+bad,similar_tos,hard,unfortunate or hard to bear,", severe, harsh, unfriendly, brutal.",(of a person) not showing any signs of weakness; tough
+hard,has_lemma,tough,unfortunate or hard to bear,rugged or physically hardy,able to endure hardship or pain
+bad,similar_tos,hopeless,(informal to emphasize how bad it is) beyond hope of management or reform,Destitute of hope; having no expectation of good; despairing.,feeling or causing despair
+bad,similar_tos,horrid,exceedingly bad,"offensive, disagreeable, abominable, execrable",causing horror
+bad,similar_tos,icky,very bad,unpleasantly sticky; yucky; disgusting,unpleasantly sticky.
+icky,has_lemma,crappy,very bad,Of very poor quality.,ill; unwell
+icky,has_lemma,lousy,very bad,"Remarkably bad; of poor quality, dirty, or underhanded.",very poor or bad
+icky,has_lemma,rotten,very bad,Bad or terrible.,very bad
+icky,has_lemma,shitty,very bad,Very bad; unpleasant; miserable; insignificant.,(of an experience or situation) unpleasant; awful.
+icky,has_lemma,stinking,very bad,Very bad and undesirable.,very bad or unpleasant
+icky,has_lemma,stinky,very bad,"Having a strong, unpleasant smell; stinking.",having a strong or unpleasant smell
+bad,similar_tos,ill,distressing,Extremely bad (bad enough to make one ill).  Generally used indirectly with to be.,suffering from an illness or disease or feeling unwell
+bad,similar_tos,incompetent,not doing a good job,"Unskilled, lacking normally expected degree of ability.",not having or showing the necessary skills to do something successfully
+incompetent,has_lemma,unskilled,not doing a good job,Of a person or workforce: not having a skill or technical training.,not having or requiring special skill or training
+bad,similar_tos,mediocre,poor to middling in quality,"Ordinary: not extraordinary; not special, exceptional, or great; of medium quality;",of only average quality; not very good
+bad,similar_tos,naughty,badly behaved,bad; tending to misbehave or act badly.,(especially of a child) badly behaved; disobedient
+bad,similar_tos,negative,having the quality of something harmful or unpleasant,damaging; undesirable; unfavourable,"(of a person, attitude, or situation) not desirable or optimistic"
+bad,similar_tos,poor,unsatisfactory,Of low quality.,of a low or inferior standard or quality
+bad,similar_tos,pretty,(used ironically) unexpectedly bad,"Cunning; clever, skilful.","(of a person, especially a woman or child) attractive in a delicate way without being truly beautiful"
+bad,similar_tos,rubber,returned for lack of funds,,
+rubber,has_lemma,no-good,returned for lack of funds,"Having no value, use or merit",(of a person) contemptible; worthless
+bad,similar_tos,severe,very bad in degree or extent,Very bad or intense.,"demanding great ability, skill, or resilience"
+bad,similar_tos,swingeing,severe; punishingly bad,"powerful, scathing (a swingeing verbal attack)","severe or extreme in size, amount, or effect"
+bad,similar_tos,uncool,(spoken slang) unfashionable and boring,"not in accord with the current fashion, standards or mores of a particular group; not cool",not fashionable or impressive
+bad,similar_tos,unfavorable,not favorable,"Disadvantageous, adverse, unsuitable, inconducive; serving to hinder or oppose.",
+unfavorable,has_lemma,unfavourable,not favorable,not approved of,expressing or showing a lack of approval or support
+bad,similar_tos,unsuitable,not conducive to good moral development,Not suitable; unfit; inappropriate.,not fitting or appropriate
+quality,has_attribute,good,having desirable or positive qualities especially those suitable for a thing specified,"Of food, edible; not stale or rotten.",skilled at doing or dealing with a specified thing
+good,similar_tos,bang-up,very good,Especially good; wonderful; superb.,excellent
+bang-up,has_lemma,bully,very good,Very good; excellent.,very good; excellent
+bang-up,has_lemma,corking,very good,"splendid, enjoyable, bang-up",very good; excellent
+bang-up,has_lemma,cracking,very good,Great,excellent
+bang-up,has_lemma,dandy,very good,Very good; better than expected but not as good as could be.,excellent
+bang-up,has_lemma,great,very good,Very good.,"used in names of animals or plants which are larger than similar kinds, e.g. great tit, greater celandine."
+bang-up,has_lemma,groovy,very good,"Cool, neat, interesting.",fashionable and exciting
+bang-up,has_lemma,keen,very good,"showing a quick and ardent willingness or responsiveness, enthusiastic, eager; interested, intense.",having or showing great perception or insight
+bang-up,has_lemma,neat,very good,"Clean, tidy; free from dirt or impurities.",done with or demonstrating skill or efficiency
+bang-up,has_lemma,nifty,very good,"Good; a general term for anything that is good, useful or beneficial.","particularly good, skilful, or effective"
+bang-up,has_lemma,not_bad,very good,,
+bang-up,has_lemma,peachy,very good,"Very good, excellent",of the nature or appearance of a peach.
+bang-up,has_lemma,slap-up,very good,"Excellent, first-class.",(of a meal or celebration) large and sumptuous
+bang-up,has_lemma,swell,very good,Excellent.,excellent; very good
+bang-up,has_lemma,smashing,very good,"(British informal) Wonderful, very good or impressive. Thought to be corruption of Irish Is maith é sin. (meaning ""that's good"").",excellent; wonderful
+good,similar_tos,good_enough,adequately good for the circumstances,,
+good,similar_tos,goodish,moderately good of its kind,Rather good than the contrary; not actually bad; tolerable.,fairly good
+good,similar_tos,hot,very good; often used in the negative,"Very good, remarkable, exciting.",having a high degree of heat or a high temperature
+good,similar_tos,redeeming,compensating for some fault or defect,,compensating for someone's or something's faults; compensatory
+good,similar_tos,satisfactory,meeting requirements,Done to satisfaction; adequate or sufficient,"fulfilling expectations or needs; acceptable, though not outstanding or perfect"
+satisfactory,has_lemma,acceptable,meeting requirements,"Capable, worthy, or sure of being accepted or received with pleasure; pleasing to a receiver; gratifying; agreeable; welcome; as, an acceptable present, one acceptable to us.",moderately good; satisfactory
+good,similar_tos,solid,characterized by good substantial quality,Filling.,on good terms with
+good,similar_tos,superb,surpassingly good,first-rate; of the highest quality; exceptionally good,very good; excellent
+good,similar_tos,well-behaved,(usually of children) someone who behaves in a manner that the speaker believes is correct,Having good manners and acting properly,
+well-behaved,has_lemma,well_behaved,(usually of children) someone who behaves in a manner that the speaker believes is correct,,(of a computer program) communicating with hardware via standard operating system calls rather than directly and therefore able to be used on different machines.
+quality,has_attribute,negative,characterized by or displaying negation or denial or opposition or resistance; having no positive features,damaging; undesirable; unfavourable,"(of a person, attitude, or situation) not desirable or optimistic"
+negative,similar_tos,antagonistic,indicating opposition or resistance,"Contending or acting against; as, antagonistic forces.",showing or feeling active opposition or hostility towards someone or something
+antagonistic,has_lemma,counter,indicating opposition or resistance,Contrary; opposite; contrasted; opposed; adverse; antagonistic.,"responding to something of the same kind, especially in opposition"
+negative,similar_tos,perverse,marked by a disposition to oppose and contradict,"Turned aside; hence, specifically, turned away from the (morally) right; willfully erring; wicked; perverted.",showing a deliberate and obstinate desire to behave in a way that is unreasonable or unacceptable
+quality,has_attribute,positive,characterized by or displaying affirmation or acceptance or certainty etc.,"Of number, greater than zero.","constructive, optimistic, or confident"
+positive,similar_tos,affirmative,expecting the best,positive,agreeing with or consenting to a statement or request
+affirmative,has_lemma,optimistic,expecting the best,Expecting the best in all possible ways.,hopeful and confident about the future
+positive,similar_tos,constructive,emphasizing what is laudable or hopeful or to the good,"Imputed by law; created to give legal effect to something for equitable reasons, as with constructive notice or a constructive trust.",having or intended to have a useful or beneficial purpose

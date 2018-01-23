@@ -1,0 +1,343 @@
+Word,Variable,Factor,Definition,Deduced
+bad,negative,1,having undesirable or negative qualities,
+negative,bad,1.0,having undesirable or negative qualities,Yes
+bad,severe,1,"(of something causing pain, danger, or other unwelcome consequences) severe or serious",
+severe,bad,1.0,"(of something causing pain, danger, or other unwelcome consequences) severe or serious",Yes
+atrocious,bad,1.4,exceptionally bad or displeasing,
+bad,atrocious,0.7142857142857143,exceptionally bad or displeasing,Yes
+atrocious,bad,1.4,very bad,
+bad,atrocious,0.7142857142857143,very bad,Yes
+atrocious,abominable,1,abominable or disgusting,
+abominable,atrocious,1.0,abominable or disgusting,Yes
+atrocious,high_prop,1,of a very poor quality,
+high_prop,atrocious,1.0,of a very poor quality,Yes
+atrocious,bad,1.4,extremely bad or unpleasant,
+bad,atrocious,0.7142857142857143,extremely bad or unpleasant,Yes
+abominable,bad,1.4,exceptionally bad or displeasing,
+bad,abominable,0.7142857142857143,exceptionally bad or displeasing,Yes
+abominable,bad,1.4,very bad or inferior.,
+bad,abominable,0.7142857142857143,very bad or inferior.,Yes
+abominable,bad,1.4,very bad,
+bad,abominable,0.7142857142857143,very bad,Yes
+abominable,terrible,1,terrible,
+terrible,abominable,1.0,terrible,Yes
+awful,bad,1.4,exceptionally bad or displeasing,
+bad,awful,0.7142857142857143,exceptionally bad or displeasing,Yes
+awful,bad,1.4,very bad.,
+bad,awful,0.7142857142857143,very bad.,Yes
+awful,negative,1,"used to emphasize the extent of something, especially something unpleasant or negative",
+negative,awful,1.0,"used to emphasize the extent of something, especially something unpleasant or negative",Yes
+dreadful,bad,1.4,exceptionally bad or displeasing,
+bad,dreadful,0.7142857142857143,exceptionally bad or displeasing,Yes
+dreadful,bad,1,bad.,
+bad,dreadful,1.0,bad.,Yes
+painful,bad,1.4,exceptionally bad or displeasing,
+bad,painful,0.7142857142857143,exceptionally bad or displeasing,Yes
+painful,bad,1.4,very bad,
+bad,painful,0.7142857142857143,very bad,Yes
+terrible,bad,1.4,exceptionally bad or displeasing,
+bad,terrible,0.7142857142857143,exceptionally bad or displeasing,Yes
+terrible,bad,1.4,very bad,
+bad,terrible,0.7142857142857143,very bad,Yes
+terrible,lousy,1,lousy.,
+lousy,terrible,1.0,lousy.,Yes
+terrible,bad,1,used to emphasize the extent of something unpleasant or bad,
+bad,terrible,1.0,used to emphasize the extent of something unpleasant or bad,Yes
+unspeakable,bad,1.4,exceptionally bad or displeasing,
+bad,unspeakable,0.7142857142857143,exceptionally bad or displeasing,Yes
+unspeakable,bad,1.4,extremely bad or objectionable.,
+bad,unspeakable,0.7142857142857143,extremely bad or objectionable.,Yes
+unspeakable,bad,1,too bad or horrific to express in words,
+bad,unspeakable,1.0,too bad or horrific to express in words,Yes
+deplorable,bad,1,bad,
+bad,deplorable,1.0,bad,Yes
+deplorable,bad,1,shockingly bad.,
+bad,deplorable,1.0,shockingly bad.,Yes
+deplorable,high_prop,1,shockingly bad in quality,
+high_prop,deplorable,1.0,shockingly bad in quality,Yes
+deplorable,bad,1,shockingly bad in quality,
+bad,deplorable,1.0,shockingly bad in quality,Yes
+distressing,bad,1,bad,
+bad,distressing,1.0,bad,Yes
+lamentable,bad,1,bad,
+bad,lamentable,1.0,bad,Yes
+lamentable,deplorable,1,"deplorable, pitiful or distressing.",
+deplorable,lamentable,1.0,"deplorable, pitiful or distressing.",Yes
+lamentable,pitiful,1,"deplorable, pitiful or distressing.",
+pitiful,lamentable,1.0,"deplorable, pitiful or distressing.",Yes
+lamentable,distressing,1,"deplorable, pitiful or distressing.",
+distressing,lamentable,1.0,"deplorable, pitiful or distressing.",Yes
+lamentable,bad,1.4,(of circumstances or conditions) very bad,
+bad,lamentable,0.7142857142857143,(of circumstances or conditions) very bad,Yes
+lamentable,deplorable,1,deplorable,
+deplorable,lamentable,1.0,deplorable,Yes
+pitiful,bad,1,bad,
+bad,pitiful,1.0,bad,Yes
+pitiful,sad,1,so appalling or sad that one feels or should feel sorry for it,
+sad,pitiful,1.0,so appalling or sad that one feels or should feel sorry for it,Yes
+pitiful,sorry,1,so appalling or sad that one feels or should feel sorry for it,
+sorry,pitiful,1.0,so appalling or sad that one feels or should feel sorry for it,Yes
+pitiful,poor,1,very small or poor,
+poor,pitiful,1.0,very small or poor,Yes
+sad,bad,1,bad,
+bad,sad,1.0,bad,Yes
+sad,high_prop,1,"poor in quality, bad",
+high_prop,sad,1.0,"poor in quality, bad",Yes
+sad,poor,1,"poor in quality, bad",
+poor,sad,1.0,"poor in quality, bad",Yes
+sad,bad,1,"poor in quality, bad",
+bad,sad,1.0,"poor in quality, bad",Yes
+sad,deplorable,1,"shameful, deplorable",
+deplorable,sad,1.0,"shameful, deplorable",Yes
+sad,poor,1,"later, regrettable, poor.",
+poor,sad,1.0,"later, regrettable, poor.",Yes
+sorry,bad,1,bad,
+bad,sorry,1.0,bad,Yes
+fearful,distressing,1.4,extremely distressing,
+distressing,fearful,0.7142857142857143,extremely distressing,Yes
+fearful,terrible,1,terrible,
+terrible,fearful,1.0,terrible,Yes
+fearful,great,1.4,very great,
+great,fearful,0.7142857142857143,very great,Yes
+frightful,distressing,1.4,extremely distressing,
+distressing,frightful,0.7142857142857143,extremely distressing,Yes
+frightful,bad,1,"used for emphasis, especially of something bad",
+bad,frightful,1.0,"used for emphasis, especially of something bad",Yes
+hard,severe,1,", severe, harsh, unfriendly, brutal.",
+severe,hard,1.0,", severe, harsh, unfriendly, brutal.",Yes
+hard,tough,1,tough,
+tough,hard,1.0,tough,Yes
+tough,hard,1,unfortunate or hard to bear,
+hard,tough,1.0,unfortunate or hard to bear,Yes
+hopeless,bad,1,(informal to emphasize how bad it is) beyond hope of management or reform,
+bad,hopeless,1.0,(informal to emphasize how bad it is) beyond hope of management or reform,Yes
+hopeless,good,1,having no expectation of good,
+good,hopeless,1.0,having no expectation of good,Yes
+horrid,bad,1,exceedingly bad,
+bad,horrid,1.0,exceedingly bad,Yes
+horrid,abominable,1,"offensive, disagreeable, abominable, execrable",
+abominable,horrid,1.0,"offensive, disagreeable, abominable, execrable",Yes
+icky,bad,1.4,very bad,
+bad,icky,0.7142857142857143,very bad,Yes
+crappy,bad,1.4,very bad,
+bad,crappy,0.7142857142857143,very bad,Yes
+crappy,high_prop,1,of very poor quality.,
+high_prop,crappy,1.0,of very poor quality.,Yes
+crappy,ill,1,ill,
+ill,crappy,1.0,ill,Yes
+lousy,bad,1.4,very bad,
+bad,lousy,0.7142857142857143,very bad,Yes
+lousy,bad,1.4,remarkably bad,
+bad,lousy,0.7142857142857143,remarkably bad,Yes
+lousy,high_prop,1,"of poor quality, dirty, or underhanded.",
+high_prop,lousy,1.0,"of poor quality, dirty, or underhanded.",Yes
+lousy,poor,1.4,very poor or bad,
+poor,lousy,0.7142857142857143,very poor or bad,Yes
+lousy,bad,1,very poor or bad,
+bad,lousy,1.0,very poor or bad,Yes
+rotten,bad,1.4,very bad,
+bad,rotten,0.7142857142857143,very bad,Yes
+rotten,bad,1,bad or terrible.,
+bad,rotten,1.0,bad or terrible.,Yes
+rotten,terrible,1,bad or terrible.,
+terrible,rotten,1.0,bad or terrible.,Yes
+rotten,bad,1.4,very bad,
+bad,rotten,0.7142857142857143,very bad,Yes
+shitty,bad,1.4,very bad,
+bad,shitty,0.7142857142857143,very bad,Yes
+shitty,bad,1.4,very bad,
+bad,shitty,0.7142857142857143,very bad,Yes
+shitty,awful,1,awful.,
+awful,shitty,1.0,awful.,Yes
+stinking,bad,1.4,very bad,
+bad,stinking,0.7142857142857143,very bad,Yes
+stinking,bad,1.4,very bad and undesirable.,
+bad,stinking,0.7142857142857143,very bad and undesirable.,Yes
+stinking,bad,1.4,very bad or unpleasant,
+bad,stinking,0.7142857142857143,very bad or unpleasant,Yes
+stinky,bad,1.4,very bad,
+bad,stinky,0.7142857142857143,very bad,Yes
+ill,bad,1.4,extremely bad (bad enough to make one ill). generally used indirectly with to be.,
+bad,ill,0.7142857142857143,extremely bad (bad enough to make one ill). generally used indirectly with to be.,Yes
+ill,bad,1,extremely bad (bad enough to make one ill). generally used indirectly with to be.,
+bad,ill,1.0,extremely bad (bad enough to make one ill). generally used indirectly with to be.,Yes
+incompetent,good,1,not doing a good job,
+good,incompetent,1.0,not doing a good job,Yes
+incompetent,unskilled,1,"unskilled, lacking normally expected degree of ability.",
+unskilled,incompetent,1.0,"unskilled, lacking normally expected degree of ability.",Yes
+unskilled,good,1,not doing a good job,
+good,unskilled,1.0,not doing a good job,Yes
+mediocre,high_prop,1,poor to middling in quality,
+high_prop,mediocre,1.0,poor to middling in quality,Yes
+mediocre,poor,1,poor to middling in quality,
+poor,mediocre,1.0,poor to middling in quality,Yes
+mediocre,great,1,"not special, exceptional, or great",
+great,mediocre,1.0,"not special, exceptional, or great",Yes
+mediocre,high_prop,1,of medium quality,
+high_prop,mediocre,1.0,of medium quality,Yes
+mediocre,high_prop,1,of only average quality,
+high_prop,mediocre,1.0,of only average quality,Yes
+mediocre,good,-1,not very good,
+good,mediocre,-1.0,not very good,Yes
+mediocre,good,-1.4,not very good,
+good,mediocre,-0.7142857142857143,not very good,Yes
+naughty,bad,1,bad,
+bad,naughty,1.0,bad,Yes
+negative,high_prop,1,having the quality of something harmful or unpleasant,
+high_prop,negative,1.0,having the quality of something harmful or unpleasant,Yes
+negative,unfavourable,1,unfavourable,
+unfavourable,negative,1.0,unfavourable,Yes
+negative,optimistic,1,"(of a person, attitude, or situation) not desirable or optimistic",
+optimistic,negative,1.0,"(of a person, attitude, or situation) not desirable or optimistic",Yes
+poor,high_prop,-1.0,of low quality.,
+high_prop,poor,-1.0,of low quality.,Yes
+poor,high_prop,1,of a low or inferior standard or quality,
+high_prop,poor,1.0,of a low or inferior standard or quality,Yes
+pretty,bad,1,(used ironically) unexpectedly bad,
+bad,pretty,1.0,(used ironically) unexpectedly bad,Yes
+severe,bad,1.4,very bad in degree or extent,
+bad,severe,0.7142857142857143,very bad in degree or extent,Yes
+severe,bad,1.4,very bad or intense.,
+bad,severe,0.7142857142857143,very bad or intense.,Yes
+severe,great,1,"demanding great ability, skill, or resilience",
+great,severe,1.0,"demanding great ability, skill, or resilience",Yes
+swingeing,severe,1,severe,
+severe,swingeing,1.0,severe,Yes
+swingeing,bad,1,punishingly bad,
+bad,swingeing,1.0,punishingly bad,Yes
+swingeing,severe,1,"severe or extreme in size, amount, or effect",
+severe,swingeing,1.0,"severe or extreme in size, amount, or effect",Yes
+unfavorable,unsuitable,1,"disadvantageous, adverse, unsuitable, inconducive",
+unsuitable,unfavorable,1.0,"disadvantageous, adverse, unsuitable, inconducive",Yes
+unsuitable,good,1,not conducive to good moral development,
+good,unsuitable,1.0,not conducive to good moral development,Yes
+good,positive,1,having desirable or positive qualities especially those suitable for a thing specified,
+positive,good,1.0,having desirable or positive qualities especially those suitable for a thing specified,Yes
+good,rotten,1,not stale or rotten.,
+rotten,good,1.0,not stale or rotten.,Yes
+bang-up,good,1.4,very good,
+good,bang-up,0.7142857142857143,very good,Yes
+bang-up,good,1,especially good,
+good,bang-up,1.0,especially good,Yes
+bang-up,superb,1,superb.,
+superb,bang-up,1.0,superb.,Yes
+bully,good,1.4,very good,
+good,bully,0.7142857142857143,very good,Yes
+bully,good,1.4,very good,
+good,bully,0.7142857142857143,very good,Yes
+bully,good,1.4,very good,
+good,bully,0.7142857142857143,very good,Yes
+corking,good,1.4,very good,
+good,corking,0.7142857142857143,very good,Yes
+corking,good,1.4,very good,
+good,corking,0.7142857142857143,very good,Yes
+cracking,good,1.4,very good,
+good,cracking,0.7142857142857143,very good,Yes
+cracking,great,1,great,
+great,cracking,1.0,great,Yes
+dandy,good,1.4,very good,
+good,dandy,0.7142857142857143,very good,Yes
+dandy,good,1.4,very good,
+good,dandy,0.7142857142857143,very good,Yes
+dandy,good,-1,better than expected but not as good as could be.,
+good,dandy,-1.0,better than expected but not as good as could be.,Yes
+great,good,1.4,very good,
+good,great,0.7142857142857143,very good,Yes
+great,good,1.4,very good.,
+good,great,0.7142857142857143,very good.,Yes
+groovy,good,1.4,very good,
+good,groovy,0.7142857142857143,very good,Yes
+groovy,neat,1,"cool, neat, interesting.",
+neat,groovy,1.0,"cool, neat, interesting.",Yes
+keen,good,1.4,very good,
+good,keen,0.7142857142857143,very good,Yes
+keen,great,1,having or showing great perception or insight,
+great,keen,1.0,having or showing great perception or insight,Yes
+neat,good,1.4,very good,
+good,neat,0.7142857142857143,very good,Yes
+nifty,good,1.4,very good,
+good,nifty,0.7142857142857143,very good,Yes
+nifty,good,1,good,
+good,nifty,1.0,good,Yes
+nifty,good,1,"a general term for anything that is good, useful or beneficial.",
+good,nifty,1.0,"a general term for anything that is good, useful or beneficial.",Yes
+nifty,good,1.4,"particularly good, skilful, or effective",
+good,nifty,0.7142857142857143,"particularly good, skilful, or effective",Yes
+not_bad,good,1.4,very good,
+good,not_bad,0.7142857142857143,very good,Yes
+peachy,good,1.4,very good,
+good,peachy,0.7142857142857143,very good,Yes
+peachy,good,1.4,"very good, excellent",
+good,peachy,0.7142857142857143,"very good, excellent",Yes
+peachy,high_prop,1,of the nature or appearance of a peach.,
+high_prop,peachy,1.0,of the nature or appearance of a peach.,Yes
+slap-up,good,1.4,very good,
+good,slap-up,0.7142857142857143,very good,Yes
+swell,good,1.4,very good,
+good,swell,0.7142857142857143,very good,Yes
+swell,good,1.4,very good,
+good,swell,0.7142857142857143,very good,Yes
+smashing,good,1.4,very good,
+good,smashing,0.7142857142857143,very good,Yes
+smashing,good,1.4,"(british informal) wonderful, very good or impressive. thought to be corruption of irish is maith é sin. (meaning ""that's good"").",
+good,smashing,0.7142857142857143,"(british informal) wonderful, very good or impressive. thought to be corruption of irish is maith é sin. (meaning ""that's good"").",Yes
+smashing,good,1,"(british informal) wonderful, very good or impressive. thought to be corruption of irish is maith é sin. (meaning ""that's good"").",
+good,smashing,1.0,"(british informal) wonderful, very good or impressive. thought to be corruption of irish is maith é sin. (meaning ""that's good"").",Yes
+good_enough,good,1,adequately good for the circumstances,
+good,good_enough,1.0,adequately good for the circumstances,Yes
+goodish,high_prop,1,moderately good of its kind,
+high_prop,goodish,1.0,moderately good of its kind,Yes
+goodish,good,0.8,moderately good of its kind,
+good,goodish,1.25,moderately good of its kind,Yes
+goodish,good,0.8,rather good than the contrary,
+good,goodish,1.25,rather good than the contrary,Yes
+goodish,bad,-1,not actually bad,
+bad,goodish,-1.0,not actually bad,Yes
+goodish,good,0.8,fairly good,
+good,goodish,1.25,fairly good,Yes
+hot,good,1.4,very good,
+good,hot,0.7142857142857143,very good,Yes
+hot,negative,1,often used in the negative,
+negative,hot,1.0,often used in the negative,Yes
+hot,good,1.4,"very good, remarkable, exciting.",
+good,hot,0.7142857142857143,"very good, remarkable, exciting.",Yes
+satisfactory,acceptable,1,"acceptable, though not outstanding or perfect",
+acceptable,satisfactory,1.0,"acceptable, though not outstanding or perfect",Yes
+acceptable,good,0.8,moderately good,
+good,acceptable,1.25,moderately good,Yes
+acceptable,satisfactory,1,satisfactory,
+satisfactory,acceptable,1.0,satisfactory,Yes
+solid,high_prop,1.0,characterized by good substantial quality,
+high_prop,solid,1.0,characterized by good substantial quality,Yes
+solid,good,1,on good terms with,
+good,solid,1.0,on good terms with,Yes
+superb,good,1,surpassingly good,
+good,superb,1.0,surpassingly good,Yes
+superb,high_prop,1,of the highest quality,
+high_prop,superb,1.0,of the highest quality,Yes
+superb,good,1.4,exceptionally good,
+good,superb,0.7142857142857143,exceptionally good,Yes
+superb,good,1.4,very good,
+good,superb,0.7142857142857143,very good,Yes
+well-behaved,good,1,having good manners and acting properly,
+good,well-behaved,1.0,having good manners and acting properly,Yes
+negative,positive,1,having no positive features,
+positive,negative,1.0,having no positive features,Yes
+negative,unfavourable,1,unfavourable,
+unfavourable,negative,1.0,unfavourable,Yes
+negative,optimistic,1,"(of a person, attitude, or situation) not desirable or optimistic",
+optimistic,negative,1.0,"(of a person, attitude, or situation) not desirable or optimistic",Yes
+counter,antagonistic,1,antagonistic.,
+antagonistic,counter,1.0,antagonistic.,Yes
+counter,high_prop,1,"responding to something of the same kind, especially in opposition",
+high_prop,counter,1.0,"responding to something of the same kind, especially in opposition",Yes
+positive,great,1,"of number, greater than zero.",
+great,positive,1.0,"of number, greater than zero.",Yes
+positive,constructive,1,"constructive, optimistic, or confident",
+constructive,positive,1.0,"constructive, optimistic, or confident",Yes
+positive,optimistic,1,"constructive, optimistic, or confident",
+optimistic,positive,1.0,"constructive, optimistic, or confident",Yes
+affirmative,positive,1,positive,
+positive,affirmative,1.0,positive,Yes
+constructive,good,1,emphasizing what is laudable or hopeful or to the good,
+good,constructive,1.0,emphasizing what is laudable or hopeful or to the good,Yes

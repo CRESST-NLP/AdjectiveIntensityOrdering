@@ -1,0 +1,143 @@
+Word,Variable,Factor,Definition,Deduced
+fast,high_prop,1.0,"moving with great speed, or capable of doing so",
+high_prop,fast,1.0,"moving with great speed, or capable of doing so",Yes
+fast,swift,1,"swift, rapid.",
+swift,fast,1.0,"swift, rapid.",Yes
+fast,rapid,1,"swift, rapid.",
+rapid,fast,1.0,"swift, rapid.",Yes
+fast,high_prop,1.0,taking place at high speed,
+high_prop,fast,1.0,taking place at high speed,Yes
+alacritous,quick,1,quick and eager,
+quick,alacritous,1.0,quick and eager,Yes
+alacritous,speedy,1,"brisk, speedy, with alacrity, quick and eager.",
+speedy,alacritous,1.0,"brisk, speedy, with alacrity, quick and eager.",Yes
+alacritous,quick,1,"brisk, speedy, with alacrity, quick and eager.",
+quick,alacritous,1.0,"brisk, speedy, with alacrity, quick and eager.",Yes
+blistering,fast,1.4,very fast,
+fast,blistering,0.7142857142857143,very fast,Yes
+blistering,high_prop,1.0,capable of quick response and great speed,
+high_prop,blistering,1.0,capable of quick response and great speed,Yes
+blistering,quick,1,capable of quick response and great speed,
+quick,blistering,1.0,capable of quick response and great speed,Yes
+blistering,fast,1.4,very fast,
+fast,blistering,0.7142857142857143,very fast,Yes
+hot,fast,1.4,very fast,
+fast,hot,0.7142857142857143,very fast,Yes
+hot,high_prop,1.0,capable of quick response and great speed,
+high_prop,hot,1.0,capable of quick response and great speed,Yes
+hot,quick,1,capable of quick response and great speed,
+quick,hot,1.0,capable of quick response and great speed,Yes
+red-hot,fast,1.4,very fast,
+fast,red-hot,0.7142857142857143,very fast,Yes
+red-hot,high_prop,1.0,capable of quick response and great speed,
+high_prop,red-hot,1.0,capable of quick response and great speed,Yes
+red-hot,quick,1,capable of quick response and great speed,
+quick,red-hot,1.0,capable of quick response and great speed,Yes
+red-hot,hot,1,so hot as to glow red,
+hot,red-hot,1.0,so hot as to glow red,Yes
+double-quick,quick,1.4,(of a marching cadence) very quick,
+quick,double-quick,0.7142857142857143,(of a marching cadence) very quick,Yes
+fast-breaking,rapid,1,occurring rapidly as a series of events in rapid succession,
+rapid,fast-breaking,1.0,occurring rapidly as a series of events in rapid succession,Yes
+fleet,fast,1.4,moving very fast,
+fast,fleet,0.7142857142857143,moving very fast,Yes
+fleet,swift,1,swift in motion,
+swift,fleet,1.0,swift in motion,Yes
+fleet,high_prop,1,moving with velocity,
+high_prop,fleet,1.0,moving with velocity,Yes
+fleet,quick,1,light and quick in going from place to place,
+quick,fleet,1.0,light and quick in going from place to place,Yes
+fleet,fast,1,fast.,
+fast,fleet,1.0,fast.,Yes
+fleet,fast,1,fast and nimble in movement,
+fast,fleet,1.0,fast and nimble in movement,Yes
+swift,fast,1.4,moving very fast,
+fast,swift,0.7142857142857143,moving very fast,Yes
+swift,high_prop,1.0,moving or capable of moving at high speed,
+high_prop,swift,1.0,moving or capable of moving at high speed,Yes
+high-speed,high_prop,1.0,operating at high speed,
+high_prop,high-speed,1.0,operating at high speed,Yes
+high-speed,high_prop,1,"that operates, moves or takes place at a greater than normal speed.",
+high_prop,high-speed,1.0,"that operates, moves or takes place at a greater than normal speed.",Yes
+high-velocity,high_prop,1.0,operating at high speed,
+high_prop,high-velocity,1.0,operating at high speed,Yes
+high-velocity,high_prop,1,denoting or relating to a gun capable of discharging a projectile with great force and speed,
+high_prop,high-velocity,1.0,denoting or relating to a gun capable of discharging a projectile with great force and speed,Yes
+immediate,instant,1,instant,
+instant,immediate,1.0,instant,Yes
+prompt,immediate,1,(of goods) for immediate delivery and payment.,
+immediate,prompt,1.0,(of goods) for immediate delivery and payment.,Yes
+quick,high_prop,1,"moving with speed, rapidity or swiftness, or capable of doing so",
+high_prop,quick,1.0,"moving with speed, rapidity or swiftness, or capable of doing so",Yes
+quick,rapid,1,rapid,
+rapid,quick,1.0,rapid,Yes
+quick,fast,1,fast.,
+fast,quick,1.0,fast.,Yes
+instant,immediate,1,occurring immediately,
+immediate,instant,1.0,occurring immediately,Yes
+instant,immediate,1,immediate,
+immediate,instant,1.0,immediate,Yes
+meteoric,high_prop,1,like a meteor in speed or brilliance or transience,
+high_prop,meteoric,1.0,like a meteor in speed or brilliance or transience,Yes
+meteoric,high_prop,1,"like a meteor in speed, brilliance, or ephemeralness.",
+high_prop,meteoric,1.0,"like a meteor in speed, brilliance, or ephemeralness.",Yes
+meteoric,rapid,1.4,(of the development of something) very rapid,
+rapid,meteoric,0.7142857142857143,(of the development of something) very rapid,Yes
+quick,high_prop,1,"moving with speed, rapidity or swiftness, or capable of doing so",
+high_prop,quick,1.0,"moving with speed, rapidity or swiftness, or capable of doing so",Yes
+quick,rapid,1,rapid,
+rapid,quick,1.0,rapid,Yes
+quick,fast,1,fast.,
+fast,quick,1.0,fast.,Yes
+speedy,rapid,1,characterized by a rapid or swift motion.,
+rapid,speedy,1.0,characterized by a rapid or swift motion.,Yes
+speedy,swift,1,characterized by a rapid or swift motion.,
+swift,speedy,1.0,characterized by a rapid or swift motion.,Yes
+rapid,high_prop,1.0,(of an action) characterized by great speed,
+high_prop,rapid,1.0,(of an action) characterized by great speed,Yes
+rapid,high_prop,1,characterized by speed,
+high_prop,rapid,1.0,characterized by speed,Yes
+rapid,high_prop,1.0,moving with or capable of moving with high speed,
+high_prop,rapid,1.0,moving with or capable of moving with high speed,Yes
+rapid,high_prop,1.0,(of an action) characterized by great speed,
+high_prop,rapid,1.0,(of an action) characterized by great speed,Yes
+speedy,high_prop,1,characterized by speed,
+high_prop,speedy,1.0,characterized by speed,Yes
+speedy,high_prop,1.0,moving with or capable of moving with high speed,
+high_prop,speedy,1.0,moving with or capable of moving with high speed,Yes
+speedy,rapid,1,characterized by a rapid or swift motion.,
+rapid,speedy,1.0,characterized by a rapid or swift motion.,Yes
+speedy,swift,1,characterized by a rapid or swift motion.,
+swift,speedy,1.0,characterized by a rapid or swift motion.,Yes
+smart,quick,1,quick and brisk,
+quick,smart,1.0,quick and brisk,Yes
+smart,quick,1,having or showing a quick-witted intelligence,
+quick,smart,1.0,having or showing a quick-witted intelligence,Yes
+windy,high_prop,1,"resembling the wind in speed, force, or variability",
+high_prop,windy,1.0,"resembling the wind in speed, force, or variability",Yes
+winged,fast,1.4,very fast,
+fast,winged,0.7142857142857143,very fast,Yes
+winged,swift,1,swift,
+swift,winged,1.0,swift,Yes
+slow,quick,-1,not quick in motion,
+quick,slow,-1.0,not quick in motion,Yes
+slow,high_prop,-1.0,proceeding at a low speed.,
+high_prop,slow,-1.0,proceeding at a low speed.,Yes
+slow,fast,1,not allowing or intended for fast travel,
+fast,slow,1.0,not allowing or intended for fast travel,Yes
+bumper-to-bumper,slow,1,"heavily crowded and slow-moving, particularly in reference to automobile traffic on a highway.",
+slow,bumper-to-bumper,1.0,"heavily crowded and slow-moving, particularly in reference to automobile traffic on a highway.",Yes
+laggard,slow,1,slower than desired or expected,
+slow,laggard,1.0,slower than desired or expected,Yes
+poky,slow,1,slow,
+slow,poky,1.0,slow,Yes
+pokey,fast,1,fast,
+fast,pokey,1.0,fast,Yes
+lazy,slow,1,(of a river) slow-moving,
+slow,lazy,1.0,(of a river) slow-moving,Yes
+long-play,slow,1,(used of records) playing at a slower speed and for a longer time than earlier records,
+slow,long-play,1.0,(used of records) playing at a slower speed and for a longer time than earlier records,Yes
+long-playing,slow,1,(used of records) playing at a slower speed and for a longer time than earlier records,
+slow,long-playing,1.0,(used of records) playing at a slower speed and for a longer time than earlier records,Yes
+sluggish,lazy,1,habitually idle and lazy,
+lazy,sluggish,1.0,habitually idle and lazy,Yes

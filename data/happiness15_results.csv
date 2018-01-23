@@ -1,0 +1,16 @@
+A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,x,b,results
+blessed,blissful,bright,golden,halcyon,happy,high_prop,laughing,miserable,prosperous,riant,suffering,unhappy,wretched,,,
+1,0,0,0,0,0,-1.0,0,0,0,0,0,0,0,blessed,0,"('wretched', '-16.80')"
+0,3,0,0,0,-2.8,-1.0,0,0,0,0,0,0,0,blissful,0,"('miserable', '-14.00')"
+0,0,1,0,0,0,-1.0,0,0,0,0,0,0,0,bright,0,"('suffering', '-14.00')"
+0,0,0,1,0,0,-1.0,0,0,0,0,0,0,0,golden,0,"('unhappy', '-10.00')"
+0,0,0,0,1,0,-1.0,0,0,0,0,0,0,0,halcyon,0,"('blessed', '10.00')"
+0,0,0,0,0,2,-2.0,0,0,0,0,0,0,0,happy,0,"('bright', '10.00')"
+0,0,0,0,0,0,1,0,0,0,0,0,0,0,high_prop,10,"('golden', '10.00')"
+0,0,0,0,0,0,-1.0,1,0,0,0,0,0,0,laughing,0,"('halcyon', '10.00')"
+0,0,0,0,0,0,0,0,1,0,0,0,-1.4,0,miserable,0,"('happy', '10.00')"
+0,0,0,0,0,0,-1.0,0,0,1,0,0,0,0,prosperous,0,"('high_prop', '10.00')"
+0,0,-1.0,0,0,0,-1.0,0,0,0,2,0,0,0,riant,0,"('laughing', '10.00')"
+0,0,0,0,0,0,0,0,0,0,0,1,-1.4,0,suffering,0,"('prosperous', '10.00')"
+0,0,0,0,0,1.0,0,0,0,0,0,0,1,0,unhappy,0,"('riant', '10.00')"
+0,0,0,0,0,0,0,0,-1.4,0,0,0,-1.4,2,wretched,0,"('blissful', '12.67')"

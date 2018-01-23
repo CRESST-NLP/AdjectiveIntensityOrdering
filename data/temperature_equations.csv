@@ -1,0 +1,407 @@
+Word,Variable,Factor,Definition,Deduced
+cold,high_prop,-1.0,having a low or inadequate temperature or feeling a sensation of coldness or having been made cold by e.g. ice or refrigeration,
+high_prop,cold,-1.0,having a low or inadequate temperature or feeling a sensation of coldness or having been made cold by e.g. ice or refrigeration,Yes
+cold,high_prop,-1.0,having a low temperature.,
+high_prop,cold,-1.0,having a low temperature.,Yes
+algid,chilly,1,chilly,
+chilly,algid,1.0,chilly,Yes
+algid,cold,1,"cold, chilly",
+cold,algid,1.0,"cold, chilly",Yes
+algid,chilly,1,"cold, chilly",
+chilly,algid,1.0,"cold, chilly",Yes
+algid,high_prop,-1.0,used of low body temperature especially in connection with certain diseases such as malaria and cholera.,
+high_prop,algid,-1.0,used of low body temperature especially in connection with certain diseases such as malaria and cholera.,Yes
+algid,cold,1,"cold, chilly",
+cold,algid,1.0,"cold, chilly",Yes
+algid,chilly,1,"cold, chilly",
+chilly,algid,1.0,"cold, chilly",Yes
+algid,frigid,1,frigid.,
+frigid,algid,1.0,frigid.,Yes
+arctic,cold,1.4,extremely cold,
+cold,arctic,0.7142857142857143,extremely cold,Yes
+arctic,cold,1.4,"being extremely cold, snowy, or having other properties of extreme winter associated with the arctic.",
+cold,arctic,0.7142857142857143,"being extremely cold, snowy, or having other properties of extreme winter associated with the arctic.",Yes
+arctic,cold,1.4,(of weather conditions) very cold,
+cold,arctic,0.7142857142857143,(of weather conditions) very cold,Yes
+frigid,cold,1.4,extremely cold,
+cold,frigid,0.7142857142857143,extremely cold,Yes
+frigid,cold,1.4,very cold,
+cold,frigid,0.7142857142857143,very cold,Yes
+frigid,high_prop,1,lacking warmth,
+high_prop,frigid,1.0,lacking warmth,Yes
+frigid,high_prop,1,very cold in temperature,
+high_prop,frigid,1.0,very cold in temperature,Yes
+frigid,cold,1.4,very cold in temperature,
+cold,frigid,0.7142857142857143,very cold in temperature,Yes
+gelid,cold,1.4,extremely cold,
+cold,gelid,0.7142857142857143,extremely cold,Yes
+gelid,cold,1.4,very cold,
+cold,gelid,0.7142857142857143,very cold,Yes
+gelid,icy,1,icy or frosty.,
+icy,gelid,1.0,icy or frosty.,Yes
+gelid,frosty,1,icy or frosty.,
+frosty,gelid,1.0,icy or frosty.,Yes
+gelid,icy,1,icy,
+icy,gelid,1.0,icy,Yes
+gelid,cold,1.4,extremely cold,
+cold,gelid,0.7142857142857143,extremely cold,Yes
+glacial,cold,1.4,extremely cold,
+cold,glacial,0.7142857142857143,extremely cold,Yes
+glacial,cold,1,cold and icy,
+cold,glacial,1.0,cold and icy,Yes
+glacial,icy,1,cold and icy,
+icy,glacial,1.0,cold and icy,Yes
+glacial,cold,1.4,very cold,
+cold,glacial,0.7142857142857143,very cold,Yes
+glacial,icy,1,icy,
+icy,glacial,1.0,icy,Yes
+icy,cold,1.4,extremely cold,
+cold,icy,0.7142857142857143,extremely cold,Yes
+icy,cold,1,cold,
+cold,icy,1.0,cold,Yes
+icy,frosty,1,frosty.,
+frosty,icy,1.0,frosty.,Yes
+icy,cold,1.4,very cold,
+cold,icy,0.7142857142857143,very cold,Yes
+polar,cold,1.4,extremely cold,
+cold,polar,0.7142857142857143,extremely cold,Yes
+bleak,cold,1,unpleasantly cold and damp,
+cold,bleak,1.0,unpleasantly cold and damp,Yes
+bleak,cold,1,swept by cold winds.,
+cold,bleak,1.0,swept by cold winds.,Yes
+bleak,cold,1,(of the weather) cold and miserable,
+cold,bleak,1.0,(of the weather) cold and miserable,Yes
+cutting,cold,1,unpleasantly cold and damp,
+cold,cutting,1.0,unpleasantly cold and damp,Yes
+cutting,cold,1,(of the wind) bitterly cold,
+cold,cutting,1.0,(of the wind) bitterly cold,Yes
+raw,cold,1,unpleasantly cold and damp,
+cold,raw,1.0,unpleasantly cold and damp,Yes
+raw,cold,1,(of the weather) cold and damp,
+cold,raw,1.0,(of the weather) cold and damp,Yes
+raw,bleak,1,bleak,
+bleak,raw,1.0,bleak,Yes
+chilly,cold,1,appreciably or disagreeably cold,
+cold,chilly,1.0,appreciably or disagreeably cold,Yes
+chilly,cold,1,cold enough to cause shivering,
+cold,chilly,1.0,cold enough to cause shivering,Yes
+chilly,cold,1,or suddenly feeling cold,
+cold,chilly,1.0,or suddenly feeling cold,Yes
+chilly,cold,1,(of a person) feeling cold,
+cold,chilly,1.0,(of a person) feeling cold,Yes
+parky,cold,1,appreciably or disagreeably cold,
+cold,parky,1.0,appreciably or disagreeably cold,Yes
+parky,cold,1,"cold, but not excessively so.",
+cold,parky,1.0,"cold, but not excessively so.",Yes
+parky,chilly,1,chilly,
+chilly,parky,1.0,chilly,Yes
+crisp,cold,0.6,pleasantly cold and invigorating,
+cold,crisp,1.6666666666666667,pleasantly cold and invigorating,Yes
+crisp,cold,1,"of weather, air etc.: dry and cold.",
+cold,crisp,1.0,"of weather, air etc.: dry and cold.",Yes
+frosty,cold,0.6,pleasantly cold and invigorating,
+cold,frosty,1.6666666666666667,pleasantly cold and invigorating,Yes
+frosty,cold,1,"cold, chilly.",
+cold,frosty,1.0,"cold, chilly.",Yes
+frosty,chilly,1,"cold, chilly.",
+chilly,frosty,1.0,"cold, chilly.",Yes
+frosty,cold,1,cold and unfriendly in manner,
+cold,frosty,1.0,cold and unfriendly in manner,Yes
+nipping,cold,0.6,pleasantly cold and invigorating,
+cold,nipping,1.6666666666666667,pleasantly cold and invigorating,Yes
+nippy,cold,0.6,pleasantly cold and invigorating,
+cold,nippy,1.6666666666666667,pleasantly cold and invigorating,Yes
+nippy,cold,0.8,"of the weather, rather cold.",
+cold,nippy,1.25,"of the weather, rather cold.",Yes
+nippy,chilly,1,(of the weather) chilly,
+chilly,nippy,1.0,(of the weather) chilly,Yes
+snappy,cold,0.6,pleasantly cold and invigorating,
+cold,snappy,1.6666666666666667,pleasantly cold and invigorating,Yes
+frigorific,cold,1,causing cold,
+cold,frigorific,1.0,causing cold,Yes
+frosty,cold,1,"cold, chilly.",
+cold,frosty,1.0,"cold, chilly.",Yes
+frosty,chilly,1,"cold, chilly.",
+chilly,frosty,1.0,"cold, chilly.",Yes
+frosty,cold,1,cold and unfriendly in manner,
+cold,frosty,1.0,cold and unfriendly in manner,Yes
+heatless,high_prop,1,without generating heat,
+high_prop,heatless,1.0,without generating heat,Yes
+heatless,high_prop,1,without heat.,
+high_prop,heatless,1.0,without heat.,Yes
+ice-cold,cold,1,as cold as ice,
+cold,ice-cold,1.0,as cold as ice,Yes
+ice-cold,cold,1,as cold as ice,
+cold,ice-cold,1.0,as cold as ice,Yes
+ice-cold,cold,1.4,very cold.,
+cold,ice-cold,0.7142857142857143,very cold.,Yes
+ice-cold,cold,1.4,(especially of a liquid) very cold,
+cold,ice-cold,0.7142857142857143,(especially of a liquid) very cold,Yes
+ice-cold,cold,1,as cold as ice,
+cold,ice-cold,1.0,as cold as ice,Yes
+refrigerated,cold,1,made or kept cold by refrigeration,
+cold,refrigerated,1.0,made or kept cold by refrigeration,Yes
+shivery,cold,1,cold enough to cause shivers,
+cold,shivery,1.0,cold enough to cause shivers,Yes
+shivery,cold,1,"shaking or trembling as a result of cold, illness, fear, or excitement",
+cold,shivery,1.0,"shaking or trembling as a result of cold, illness, fear, or excitement",Yes
+stone-cold,cold,1.4,completely cold,
+cold,stone-cold,0.7142857142857143,completely cold,Yes
+stone-cold,cold,1.4,completely cold,
+cold,stone-cold,0.7142857142857143,completely cold,Yes
+unwarmed,warming,1,not made warm,
+warming,unwarmed,1.0,not made warm,Yes
+unwarmed,warm,1,not made warm,
+warm,unwarmed,1.0,not made warm,Yes
+unwarmed,warmed,1,not made warm,
+warmed,unwarmed,1.0,not made warm,Yes
+cool,warming,-1,neither warm nor very cold,
+warming,cool,-1.0,neither warm nor very cold,Yes
+cool,warm,-1,neither warm nor very cold,
+warm,cool,-1.0,neither warm nor very cold,Yes
+cool,warmed,-1,neither warm nor very cold,
+warmed,cool,-1.0,neither warm nor very cold,Yes
+cool,warming,-1,neither warm nor very cold,
+warming,cool,-1.0,neither warm nor very cold,Yes
+cool,warm,-1,neither warm nor very cold,
+warm,cool,-1.0,neither warm nor very cold,Yes
+cool,warmed,-1,neither warm nor very cold,
+warmed,cool,-1.0,neither warm nor very cold,Yes
+cool,cold,-1.4,neither warm nor very cold,
+cold,cool,-0.7142857142857143,neither warm nor very cold,Yes
+cool,high_prop,1,giving relief from heat,
+high_prop,cool,1.0,giving relief from heat,Yes
+cool,high_prop,-0.6,having a slightly low temperature,
+high_prop,cool,-1.6666666666666667,having a slightly low temperature,Yes
+cool,cold,0.6,mildly or pleasantly cold.,
+cold,cool,1.6666666666666667,mildly or pleasantly cold.,Yes
+cool,high_prop,-1.0,soothing or refreshing because of its low temperature,
+high_prop,cool,-1.0,soothing or refreshing because of its low temperature,Yes
+air-conditioned,high_prop,1,equipped with and climate-controlled by air-conditioning.,
+high_prop,air-conditioned,1.0,equipped with and climate-controlled by air-conditioning.,Yes
+water-cooled,cool,1,kept cool or designed to be kept cool by means of water especially circulating water,
+cool,water-cooled,1.0,kept cool or designed to be kept cool by means of water especially circulating water,Yes
+water-cooled,cool,1,kept cool or designed to be kept cool by means of water especially circulating water,
+cool,water-cooled,1.0,kept cool or designed to be kept cool by means of water especially circulating water,Yes
+hot,high_prop,1,used of physical heat,
+high_prop,hot,1.0,used of physical heat,Yes
+hot,high_prop,1,having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning,
+high_prop,hot,1.0,having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning,Yes
+hot,high_prop,1,having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning,
+high_prop,hot,1.0,having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning,Yes
+hot,high_prop,1,having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning,
+high_prop,hot,1.0,having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning,Yes
+hot,high_prop,1.0,"of an object, having a high temperature.",
+high_prop,hot,1.0,"of an object, having a high temperature.",Yes
+baking,hot,1,as hot as if in an oven,
+hot,baking,1.0,as hot as if in an oven,Yes
+baking,hot,1.4,"of a person, the weather, or an object, very hot.",
+hot,baking,0.7142857142857143,"of a person, the weather, or an object, very hot.",Yes
+baking_hot,hot,1,as hot as if in an oven,
+hot,baking_hot,1.0,as hot as if in an oven,Yes
+blistering,hot,1,hot enough to raise (or as if to raise) blisters,
+hot,blistering,1.0,hot enough to raise (or as if to raise) blisters,Yes
+blistering,hot,1.4,very hot,
+hot,blistering,0.7142857142857143,very hot,Yes
+blistering,high_prop,1,(of heat) intense,
+high_prop,blistering,1.0,(of heat) intense,Yes
+blistery,hot,1,hot enough to raise (or as if to raise) blisters,
+hot,blistery,1.0,hot enough to raise (or as if to raise) blisters,Yes
+calefacient,high_prop,1,producing the sensation of heat when applied to the body,
+high_prop,calefacient,1.0,producing the sensation of heat when applied to the body,Yes
+warming,high_prop,1,producing the sensation of heat when applied to the body,
+high_prop,warming,1.0,producing the sensation of heat when applied to the body,Yes
+calefactory,high_prop,1,serving to heat,
+high_prop,calefactory,1.0,serving to heat,Yes
+calefactive,high_prop,1,serving to heat,
+high_prop,calefactive,1.0,serving to heat,Yes
+calorifacient,high_prop,1,producing heat,
+high_prop,calorifacient,1.0,producing heat,Yes
+calorific,high_prop,1,heat-generating,
+high_prop,calorific,1.0,heat-generating,Yes
+fervent,hot,1.4,extremely hot,
+hot,fervent,0.7142857142857143,extremely hot,Yes
+fervent,hot,1.4,"glowing, burning, very hot.",
+hot,fervent,0.7142857142857143,"glowing, burning, very hot.",Yes
+fervid,hot,1.4,extremely hot,
+hot,fervid,0.7142857142857143,extremely hot,Yes
+fervid,hot,1.4,"intensely hot, emotional, or zealous.",
+hot,fervid,0.7142857142857143,"intensely hot, emotional, or zealous.",Yes
+igneous,fiery,1,fiery.,
+fiery,igneous,1.0,fiery.,Yes
+heatable,hot,1,capable of becoming hot,
+hot,heatable,1.0,capable of becoming hot,Yes
+heated,warming,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warming,heated,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated,warm,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warm,heated,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated,warmed,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warmed,heated,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated,hot,1,made warm or hot (`het' is a dialectal variant of `heated'),
+hot,heated,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated,warming,1,made warm or hot,
+warming,heated,1.0,made warm or hot,Yes
+heated,warm,1,made warm or hot,
+warm,heated,1.0,made warm or hot,Yes
+heated,warmed,1,made warm or hot,
+warmed,heated,1.0,made warm or hot,Yes
+heated,hot,1,made warm or hot,
+hot,heated,1.0,made warm or hot,Yes
+heated_up,warming,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warming,heated_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated_up,warm,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warm,heated_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated_up,warmed,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warmed,heated_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated_up,hot,1,made warm or hot (`het' is a dialectal variant of `heated'),
+hot,heated_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+heated_up,heated,1,made warm or hot (`het' is a dialectal variant of `heated'),
+heated,heated_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het,warming,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warming,het,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het,warm,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warm,het,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het,warmed,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warmed,het,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het,hot,1,made warm or hot (`het' is a dialectal variant of `heated'),
+hot,het,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het,heated,1,made warm or hot (`het' is a dialectal variant of `heated'),
+heated,het,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het_up,warming,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warming,het_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het_up,warm,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warm,het_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het_up,warmed,1,made warm or hot (`het' is a dialectal variant of `heated'),
+warmed,het_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het_up,hot,1,made warm or hot (`het' is a dialectal variant of `heated'),
+hot,het_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+het_up,heated,1,made warm or hot (`het' is a dialectal variant of `heated'),
+heated,het_up,1.0,made warm or hot (`het' is a dialectal variant of `heated'),Yes
+hottish,hot,0.6,somewhat hot,
+hot,hottish,1.6666666666666667,somewhat hot,Yes
+hottish,hot,0.6,"somewhat hot, not_quite hot",
+hot,hottish,1.6666666666666667,"somewhat hot, not_quite hot",Yes
+hottish,hot,-0.6,"somewhat hot, not_quite hot",
+hot,hottish,-1.6666666666666667,"somewhat hot, not_quite hot",Yes
+overheated,heated,1.4,excessively heated,
+heated,overheated,0.7142857142857143,excessively heated,Yes
+red-hot,high_prop,1,glowing red with heat,
+high_prop,red-hot,1.0,glowing red with heat,Yes
+red-hot,hot,1,so hot as to glow red,
+hot,red-hot,1.0,so hot as to glow red,Yes
+scorching,hot,1,hot and dry enough to burn or parch a surface,
+hot,scorching,1.0,hot and dry enough to burn or parch a surface,Yes
+scorching,hot,1.4,very hot.,
+hot,scorching,0.7142857142857143,very hot.,Yes
+scorching,hot,1.4,very hot,
+hot,scorching,0.7142857142857143,very hot,Yes
+sizzling,hot,1,hot enough to burn with or as if with a hissing sound,
+hot,sizzling,1.0,hot enough to burn with or as if with a hissing sound,Yes
+sizzling,hot,1,hot enough to make a hissing sound.,
+hot,sizzling,1.0,hot enough to make a hissing sound.,Yes
+sizzling,hot,1.4,very hot,
+hot,sizzling,0.7142857142857143,very hot,Yes
+sultry,high_prop,1,characterized by oppressive heat and humidity,
+high_prop,sultry,1.0,characterized by oppressive heat and humidity,Yes
+sultry,hot,1,hot and humid,
+hot,sultry,1.0,hot and humid,Yes
+stifling,high_prop,1,characterized by oppressive heat and humidity,
+high_prop,stifling,1.0,characterized by oppressive heat and humidity,Yes
+sulfurous,high_prop,1,characterized by oppressive heat and humidity,
+high_prop,sulfurous,1.0,characterized by oppressive heat and humidity,Yes
+sulphurous,high_prop,1,characterized by oppressive heat and humidity,
+high_prop,sulphurous,1.0,characterized by oppressive heat and humidity,Yes
+sulphurous,sulfurous,1,alternative spelling of sulfurous,
+sulfurous,sulphurous,1.0,alternative spelling of sulfurous,Yes
+sweltering,hot,1.4,excessively hot and humid or marked by sweating and faintness,
+hot,sweltering,0.7142857142857143,excessively hot and humid or marked by sweating and faintness,Yes
+sweltering,hot,1,hot and humid,
+hot,sweltering,1.0,hot and humid,Yes
+sweltry,hot,1.4,excessively hot and humid or marked by sweating and faintness,
+hot,sweltry,0.7142857142857143,excessively hot and humid or marked by sweating and faintness,Yes
+thermal,high_prop,1,caused by or designed to retain heat,
+high_prop,thermal,1.0,caused by or designed to retain heat,Yes
+thermal,high_prop,1,pertaining to heat or temperature.,
+high_prop,thermal,1.0,pertaining to heat or temperature.,Yes
+thermal,high_prop,1,pertaining to heat or temperature.,
+high_prop,thermal,1.0,pertaining to heat or temperature.,Yes
+torrid,hot,1.4,extremely hot,
+hot,torrid,0.7142857142857143,extremely hot,Yes
+torrid,hot,1.4,very hot and dry.,
+hot,torrid,0.7142857142857143,very hot and dry.,Yes
+tropical,high_prop,1,of weather or climate,
+high_prop,tropical,1.0,of weather or climate,Yes
+tropical,hot,1,hot and humid as in the tropics,
+hot,tropical,1.0,hot and humid as in the tropics,Yes
+tropical,high_prop,1,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",
+high_prop,tropical,1.0,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",Yes
+tropical,hot,1,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",
+hot,tropical,1.0,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",Yes
+tropical,tropic,1,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",
+tropic,tropical,1.0,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",Yes
+tropical,tropic,1,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",
+tropic,tropical,1.0,"from or similar to a hot humid climate, e.g. tropical fruit, tropical weather.",Yes
+tropic,high_prop,1,of weather or climate,
+high_prop,tropic,1.0,of weather or climate,Yes
+tropic,hot,1,hot and humid as in the tropics,
+hot,tropic,1.0,hot and humid as in the tropics,Yes
+tropic,hot,1,hot and humid.,
+hot,tropic,1.0,hot and humid.,Yes
+white,high_prop,1,glowing white with heat,
+high_prop,white,1.0,glowing white with heat,Yes
+white-hot,high_prop,1,glowing white with heat,
+high_prop,white-hot,1.0,glowing white with heat,Yes
+white-hot,white,1,glowing white with heat,
+white,white-hot,1.0,glowing white with heat,Yes
+white-hot,fervid,1,fervid or zealous.,
+fervid,white-hot,1.0,fervid or zealous.,Yes
+warm,high_prop,1,having or producing a comfortable and agreeable degree of heat or imparting or maintaining heat,
+high_prop,warm,1.0,having or producing a comfortable and agreeable degree of heat or imparting or maintaining heat,Yes
+warm,high_prop,1,having or producing a comfortable and agreeable degree of heat or imparting or maintaining heat,
+high_prop,warm,1.0,having or producing a comfortable and agreeable degree of heat or imparting or maintaining heat,Yes
+warm,high_prop,0.6,"having a temperature slightly higher than usual, but still pleasant",
+high_prop,warm,1.6666666666666667,"having a temperature slightly higher than usual, but still pleasant",Yes
+warm,high_prop,1,a mild temperature.,
+high_prop,warm,1.0,a mild temperature.,Yes
+lukewarm,warming,0.8,moderately warm,
+warming,lukewarm,1.25,moderately warm,Yes
+lukewarm,warm,0.8,moderately warm,
+warm,lukewarm,1.25,moderately warm,Yes
+lukewarm,warmed,0.8,moderately warm,
+warmed,lukewarm,1.25,moderately warm,Yes
+lukewarm,high_prop,1,temperature between warm and cool.,
+high_prop,lukewarm,1.0,temperature between warm and cool.,Yes
+lukewarm,warming,1,temperature between warm and cool.,
+warming,lukewarm,1.0,temperature between warm and cool.,Yes
+lukewarm,warm,1,temperature between warm and cool.,
+warm,lukewarm,1.0,temperature between warm and cool.,Yes
+lukewarm,warmed,1,temperature between warm and cool.,
+warmed,lukewarm,1.0,temperature between warm and cool.,Yes
+lukewarm,cool,1,temperature between warm and cool.,
+cool,lukewarm,1.0,temperature between warm and cool.,Yes
+tepid,warming,0.8,moderately warm,
+warming,tepid,1.25,moderately warm,Yes
+tepid,warm,0.8,moderately warm,
+warm,tepid,1.25,moderately warm,Yes
+tepid,warmed,0.8,moderately warm,
+warmed,tepid,1.25,moderately warm,Yes
+tepid,lukewarm,1,lukewarm,
+lukewarm,tepid,1.0,lukewarm,Yes
+tepid,warming,-1,neither warm nor cool.,
+warming,tepid,-1.0,neither warm nor cool.,Yes
+tepid,warm,-1,neither warm nor cool.,
+warm,tepid,-1.0,neither warm nor cool.,Yes
+tepid,warmed,-1,neither warm nor cool.,
+warmed,tepid,-1.0,neither warm nor cool.,Yes
+tepid,warming,-1,neither warm nor cool.,
+warming,tepid,-1.0,neither warm nor cool.,Yes
+tepid,warm,-1,neither warm nor cool.,
+warm,tepid,-1.0,neither warm nor cool.,Yes
+tepid,warmed,-1,neither warm nor cool.,
+warmed,tepid,-1.0,neither warm nor cool.,Yes
+tepid,cool,-1,neither warm nor cool.,
+cool,tepid,-1.0,neither warm nor cool.,Yes
+warmed,high_prop,1.0,at a higher temperature,
+high_prop,warmed,1.0,at a higher temperature,Yes
+warming,high_prop,1,imparting heat,
+high_prop,warming,1.0,imparting heat,Yes

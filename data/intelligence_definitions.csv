@@ -1,0 +1,24 @@
+Source,Relation,Word,WordNet Definition,Wikitionary Definition,Oxford Definition
+intelligence,has_attribute,intelligent,having the capacity for thought and reason especially to a high degree,"of high or especially quick cognitive capacity, bright.","having or showing intelligence, especially of a high level"
+intelligent,similar_tos,agile,mentally quick,"Having the faculty of quick motion in the limbs; apt or ready  to move; nimble; active; as, an agile boy; an agile tongue.",able to think and understand quickly
+agile,has_lemma,nimble,mentally quick,Quick and light in movement or action.,(of the mind) able to think and understand quickly
+intelligent,similar_tos,apt,mentally quick and resourceful,"Ready; especially fitted or qualified (to do something); quick to learn; prompt; expert; as, a pupil apt to learn; an apt scholar.",appropriate or suitable in the circumstances
+apt,has_lemma,clever,mentally quick and resourceful,"smart, intelligent or witty, in the sense of being mentally quick or sharp","quick to understand, learn, and devise or apply ideas; intelligent"
+intelligent,similar_tos,brainy,having or marked by unusual and impressive intelligence,Very intellectually capable.,having or showing intelligence
+brainy,has_lemma,brilliant,having or marked by unusual and impressive intelligence,highly intelligent,(of light or colour) very bright
+brainy,has_lemma,smart_as_a_whip,having or marked by unusual and impressive intelligence,,
+intelligent,similar_tos,bright,characterized by quickness and ease in learning,"Intelligent, brilliant.",intelligent and quick-witted
+bright,has_lemma,smart,characterized by quickness and ease in learning,Exhibiting social ability or cleverness.,(of an object) bright and fresh in appearance
+intelligent,similar_tos,natural,being talented through inherited qualities,That which exists and evolved within the confines of an eco-system.,(of a person) having an innate skill or quality
+natural,has_lemma,born,being talented through inherited qualities,"Well suited to (some behaviour or occupation), as though from birth.",having a natural ability to do a particular job
+natural,has_lemma,innate,being talented through inherited qualities,"Inborn; native; natural; as, innate vigor; innate eloquence.",inborn; natural
+intelligent,similar_tos,prehensile,having a keen intellect,Able to take hold of and clasp objects; adapted for grasping especially by wrapping around an object.,(chiefly of an animal's limb or tail) capable of grasping
+intelligent,similar_tos,quick,apprehending and responding with speed and sensitivity,"Lively, fast-thinking, witty, intelligent.","prompt to understand, think, or learn; intelligent"
+quick,has_lemma,ready,apprehending and responding with speed and sensitivity,Inclined; apt to happen.,keen or quick to give
+intelligent,similar_tos,scintillating,brilliantly clever,"brilliantly clever, amusing or witty",sparkling or shining brightly
+intelligent,similar_tos,searching,"having keenness and forcefulness and penetration in thought, expression, or intellect","(of an investigation, etc.) thorough","thoroughly scrutinizing, especially in a disconcerting way"
+searching,has_lemma,trenchant,"having keenness and forcefulness and penetration in thought, expression, or intellect","Keen; biting; vigorously effective and articulate; severe; as, trenchant wit.",vigorous or incisive in expression or style
+intelligence,has_attribute,unintelligent,lacking intelligence,not intelligent,having or showing a low level of intelligence
+unintelligent,has_lemma,stupid,lacking intelligence,Lacking in intelligence or exhibiting the quality of having been done by someone lacking in intelligence.,having or showing a great lack of intelligence or common sense
+unintelligent,similar_tos,brainless,not using intelligence,"unintelligent, with little common sense.",stupid; very foolish
+brainless,has_lemma,headless,not using intelligence,Without a head; decapitated.,(of a body) having no head
